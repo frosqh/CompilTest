@@ -42,7 +42,6 @@ public class TDS {
 				temp= new Scope("class", currentScope, t.getChild(0).toString());
 				currentScope.addScopeNotInner(t.getChild(0).toString(), temp);
 				currentScope = temp;
-				System.out.println("Oh yeah" + t.getChild(0));
 				if (tree.getText().equals("inherit")){
 					Scope scope = currentScope;
 					while (!scope.getOrigin().equals("General")){
@@ -212,6 +211,8 @@ public class TDS {
 					check(t1, aST);
 				}
 				else{
+					if (t1.getText().matches("^-?\\d+$")){}
+					else{
 					if (currentScope.isIn(t1.getText())){
 						ArrayList<String> k = currentScope.getTable().get(t1.getText());
 						if (!k.get(1).equals("int")){
@@ -225,12 +226,16 @@ public class TDS {
 								throw new Exception (t1.getText() + " is not an Integer");
 							}
 						}
-					}
+						else{
+							throw new Exception(t1.getText() + " is not an Integer");
+						}
+					}}
 				}
 				if (Arrays.asList(op).contains(t2.getText())){
 					check(t2, aST);
 				}
 				else{
+					if (t2.getText().matches("^-?\\d+$")){
 					if (currentScope.isIn(t2.getText())){
 						ArrayList<String> k = currentScope.getTable().get(t2.getText());
 						if (!k.get(1).equals("int")){
@@ -244,7 +249,10 @@ public class TDS {
 								throw new Exception (t2.getText() + " is not an Integer");
 							}
 						}
-					}
+						else{
+							throw new Exception(t2.getText() + " is not an Integer");
+						}
+					}}
 				}
 			}
 			else{
@@ -280,6 +288,34 @@ public class TDS {
 						else{
 							if (!(scope.getAncestor().getTable().get(scope.getName()).size()>2)){
 								throw new Exception("Cannot use super within a class wich do not inheritate");
+							}
+						}
+					}
+					if (aST.getText().equals("if")){
+						Tree t1 = aST.getChild(0);
+						if (Arrays.asList(op).contains(t1.getText())){
+							check((BaseTree) t1,aST);
+						}
+						else{
+							if (t1.getText().matches("^-?\\d+$")){}
+							else{
+								if (currentScope.isIn(t1.getText())){
+									if(currentScope.getTable().get(t1.getText()).get(1).equals("int")){}
+									else{
+										throw new Exception(t1.getText() + " is not an Integer");
+									}
+								}
+								else{
+									if (currentScope.isInAncestor(t1.getText())){
+										if (currentScope.getFromAncestor(t1.getText()).get(1).equals(("int"))){}
+										else{
+											throw new Exception(t1.getText() + " is not an Integer");
+										}
+									}
+									else{
+										throw new Exception(t1.getText() + " is not an Integer");
+									}
+								}
 							}
 						}
 					}
