@@ -64,16 +64,26 @@ public class TDS {
 			return 2;
 		case "method" : //On est dans une cr�ation de m�thode
 			try {
-				if (t.getChild(0).getChild(t.getChildCount()-1).toString().equals("Void")){
+				Tree retur = null;
+				String returnType = t.getChild(0).getChild(t.getChild(0).getChildCount()-1).toString();
+				if (!returnType.equals("Void")){
 					int c = t.getChildCount();
 					boolean b =false;
 					for (int i =0; i<c; i++){
 						if (t.getChild(i).getText().equals("return")){
 							b=true;
+							retur = t.getChild(i).getChild(0);
 						}
 					}
 					if (!b){
 						throw new Exception("Function " + t.getChild(0).getText() + " doesn't return anything");
+					}
+					else{
+						String effectiveReturnType = retur.getText();
+						if (currentScope.isIn(effectiveReturnType)){
+							currentScope.getTable().get(effectiveReturnType);
+						}
+						
 					}
 				}
 
@@ -88,13 +98,13 @@ public class TDS {
 				return 1;
 			} catch (Exception e) {
 				System.out.println("Error : \""+ e.getMessage()+"\"");
+				//e.printStackTrace();
 				if (e.getMessage().startsWith("Var")){
 					return 1;
 				}
 				else{
 					return 2;
 				}
-				//e.printStackTrace();
 			}
 		case "Inner" : //On est dans un bloc interne
 			temp = new Scope("Inner", currentScope);
