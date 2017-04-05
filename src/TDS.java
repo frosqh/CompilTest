@@ -1,15 +1,17 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 import org.antlr.runtime.tree.BaseTree;
 import org.antlr.runtime.tree.Tree;
 
 public class TDS {
+	private HashMap<String, String> liste = new HashMap<String, String>();
 	private Scope currentScope;
 	private Scope temp;
 	private String[] util = {"DoExpr", "Void", "Inner", "inherit", "class", "var", "method", "if", "then", "fi", "for", "in", 
 			"do", "end", "write", "read", "return", "this", "super", "new", "int", "String", ":=", "+", "-", "*", "/", ">", "<", "<=", "==",
-			"=", ">="};
+			"=", ">=", "else"};
 	
 	public TDS(){
 		currentScope = new Scope("General");
@@ -29,20 +31,34 @@ public class TDS {
 				return 0;
 			} catch (Exception e) {
 				System.out.println("Error : \""+ e.getMessage()+"\"");
-				e.printStackTrace();
+				//e.printStackTrace();
 			}
 			return 2;
 		case "class" : //On est dans une cr�ation de classe
 			try {
+				Tree tree = t.getChild(1);
 				currentScope.addSolo("class", t.getChild(0));
 				temp= new Scope(t.getChild(0).toString(), currentScope);
 				currentScope.addScopeNotInner(t.getChild(0).toString(), temp);
 				currentScope = temp;
+				if (tree.getText().equals("inherit")){
+					Scope scope = currentScope;
+					while (!scope.getOrigin().equals("General")){
+						scope=scope.getAncestor();
+					}
+					Scope sc2 = scope.getSecondTable().get(tree.getChild(0).getText());
+					for (String k : sc2.getTable().keySet()){
+						ArrayList<String> b = sc2.getTable().get(k);
+						b.add("inherit");
+						currentScope.getTable().put(k, b);
+					}
+					
+				}
 				//System.out.println("On est maintenant dans " + currentScope.getOrigin());
 				return 1;
 			} catch (Exception e) {
 				System.out.println("Error : \""+ e.getMessage()+"\"");
-				e.printStackTrace();
+				//e.printStackTrace();
 			}
 			return 2;
 		case "method" : //On est dans une cr�ation de m�thode
@@ -98,6 +114,11 @@ public class TDS {
 		}
 	}
 
+	public HashMap<String, String> getListe() {
+		return liste;
+	}
+
+
 	public Scope getScope() {
 		return currentScope;
 	}
@@ -106,32 +127,39 @@ public class TDS {
 		return currentScope.toString(1);
 	}
 
-	public void check(BaseTree aST) throws Exception {
+	public void check(BaseTree aST, BaseTree parent) throws Exception {
 		if (!Arrays.asList(util).contains(aST.getText())){
-			if (aST.getAncestor(0) != null){ //Si c'est genre un appel de fonctions ou un paramètre
-				if (Arrays.asList(util).contains(aST.getAncestor(0).getText())){
-					String ancetre = aST.getAncestor(0).getText();
-					ArrayList<String> ancetreb = null;
-					if (currentScope.isIn(ancetre)){
-						ancetreb = currentScope.getTable().get(ancetre);
-					}
-					else{
-						ancetreb = currentScope.getFromAncestor(ancetre);
-					}
-					if (ancetreb.get(0).equals("var")){ //Si c'est un appel de fonctions
-						String type = ancetreb.get(1);
-						Scope scope = currentScope;
-						while (!scope.getOrigin().equals("General")){
-							scope=scope.getAncestor();
-						}
-						Scope a = scope.getSecondTable().get(type);
-						if (!a.getTable().containsKey(aST.getText())){
-							throw new Exception ("Method " + aST.getText() + " is not defined");
-						}
-					}
-					else{
-						if (ancetreb.get(0).equals("method")){
+			if (parent.getText() != null){ //Si c'est genre un appel de fonctions ou un paramètre
+				if (!Arrays.asList(util).contains(parent.getText())){
+					String ancetre = parent.getText();
+					//System.out.println(ancetre);
+					if (!liste.get(ancetre).equals("method")){
+						
+						ArrayList<String> ancetreb = null;
+						if (currentScope.isIn(ancetre)){
 							
+							ancetreb = currentScope.getTable().get(ancetre);
+						}
+						else{
+							ancetreb = currentScope.getFromAncestor(ancetre);
+						}
+						//System.out.println(ancetreb);
+						if (ancetreb.get(0).equals("var")){ //Si c'est un appel de fonctions
+							String type = ancetreb.get(1);
+							Scope scope = currentScope;
+							while (!scope.getOrigin().equals("General")){
+								scope=scope.getAncestor();
+							}
+							Scope a = scope.getSecondTable().get(type);
+							if (!a.getTable().containsKey(aST.getText())){
+								throw new Exception ("Method " + aST.getText() + " is not defined");
+							}
+							//System.out.println(a.getTable().get(aST.getText()).get(0));
+						}
+						else{
+							if (ancetreb.get(0).equals("method")){
+								
+							}
 						}
 					}
 				}
@@ -141,7 +169,8 @@ public class TDS {
 			else{
 				if (noeud.matches("^-?\\d+$")){}
 				else{
-					if (!currentScope.isIn(noeud) && !currentScope.isInAncestor(noeud)){
+					//System.out.println(noeud);
+					if (!liste.containsKey(noeud)){
 						throw new Exception ("Object "+noeud+" is not defined");
 					}
 				}

@@ -10,6 +10,7 @@ import org.antlr.runtime.tree.CommonTree;
 public class main2 {
 	
 	public static int i;
+	public static TDS Tds;
 	public static void main(String[] args) throws IOException, RecognitionException{
 		
 		CharStream input = null;
@@ -25,7 +26,7 @@ public class main2 {
 		GrammarParser parser = new GrammarParser(tokens);
 		GrammarParser.p_return r = parser.p();
 		CommonTree t = r.tree;
-		TDS Tds = new TDS();
+		Tds = new TDS();
 		parseTree(t, Tds, false);
 		System.out.println(Tds);
 	}
@@ -46,13 +47,13 @@ public class main2 {
 				 * Sinon, idf -> dans la TDS ?
 				 */
 				try {
-					Tds.check(AST);
+					Tds.check(AST, t);
 					if (hasChanged != 2){
-						parseTree((CommonTree) AST, Tds, (hasChanged == 1));
+						parseTree((CommonTree) AST, Tds, (hasChanged == 1) );
 					}
 				} catch (Exception e) {
 					System.out.println("Error : " + e.getMessage());
-					e.printStackTrace();
+					//e.printStackTrace();
 				}
 
 			}

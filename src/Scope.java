@@ -101,6 +101,7 @@ public class Scope {
 			param.add("param");
 			
 			table.put(name, param);
+			main2.Tds.getListe().put(name, "var");
 		}
 		else{
 			throw new Exception("Var name already used : " + name);
@@ -123,6 +124,7 @@ public class Scope {
 			param.add(type);
 			
 			table.put(name, param);
+			main2.Tds.getListe().put(name, "var");
 		}
 		else{
 			throw new Exception("Var name already used : " + name);
@@ -183,9 +185,16 @@ public class Scope {
 			param.add(string);
 			param.add(returnType);
 			table.put(name, param);
+			main2.Tds.getListe().put(name, "method");
 		}
 		else{
-			throw new Exception("Method name already used : " + name);
+			if (getTable().get(name).contains("inherit")){
+				getTable().remove(name);
+				addMethod(string, child);
+			}
+			else{
+				throw new Exception("Method name already used : " + name);
+			}
 		}
 	}
 
@@ -196,6 +205,7 @@ public class Scope {
 			param.add(string);
 			
 			table.put(name, param);
+			main2.Tds.getListe().put(name, "class");
 		}
 		else{
 			throw new Exception("Class name already used : " + name);
