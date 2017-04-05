@@ -64,6 +64,16 @@ public class TDS {
 			return 2;
 		case "method" : //On est dans une cr�ation de m�thode
 			try {
+				int c = t.getChildCount();
+				boolean b =false;
+				for (int i =0; i<c; i++){
+					if (t.getChild(i).getText().equals("return")){
+						b=true;
+					}
+				}
+				if (!b){
+					throw new Exception("Function " + t.getChild(0).getText() + " doesn't return anything");
+				}
 				currentScope.addMethod("method", t.getChild(0));
 				temp = new Scope(t.getChild(0).toString(), currentScope);
 				currentScope.addScopeNotInner(t.getChild(0).toString(), temp);
@@ -198,9 +208,46 @@ public class TDS {
 		}
 		else{
 			if (Arrays.asList(op).contains(aST.getText())){
-				Tree t1 = aST.getChild(0);
-				Tree t2 = aST.getChild(1);
-				
+				BaseTree t1 = (BaseTree) aST.getChild(0);
+				BaseTree t2 = (BaseTree) aST.getChild(1);
+				if (Arrays.asList(op).contains(t1.getText())){
+					check(t1, aST);
+				}
+				else{
+					if (currentScope.isIn(t1.getText())){
+						ArrayList<String> k = currentScope.getTable().get(t1.getText());
+						if (!k.get(1).equals("int")){
+							throw new Exception (t1.getText() + " is not an Integer");
+						}
+					}
+					else{
+						if (currentScope.isInAncestor(t1.getText())){
+							ArrayList<String> k = currentScope.getFromAncestor(t1.getText());
+							if (!k.get(1).equals("int")){
+								throw new Exception (t1.getText() + " is not an Integer");
+							}
+						}
+					}
+				}
+				if (Arrays.asList(op).contains(t2.getText())){
+					check(t2, aST);
+				}
+				else{
+					if (currentScope.isIn(t2.getText())){
+						ArrayList<String> k = currentScope.getTable().get(t2.getText());
+						if (!k.get(1).equals("int")){
+							throw new Exception (t2.getText() + " is not an Integer");
+						}
+					}
+					else{
+						if (currentScope.isInAncestor(t2.getText())){
+							ArrayList<String> k = currentScope.getFromAncestor(t2.getText());
+							if (!k.get(1).equals("int")){
+								throw new Exception (t2.getText() + " is not an Integer");
+							}
+						}
+					}
+				}
 			}
 		}
 	}
