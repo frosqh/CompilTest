@@ -47,11 +47,16 @@ public class TDS {
 					while (!scope.getOrigin().equals("General")){
 						scope=scope.getAncestor();
 					}
-					Scope sc2 = scope.getSecondTable().get(tree.getChild(0).getText());
-					for (String k : sc2.getTable().keySet()){
-						ArrayList<String> b = sc2.getTable().get(k);
-						b.add("inherit");
-						currentScope.getTable().put(k, b);
+					if (scope.isIn(tree.getChild(0).getText())){
+						Scope sc2 = scope.getSecondTable().get(tree.getChild(0).getText());
+						for (String k : sc2.getTable().keySet()){
+							ArrayList<String> b = sc2.getTable().get(k);
+							b.add("inherit");
+							currentScope.getTable().put(k, b);
+						}
+					}
+					else{
+						throw new Exception("Class " + tree.getChild(0).getText() + " doesn't exists");
 					}
 					
 				}
@@ -81,7 +86,19 @@ public class TDS {
 					else{
 						String effectiveReturnType = retur.getText();
 						if (currentScope.isIn(effectiveReturnType)){
-							currentScope.getTable().get(effectiveReturnType);
+							String trueType = currentScope.getTable().get(effectiveReturnType).get(1);
+							if (!trueType.equals(returnType)){
+								Scope scope = currentScope;
+								while (!scope.getOrigin().equals("General")){
+									scope=scope.getAncestor();
+								}
+								String type = trueType;
+								if (scope.isIn(returnType)){
+									while(scope.isIn(trueType) && !trueType.equals(returnType) && scope.getTable().get(trueType).size()>2){
+										trueType = scope.getTable().get(trueType).get(2);
+									}
+								}
+							}
 						}
 						
 					}
