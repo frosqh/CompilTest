@@ -15,7 +15,7 @@ public class TDS {
 	private String[] op = {"+", "-", "*", "/", ">", "<", "<=", "==", ">="};
 	
 	public TDS(){
-		currentScope = new Scope("General");
+		currentScope = new Scope("General", null, "General");
 	}
 	
 	public void goBack(){
@@ -39,9 +39,10 @@ public class TDS {
 			try {
 				Tree tree = t.getChild(1);
 				currentScope.addSolo("class", t.getChild(0));
-				temp= new Scope(t.getChild(0).toString(), currentScope);
+				temp= new Scope("class", currentScope, t.getChild(0).toString());
 				currentScope.addScopeNotInner(t.getChild(0).toString(), temp);
 				currentScope = temp;
+				System.out.println("Oh yeah" + t.getChild(0));
 				if (tree.getText().equals("inherit")){
 					Scope scope = currentScope;
 					while (!scope.getOrigin().equals("General")){
@@ -69,45 +70,12 @@ public class TDS {
 			return 2;
 		case "method" : //On est dans une cr�ation de m�thode
 			try {
-				Tree retur = null;
-				String returnType = t.getChild(0).getChild(t.getChild(0).getChildCount()-1).toString();
-				if (!returnType.equals("Void")){
-					int c = t.getChildCount();
-					boolean b =false;
-					for (int i =0; i<c; i++){
-						if (t.getChild(i).getText().equals("return")){
-							b=true;
-							retur = t.getChild(i).getChild(0);
-						}
-					}
-					if (!b){
-						throw new Exception("Function " + t.getChild(0).getText() + " doesn't return anything");
-					}
-					else{
-						String effectiveReturnType = retur.getText();
-						if (currentScope.isIn(effectiveReturnType)){
-							String trueType = currentScope.getTable().get(effectiveReturnType).get(1);
-							if (!trueType.equals(returnType)){
-								Scope scope = currentScope;
-								while (!scope.getOrigin().equals("General")){
-									scope=scope.getAncestor();
-								}
-								String type = trueType;
-								if (scope.isIn(returnType)){
-									while(scope.isIn(trueType) && !trueType.equals(returnType) && scope.getTable().get(trueType).size()>2){
-										trueType = scope.getTable().get(trueType).get(2);
-									}
-								}
-							}
-						}
-						
-					}
-				}
-
+			
 				currentScope.addMethod("method", t.getChild(0));
-				temp = new Scope(t.getChild(0).toString(), currentScope);
+				temp = new Scope("method", currentScope, t.getChild(0).toString());
 				currentScope.addScopeNotInner(t.getChild(0).toString(), temp);
 				currentScope = temp;
+
 				for (int i = 0; i <= t.getChild(0).getChildCount()-2; i++){
 					currentScope.add("var", ((BaseTree) t.getChild(0).getChild(i)));
 				}
@@ -124,27 +92,27 @@ public class TDS {
 				}
 			}
 		case "Inner" : //On est dans un bloc interne
-			temp = new Scope("Inner", currentScope);
+			temp = new Scope("Inner", currentScope, "Inner");
 			currentScope.addScopeInner(temp);
 			currentScope = temp;
 			//System.out.println("On est maintenant dans " + currentScope.getOrigin());
 			return 1;
 		case "then" : // On est dans la premi�re branche d'un If
-			temp = new Scope("then", currentScope);
+			temp = new Scope("then", currentScope, "Then");
 			currentScope.addScopeInner(temp);
 			currentScope = temp;
 			//System.out.println("On est maintenant dans " + currentScope.getOrigin());
 
 			return 1;
 		case "else" : // On est dans la seconde branche d'un If
-			temp = new Scope("else", currentScope);
+			temp = new Scope("else", currentScope, "Else");
 			currentScope.addScopeInner(temp);
 			currentScope = temp;
 			//System.out.println("On est maintenant dans " + currentScope.getOrigin());
 
 			return 1;
 		case "do" : //On est dans un for
-			temp = new Scope("do", currentScope);
+			temp = new Scope("do", currentScope, "Do" );
 			currentScope.addScopeInner(temp);
 			currentScope = temp;
 			//System.out.println("On est maintenant dans " + currentScope.getOrigin());
@@ -274,6 +242,44 @@ public class TDS {
 							ArrayList<String> k = currentScope.getFromAncestor(t2.getText());
 							if (!k.get(1).equals("int")){
 								throw new Exception (t2.getText() + " is not an Integer");
+							}
+						}
+					}
+				}
+			}
+			else{
+				if (aST.getText().equals("this")){
+					Scope scope = currentScope;
+					boolean b = false;
+					while (!scope.getOrigin().equals("General")){
+						if (scope.getOrigin().equals("class")){
+							b = true;
+							break;
+						}
+						scope = scope.getAncestor();
+					}
+					if (!b){
+						throw new Exception("Cannot use this outside of a class");
+					}
+				}
+				else{
+					if (aST.getText().equals("super")){
+						Scope scope = currentScope;
+						boolean b = false;
+						while (!scope.getOrigin().equals("General")){
+							System.out.println(scope.getOrigin() + scope.getName());
+							if (scope.getOrigin().equals("class")){
+								b = true;
+								break;
+							}
+							scope = scope.getAncestor();
+						}
+						if (!b){
+							throw new Exception("Cannot use super outside of a class");
+						}
+						else{
+							if (!(scope.getAncestor().getTable().get(scope.getName()).size()>2)){
+								throw new Exception("Cannot use super within a class wich do not inheritate");
 							}
 						}
 					}

@@ -11,7 +11,16 @@ public class Scope {
 	private ArrayList<Scope> innerScopeList = new ArrayList<Scope>();
 	private HashMap<String, ArrayList<String>> table;
 	private HashMap<String, Scope> secondTable;
+	private String name;
 	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public String toString(int tab){
 		if (table.isEmpty()){
 			return null;
@@ -20,7 +29,7 @@ public class Scope {
 		for (int i =0 ; i< tab; i++){
 			tabu += "    ";
 		}
-		String s = tabu.substring(0,  tabu.length()-4) + "Scope " + origin +"\n";
+		String s = tabu.substring(0,  tabu.length()-4) + "Scope " + name +"\n";
 		//System.out.println(table);
 		for (String k : table.keySet()){
 			s += tabu + k + " : " + table.get(k) + "\n";
@@ -44,11 +53,12 @@ public class Scope {
 		return s;
 	}
 	
-	public Scope(String id, Scope anc){
+	public Scope(String id, Scope anc, String string){
 		table = new HashMap<String, ArrayList<String>>();
 		secondTable = new HashMap<String, Scope>();
 		setOrigin(id);
 		setAncestor(anc);
+		setName(string);
 	}
 	
 	public ArrayList<Scope> getInnerScopeList() {
