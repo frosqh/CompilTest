@@ -85,41 +85,121 @@ public class Scope {
 	public void setAncestor(Scope ancestor) {
 		this.ancestor = ancestor;
 	}
-
-	public void add(String string, List<BaseTree> children) {
-		String name = children.get(0).toString();
-		String type = children.get(1).toString();
-		
-		ArrayList<String> param = new ArrayList<String>();
-		param.add(string);
-		param.add(type);
-		
-		table.put(name, param);
-		
-	}
-
-	public void addMethod(String string, Tree child) {
-		String name = child.toString();
-		String returnType;
-		if (child.getChildCount() >0){
-			returnType = child.getChild(0).toString();
+	
+	public void add(String string, BaseTree child) throws Exception{
+		String name = child.getText();
+		String type = child.getChild(0).getText();
+		if (!isIn(name)){
+			if (isInAncestor(name)){
+				System.out.println("Warning : \"Var name surcharged : " + name+"\"");
+			}
+			checkType(type);
+			ArrayList<String> param = new ArrayList<String>();
+			
+			param.add(string);
+			param.add(type);
+			param.add("param");
+			
+			table.put(name, param);
 		}
 		else{
-			returnType = null;
+			throw new Exception("Var name already used : " + name);
 		}
-		ArrayList<String> param = new ArrayList<String>();
-		param.add(string);
-		param.add(returnType);
-		table.put(name, param);
 	}
 
-	public void addSolo(String string, Tree child) {
+	public void add(String string, List<BaseTree> children) throws Exception {
+		String name = children.get(0).toString();
+		//System.out.println(name+" "+isIn(name));
+		if (!isIn(name)){
+			if (isInAncestor(name)){
+				System.out.println("Warning : \"Var name surcharged : " + name+"\"");
+			}
+			String type = children.get(1).toString();
+			
+			checkType(type);
+			
+			ArrayList<String> param = new ArrayList<String>();
+			param.add(string);
+			param.add(type);
+			
+			table.put(name, param);
+		}
+		else{
+			throw new Exception("Var name already used : " + name);
+		}
+		
+		
+	}
+
+	private void checkType(String type) throws Exception {
+		if (!type.equals("int") && !type.equals("String")){
+			if (isIn(type)){
+				if (!table.get(type).get(0).equals("class")){
+					throw new Exception(type + " is not a type");
+				}
+			}
+			else{
+				if (isInAncestor(type)){
+					if (!getFromAncestor(type).get(0).equals("class")){
+						throw new Exception(type + " is not a type");
+					}
+				}
+				else{
+					throw new Exception(type + " is not a type");
+				}
+			}
+		}
+		
+	}
+
+	private ArrayList<String> getFromAncestor(String type) throws Exception {
+		if (!isInAncestor(type)){
+			throw new Exception(type + " is not in ancestor");
+		}
+		else{
+			if (getAncestor().isIn(type)){
+				return getAncestor().getTable().get(type);
+			}
+			else{
+				return getAncestor().getFromAncestor(type);
+			}
+		}
+	}
+
+	public void addMethod(String string, Tree child) throws Exception {
 		String name = child.toString();
-		
-		ArrayList<String> param = new ArrayList<String>();
-		param.add(string);
-		
-		table.put(name, param);
+		if (!isIn(name)){
+			if (isInAncestor(name)){
+				System.out.println("Warning : \"Method name surcharged : " + name+"\"");
+			}
+			String returnType;
+			if (child.getChildCount() >0){
+				returnType = child.getChild(child.getChildCount()-1).toString();
+			}
+			else{
+				returnType = "Void";
+			}
+			ArrayList<String> param = new ArrayList<String>();
+			param.add(string);
+			param.add(returnType);
+			table.put(name, param);
+		}
+		else{
+			throw new Exception("Method name already used : " + name);
+		}
+	}
+
+	public void addSolo(String string, Tree child) throws Exception {
+		String name = child.toString();
+		if (!isIn(name)){
+			ArrayList<String> param = new ArrayList<String>();
+			param.add(string);
+			
+			table.put(name, param);
+		}
+		else{
+			throw new Exception("Class name already used : " + name);
+		}
 		
 	}
 	
@@ -142,6 +222,19 @@ public class Scope {
 	public void addScopeNotInner(String string, Scope temp) {
 		secondTable.put(string, temp);
 		
+	}
+	
+	public boolean isIn(String name){
+		return table.containsKey(name);
+	}
+	
+	public boolean isInAncestor(String name){
+		if (ancestor != null){
+			return ancestor.isIn(name) || ancestor.isInAncestor(name);
+		}
+		else{
+			return false;
+		}
 	}
 
 }
