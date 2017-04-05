@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashMap;
 
 import org.antlr.runtime.tree.BaseTree;
@@ -10,8 +11,8 @@ public class TDS {
 	private Scope currentScope;
 	private Scope temp;
 	private String[] util = {"DoExpr", "Void", "Inner", "inherit", "class", "var", "method", "if", "then", "fi", "for", "in", 
-			"do", "end", "write", "read", "return", "this", "super", "new", "int", "String", ":=", "+", "-", "*", "/", ">", "<", "<=", "==",
-			"=", ">=", "else"};
+			"do", "end", "write", "read", "return", "this", "super", "new", "int", "String", ":=", "+", "-", "*", "/", ">", "<", "<=", "==", ">=", "else"};
+	private String[] op = {"+", "-", "*", "/", ">", "<", "<=", "==", ">="};
 	
 	public TDS(){
 		currentScope = new Scope("General");
@@ -158,8 +159,14 @@ public class TDS {
 								throw new Exception ("Method " + aST.getText() + " is not defined for type " + type);
 							}
 							
-							ArrayList<String> v = a.getTable().get(aST.getText());
-							int c = v.size();
+							Scope v = a.getSecondTable().get(aST.getText());
+							Collection<ArrayList<String>> c3 = v.getTable().values();
+							int c = 0;
+							for (ArrayList<String> l : c3){
+								if (l.contains("param")){
+									c++;
+								}
+							}
 							int c2 = aST.getChildCount();
 							if (c!=c2){
 								throw new Exception ("More paramaters required for " + aST.getText());
@@ -187,6 +194,13 @@ public class TDS {
 						throw new Exception ("Object "+noeud+" is not defined");
 					}
 				}
+			}
+		}
+		else{
+			if (Arrays.asList(op).contains(aST.getText())){
+				Tree t1 = aST.getChild(0);
+				Tree t2 = aST.getChild(1);
+				
 			}
 		}
 	}
