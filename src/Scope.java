@@ -191,6 +191,7 @@ public class Scope {
 			if (getTable().get(name).contains("inherit")){
 				getTable().remove(name);
 				addMethod(string, child);
+				System.out.println("Warning : \"Method name surcharged : " + name+"\"");
 			}
 			else{
 				throw new Exception("Method name already used : " + name);

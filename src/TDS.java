@@ -64,16 +64,19 @@ public class TDS {
 			return 2;
 		case "method" : //On est dans une cr�ation de m�thode
 			try {
-				int c = t.getChildCount();
-				boolean b =false;
-				for (int i =0; i<c; i++){
-					if (t.getChild(i).getText().equals("return")){
-						b=true;
+				if (t.getChild(0).getChild(t.getChildCount()-1).toString().equals("Void")){
+					int c = t.getChildCount();
+					boolean b =false;
+					for (int i =0; i<c; i++){
+						if (t.getChild(i).getText().equals("return")){
+							b=true;
+						}
+					}
+					if (!b){
+						throw new Exception("Function " + t.getChild(0).getText() + " doesn't return anything");
 					}
 				}
-				if (!b){
-					throw new Exception("Function " + t.getChild(0).getText() + " doesn't return anything");
-				}
+
 				currentScope.addMethod("method", t.getChild(0));
 				temp = new Scope(t.getChild(0).toString(), currentScope);
 				currentScope.addScopeNotInner(t.getChild(0).toString(), temp);
