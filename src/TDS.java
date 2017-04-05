@@ -1,9 +1,15 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import org.antlr.runtime.tree.BaseTree;
 import org.antlr.runtime.tree.Tree;
 
 public class TDS {
 	private Scope currentScope;
 	private Scope temp;
+	private String[] util = {"DoExpr", "Void", "Inner", "inherit", "class", "var", "method", "if", "then", "fi", "for", "in", 
+			"do", "end", "write", "read", "return", "this", "super", "new", "int", "String", ":=", "+", "-", "*", "/", ">", "<", "<=", "==",
+			"=", ">="};
 	
 	public TDS(){
 		currentScope = new Scope("General");
@@ -23,6 +29,7 @@ public class TDS {
 				return 0;
 			} catch (Exception e) {
 				System.out.println("Error : \""+ e.getMessage()+"\"");
+				e.printStackTrace();
 			}
 			return 2;
 		case "class" : //On est dans une cr�ation de classe
@@ -35,6 +42,7 @@ public class TDS {
 				return 1;
 			} catch (Exception e) {
 				System.out.println("Error : \""+ e.getMessage()+"\"");
+				e.printStackTrace();
 			}
 			return 2;
 		case "method" : //On est dans une cr�ation de m�thode
@@ -50,9 +58,14 @@ public class TDS {
 				return 1;
 			} catch (Exception e) {
 				System.out.println("Error : \""+ e.getMessage()+"\"");
+				if (e.getMessage().startsWith("Var")){
+					return 1;
+				}
+				else{
+					return 2;
+				}
 				//e.printStackTrace();
 			}
-			return 2;
 		case "Inner" : //On est dans un bloc interne
 			temp = new Scope("Inner", currentScope);
 			currentScope.addScopeInner(temp);
@@ -93,9 +106,59 @@ public class TDS {
 		return currentScope.toString(1);
 	}
 
-	public void check(BaseTree aST) {
-		switch (aST.toString()){
-			
+	public void check(BaseTree aST) throws Exception {
+		if (!Arrays.asList(util).contains(aST.getText())){
+			if (aST.getAncestor(0) != null){ //Si c'est genre un appel de fonctions ou un paramètre
+				if (Arrays.asList(util).contains(aST.getAncestor(0).getText())){
+					String ancetre = aST.getAncestor(0).getText();
+					ArrayList<String> ancetreb = null;
+					if (currentScope.isIn(ancetre)){
+						ancetreb = currentScope.getTable().get(ancetre);
+					}
+					else{
+						ancetreb = currentScope.getFromAncestor(ancetre);
+					}
+					if (ancetreb.get(0).equals("var")){ //Si c'est un appel de fonctions
+						String type = ancetreb.get(1);
+						Scope scope = currentScope;
+						while (!scope.getOrigin().equals("General")){
+							scope=scope.getAncestor();
+						}
+						Scope a = scope.getSecondTable().get(type);
+						if (!a.getTable().containsKey(aST.getText())){
+							throw new Exception ("Method " + aST.getText() + " is not defined");
+						}
+					}
+					else{
+						if (ancetreb.get(0).equals("method")){
+							
+						}
+					}
+				}
+			}
+			String noeud = aST.getText();
+			if (noeud.startsWith("\"")&&noeud.endsWith("\"")&&getNumber(noeud, '"')==2){}
+			else{
+				if (noeud.matches("^-?\\d+$")){}
+				else{
+					if (!currentScope.isIn(noeud) && !currentScope.isInAncestor(noeud)){
+						throw new Exception ("Object "+noeud+" is not defined");
+					}
+				}
+			}
 		}
+	}
+	
+	public int getNumber(String str, char c){
+		char tempc;
+		int charCount = 0;
+		for( int i = 0; i < str.length( ); i++ )
+		{
+		    tempc = str.charAt( i );
+
+		    if( tempc == c)
+		        charCount++;
+		}
+		return charCount;
 	}
 }

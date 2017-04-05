@@ -37,7 +37,7 @@ public class main2 {
 		java.util.List<BaseTree> l = t.getChildren();
 		//System.out.println(l);
 		if (l != null){
-			i++;
+			//i++;
 			for (BaseTree AST : l){
 				hasChanged = Tds.add(AST);
 				//System.out.println(hasChanged);
@@ -45,10 +45,16 @@ public class main2 {
 				 * Pour chaque arbre, on regarde si c'est un noeud type de l'AST
 				 * Sinon, idf -> dans la TDS ?
 				 */
-				Tds.check(AST);
-				if (hasChanged != 2){
-					parseTree((CommonTree) AST, Tds, (hasChanged == 1));
+				try {
+					Tds.check(AST);
+					if (hasChanged != 2){
+						parseTree((CommonTree) AST, Tds, (hasChanged == 1));
+					}
+				} catch (Exception e) {
+					System.out.println("Error : " + e.getMessage());
+					e.printStackTrace();
 				}
+
 			}
 		}
 		if (b){

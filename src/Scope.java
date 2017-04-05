@@ -8,7 +8,7 @@ import org.antlr.runtime.tree.Tree;
 public class Scope {
 	private Scope ancestor = null;
 	private String origin;
-	private ArrayList<Scope> innerScopeList;
+	private ArrayList<Scope> innerScopeList = new ArrayList<Scope>();
 	private HashMap<String, ArrayList<String>> table;
 	private HashMap<String, Scope> secondTable;
 	
@@ -152,7 +152,7 @@ public class Scope {
 		
 	}
 
-	private ArrayList<String> getFromAncestor(String type) throws Exception {
+	public ArrayList<String> getFromAncestor(String type) throws Exception {
 		if (!isInAncestor(type)){
 			throw new Exception(type + " is not in ancestor");
 		}
