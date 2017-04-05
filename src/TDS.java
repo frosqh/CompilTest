@@ -150,10 +150,23 @@ public class TDS {
 							while (!scope.getOrigin().equals("General")){
 								scope=scope.getAncestor();
 							}
+							if (type.equals("int") || type.equals("String")){
+								throw new Exception ("Method " + aST.getText() + " is not defined for type " + type);
+							}
 							Scope a = scope.getSecondTable().get(type);
 							if (!a.getTable().containsKey(aST.getText())){
-								throw new Exception ("Method " + aST.getText() + " is not defined");
+								throw new Exception ("Method " + aST.getText() + " is not defined for type " + type);
 							}
+							
+							ArrayList<String> v = a.getTable().get(aST.getText());
+							int c = v.size();
+							int c2 = aST.getChildCount();
+							if (c!=c2){
+								throw new Exception ("More paramaters required for " + aST.getText());
+							}
+							
+							
+							
 							//System.out.println(a.getTable().get(aST.getText()).get(0));
 						}
 						else{
