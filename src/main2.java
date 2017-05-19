@@ -14,8 +14,12 @@ public class main2 {
 	public static void main(String[] args) throws IOException, RecognitionException{
 		
 		CharStream input = null;
+		String output = "./code";
 		if (args.length > 0){
 			input = new ANTLRFileStream(args[0]);
+			if (args.length > 1){
+				output = args[1];
+			}
 		}
 		else{
 			input = new ANTLRInputStream(System.in);
@@ -29,10 +33,21 @@ public class main2 {
 		Tds = new TDS();
 		parseTree(t, Tds, false);
 		System.out.println(Tds);
+		generateCode(t, output);
+	}
+
+	private static void generateCode(CommonTree t, String output) {
+		Code codeGen = new Code(output, Tds);
+		codeGen.generate(t);
+		try {
+			codeGen.save();
+		} catch (Exception e) {
+			System.out.println("Error : " + e.getMessage());
+			e.printStackTrace();
+		}
 	}
 
 	private static void parseTree(CommonTree t, TDS Tds, boolean b) {
-		// TODO Auto-generated method stub
 		int hasChanged;
 		//System.out.println("On est dans l'arbre : " + t.toStringTree());
 		java.util.List<BaseTree> l = t.getChildren();
@@ -53,7 +68,7 @@ public class main2 {
 					}
 				} catch (Exception e) {
 					System.out.println("Error : " + e.getMessage());
-					//e.printStackTrace();
+					e.printStackTrace();
 				}
 
 			}

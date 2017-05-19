@@ -210,10 +210,17 @@ public class Scope {
 	}
 
 	public void addSolo(String string, Tree child) throws Exception {
+		addSolo(string, child, false);
+		
+	}
+	
+	public void addSolo(String string, Tree child, boolean b) throws Exception {
 		String name = child.toString();
 		if (!isIn(name)){
 			ArrayList<String> param = new ArrayList<String>();
 			param.add(string);
+			if (b)
+				param.add("inherit");
 			
 			table.put(name, param);
 			main2.Tds.getListe().put(name, "class");
@@ -221,7 +228,6 @@ public class Scope {
 		else{
 			throw new Exception("Class name already used : " + name);
 		}
-		
 	}
 	
 	public HashMap<String, ArrayList<String>> getTable() {

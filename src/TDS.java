@@ -12,7 +12,7 @@ public class TDS {
 	private Scope temp;
 	private String[] util = {"DoExpr", "Void", "Inner", "inherit", "class", "var", "method", "if", "then", "fi", "for", "in", 
 			"do", "end", "write", "read", "return", "this", "super", "new", "int", "String", ":=", "+", "-", "*", "/", ">", "<", "<=", "==", ">=", "else"};
-	private String[] op = {"+", "-", "*", "/", ">", "<", "<=", "==", ">="};
+	private String[] op = {"+", "-", "*", ">", "<", "<=", "==", ">="};
 	
 	public TDS(){
 		currentScope = new Scope("General", null, "General");
@@ -38,11 +38,11 @@ public class TDS {
 		case "class" : //On est dans une cr�ation de classe
 			try {
 				Tree tree = t.getChild(1);
-				currentScope.addSolo("class", t.getChild(0));
-				temp= new Scope("class", currentScope, t.getChild(0).toString());
-				currentScope.addScopeNotInner(t.getChild(0).toString(), temp);
-				currentScope = temp;
 				if (tree.getText().equals("inherit")){
+					currentScope.addSolo("class", t.getChild(0), true);
+					temp= new Scope("class", currentScope, t.getChild(0).toString());
+					currentScope.addScopeNotInner(t.getChild(0).toString(), temp);
+					currentScope = temp;
 					Scope scope = currentScope;
 					while (!scope.getOrigin().equals("General")){
 						scope=scope.getAncestor();
@@ -51,6 +51,7 @@ public class TDS {
 						Scope sc2 = scope.getSecondTable().get(tree.getChild(0).getText());
 						for (String k : sc2.getTable().keySet()){
 							ArrayList<String> b = sc2.getTable().get(k);
+							System.out.println("b :" +  b + "-----------------");
 							b.add("inherit");
 							currentScope.getTable().put(k, b);
 						}
@@ -59,6 +60,12 @@ public class TDS {
 						throw new Exception("Class " + tree.getChild(0).getText() + " doesn't exists");
 					}
 					
+				}
+				else{
+					currentScope.addSolo("class", t.getChild(0));
+					temp= new Scope("class", currentScope, t.getChild(0).toString());
+					currentScope.addScopeNotInner(t.getChild(0).toString(), temp);
+					currentScope = temp;
 				}
 				//System.out.println("On est maintenant dans " + currentScope.getOrigin());
 				return 1;
@@ -235,24 +242,26 @@ public class TDS {
 					check(t2, aST);
 				}
 				else{
-					if (t2.getText().matches("^-?\\d+$")){
-					if (currentScope.isIn(t2.getText())){
-						ArrayList<String> k = currentScope.getTable().get(t2.getText());
-						if (!k.get(1).equals("int")){
-							throw new Exception (t2.getText() + " is not an Integer");
-						}
-					}
+					if (t2.getText().matches("^-?\\d+$")){} 
 					else{
-						if (currentScope.isInAncestor(t2.getText())){
-							ArrayList<String> k = currentScope.getFromAncestor(t2.getText());
+						if (currentScope.isIn(t2.getText())){
+							ArrayList<String> k = currentScope.getTable().get(t2.getText());
 							if (!k.get(1).equals("int")){
 								throw new Exception (t2.getText() + " is not an Integer");
 							}
 						}
 						else{
-							throw new Exception(t2.getText() + " is not an Integer");
+							if (currentScope.isInAncestor(t2.getText())){
+								ArrayList<String> k = currentScope.getFromAncestor(t2.getText());
+								if (!k.get(1).equals("int")){
+									throw new Exception (t2.getText() + " is not an Integer");
+								}
+							}
+							else{
+								throw new Exception(t2.getText() + " is not an Integer");
+							}
 						}
-					}}
+					}
 				}
 			}
 			else{
@@ -286,7 +295,8 @@ public class TDS {
 							throw new Exception("Cannot use super outside of a class");
 						}
 						else{
-							if (!(scope.getAncestor().getTable().get(scope.getName()).size()>2)){
+							if (!(scope.getAncestor().getTable().get(scope.getName()).contains("inherit"))){
+								System.out.println(scope.getAncestor().getTable().get(scope.getName()));
 								throw new Exception("Cannot use super within a class wich do not inheritate");
 							}
 						}

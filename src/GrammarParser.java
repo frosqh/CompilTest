@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:50:56 Grammar.g 2017-04-05 09:04:42
+// $ANTLR 3.3 Nov 30, 2010 12:50:56 Grammar.g 2017-05-19 01:46:30
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -727,7 +727,7 @@ public class GrammarParser extends Parser {
     };
 
     // $ANTLR start "mETHOD_DECL"
-    // Grammar.g:46:1: mETHOD_DECL : MethodStat IDF '(' ( mETHOD_ARGS )* ')' mETHOD_TYPE '{' ( vAR_DECL )* ( iNSTRUCTION )+ '}' ';' -> ^( MethodStat ^( IDF ( mETHOD_ARGS )* mETHOD_TYPE ) ( vAR_DECL )* ( iNSTRUCTION )+ ) ;
+    // Grammar.g:46:1: mETHOD_DECL : MethodStat IDF '(' ( mETHOD_ARGS )* ')' mETHOD_TYPE '{' ( vAR_DECL )* ( iNSTRUCTION )+ '}' -> ^( MethodStat ^( IDF ( mETHOD_ARGS )* mETHOD_TYPE ) ( vAR_DECL )* ( iNSTRUCTION )+ ) ;
     public final GrammarParser.mETHOD_DECL_return mETHOD_DECL() throws RecognitionException {
         GrammarParser.mETHOD_DECL_return retval = new GrammarParser.mETHOD_DECL_return();
         retval.start = input.LT(1);
@@ -740,7 +740,6 @@ public class GrammarParser extends Parser {
         Token char_literal26=null;
         Token char_literal28=null;
         Token char_literal31=null;
-        Token char_literal32=null;
         GrammarParser.mETHOD_ARGS_return mETHOD_ARGS25 = null;
 
         GrammarParser.mETHOD_TYPE_return mETHOD_TYPE27 = null;
@@ -756,10 +755,8 @@ public class GrammarParser extends Parser {
         CommonTree char_literal26_tree=null;
         CommonTree char_literal28_tree=null;
         CommonTree char_literal31_tree=null;
-        CommonTree char_literal32_tree=null;
         RewriteRuleTokenStream stream_34=new RewriteRuleTokenStream(adaptor,"token 34");
         RewriteRuleTokenStream stream_35=new RewriteRuleTokenStream(adaptor,"token 35");
-        RewriteRuleTokenStream stream_37=new RewriteRuleTokenStream(adaptor,"token 37");
         RewriteRuleTokenStream stream_38=new RewriteRuleTokenStream(adaptor,"token 38");
         RewriteRuleTokenStream stream_39=new RewriteRuleTokenStream(adaptor,"token 39");
         RewriteRuleTokenStream stream_IDF=new RewriteRuleTokenStream(adaptor,"token IDF");
@@ -769,8 +766,8 @@ public class GrammarParser extends Parser {
         RewriteRuleSubtreeStream stream_mETHOD_ARGS=new RewriteRuleSubtreeStream(adaptor,"rule mETHOD_ARGS");
         RewriteRuleSubtreeStream stream_iNSTRUCTION=new RewriteRuleSubtreeStream(adaptor,"rule iNSTRUCTION");
         try {
-            // Grammar.g:46:14: ( MethodStat IDF '(' ( mETHOD_ARGS )* ')' mETHOD_TYPE '{' ( vAR_DECL )* ( iNSTRUCTION )+ '}' ';' -> ^( MethodStat ^( IDF ( mETHOD_ARGS )* mETHOD_TYPE ) ( vAR_DECL )* ( iNSTRUCTION )+ ) )
-            // Grammar.g:46:16: MethodStat IDF '(' ( mETHOD_ARGS )* ')' mETHOD_TYPE '{' ( vAR_DECL )* ( iNSTRUCTION )+ '}' ';'
+            // Grammar.g:46:14: ( MethodStat IDF '(' ( mETHOD_ARGS )* ')' mETHOD_TYPE '{' ( vAR_DECL )* ( iNSTRUCTION )+ '}' -> ^( MethodStat ^( IDF ( mETHOD_ARGS )* mETHOD_TYPE ) ( vAR_DECL )* ( iNSTRUCTION )+ ) )
+            // Grammar.g:46:16: MethodStat IDF '(' ( mETHOD_ARGS )* ')' mETHOD_TYPE '{' ( vAR_DECL )* ( iNSTRUCTION )+ '}'
             {
             MethodStat22=(Token)match(input,MethodStat,FOLLOW_MethodStat_in_mETHOD_DECL310);  
             stream_MethodStat.add(MethodStat22);
@@ -891,9 +888,6 @@ public class GrammarParser extends Parser {
             char_literal31=(Token)match(input,39,FOLLOW_39_in_mETHOD_DECL331);  
             stream_39.add(char_literal31);
 
-            char_literal32=(Token)match(input,37,FOLLOW_37_in_mETHOD_DECL333);  
-            stream_37.add(char_literal32);
-
 
 
             // AST REWRITE
@@ -907,19 +901,19 @@ public class GrammarParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (CommonTree)adaptor.nil();
-            // 46:99: -> ^( MethodStat ^( IDF ( mETHOD_ARGS )* mETHOD_TYPE ) ( vAR_DECL )* ( iNSTRUCTION )+ )
+            // 46:95: -> ^( MethodStat ^( IDF ( mETHOD_ARGS )* mETHOD_TYPE ) ( vAR_DECL )* ( iNSTRUCTION )+ )
             {
-                // Grammar.g:46:102: ^( MethodStat ^( IDF ( mETHOD_ARGS )* mETHOD_TYPE ) ( vAR_DECL )* ( iNSTRUCTION )+ )
+                // Grammar.g:46:98: ^( MethodStat ^( IDF ( mETHOD_ARGS )* mETHOD_TYPE ) ( vAR_DECL )* ( iNSTRUCTION )+ )
                 {
                 CommonTree root_1 = (CommonTree)adaptor.nil();
                 root_1 = (CommonTree)adaptor.becomeRoot(stream_MethodStat.nextNode(), root_1);
 
-                // Grammar.g:46:115: ^( IDF ( mETHOD_ARGS )* mETHOD_TYPE )
+                // Grammar.g:46:111: ^( IDF ( mETHOD_ARGS )* mETHOD_TYPE )
                 {
                 CommonTree root_2 = (CommonTree)adaptor.nil();
                 root_2 = (CommonTree)adaptor.becomeRoot(stream_IDF.nextNode(), root_2);
 
-                // Grammar.g:46:121: ( mETHOD_ARGS )*
+                // Grammar.g:46:117: ( mETHOD_ARGS )*
                 while ( stream_mETHOD_ARGS.hasNext() ) {
                     adaptor.addChild(root_2, stream_mETHOD_ARGS.nextTree());
 
@@ -929,7 +923,7 @@ public class GrammarParser extends Parser {
 
                 adaptor.addChild(root_1, root_2);
                 }
-                // Grammar.g:46:147: ( vAR_DECL )*
+                // Grammar.g:46:143: ( vAR_DECL )*
                 while ( stream_vAR_DECL.hasNext() ) {
                     adaptor.addChild(root_1, stream_vAR_DECL.nextTree());
 
@@ -983,11 +977,11 @@ public class GrammarParser extends Parser {
 
         CommonTree root_0 = null;
 
-        Token char_literal33=null;
-        GrammarParser.tYPE_return tYPE34 = null;
+        Token char_literal32=null;
+        GrammarParser.tYPE_return tYPE33 = null;
 
 
-        CommonTree char_literal33_tree=null;
+        CommonTree char_literal32_tree=null;
         RewriteRuleTokenStream stream_36=new RewriteRuleTokenStream(adaptor,"token 36");
         RewriteRuleSubtreeStream stream_tYPE=new RewriteRuleSubtreeStream(adaptor,"rule tYPE");
         try {
@@ -1014,15 +1008,15 @@ public class GrammarParser extends Parser {
                     // Grammar.g:49:16: ( ':' tYPE )
                     // Grammar.g:49:17: ':' tYPE
                     {
-                    char_literal33=(Token)match(input,36,FOLLOW_36_in_mETHOD_TYPE368);  
-                    stream_36.add(char_literal33);
+                    char_literal32=(Token)match(input,36,FOLLOW_36_in_mETHOD_TYPE366);  
+                    stream_36.add(char_literal32);
 
-                    pushFollow(FOLLOW_tYPE_in_mETHOD_TYPE370);
-                    tYPE34=tYPE();
+                    pushFollow(FOLLOW_tYPE_in_mETHOD_TYPE368);
+                    tYPE33=tYPE();
 
                     state._fsp--;
 
-                    stream_tYPE.add(tYPE34.getTree());
+                    stream_tYPE.add(tYPE33.getTree());
 
                     }
 
@@ -1105,21 +1099,21 @@ public class GrammarParser extends Parser {
 
         CommonTree root_0 = null;
 
-        Token IDF35=null;
-        Token char_literal36=null;
-        Token char_literal38=null;
-        Token IDF39=null;
-        Token char_literal40=null;
-        GrammarParser.tYPE_return tYPE37 = null;
+        Token IDF34=null;
+        Token char_literal35=null;
+        Token char_literal37=null;
+        Token IDF38=null;
+        Token char_literal39=null;
+        GrammarParser.tYPE_return tYPE36 = null;
 
-        GrammarParser.tYPE_return tYPE41 = null;
+        GrammarParser.tYPE_return tYPE40 = null;
 
 
-        CommonTree IDF35_tree=null;
-        CommonTree char_literal36_tree=null;
-        CommonTree char_literal38_tree=null;
-        CommonTree IDF39_tree=null;
-        CommonTree char_literal40_tree=null;
+        CommonTree IDF34_tree=null;
+        CommonTree char_literal35_tree=null;
+        CommonTree char_literal37_tree=null;
+        CommonTree IDF38_tree=null;
+        CommonTree char_literal39_tree=null;
         RewriteRuleTokenStream stream_36=new RewriteRuleTokenStream(adaptor,"token 36");
         RewriteRuleTokenStream stream_IDF=new RewriteRuleTokenStream(adaptor,"token IDF");
         RewriteRuleTokenStream stream_40=new RewriteRuleTokenStream(adaptor,"token 40");
@@ -1128,18 +1122,18 @@ public class GrammarParser extends Parser {
             // Grammar.g:56:14: ( IDF ':' tYPE ( ',' IDF ':' tYPE )* -> ( ^( IDF tYPE ) )* )
             // Grammar.g:56:16: IDF ':' tYPE ( ',' IDF ':' tYPE )*
             {
-            IDF35=(Token)match(input,IDF,FOLLOW_IDF_in_mETHOD_ARGS414);  
-            stream_IDF.add(IDF35);
+            IDF34=(Token)match(input,IDF,FOLLOW_IDF_in_mETHOD_ARGS412);  
+            stream_IDF.add(IDF34);
 
-            char_literal36=(Token)match(input,36,FOLLOW_36_in_mETHOD_ARGS416);  
-            stream_36.add(char_literal36);
+            char_literal35=(Token)match(input,36,FOLLOW_36_in_mETHOD_ARGS414);  
+            stream_36.add(char_literal35);
 
-            pushFollow(FOLLOW_tYPE_in_mETHOD_ARGS418);
-            tYPE37=tYPE();
+            pushFollow(FOLLOW_tYPE_in_mETHOD_ARGS416);
+            tYPE36=tYPE();
 
             state._fsp--;
 
-            stream_tYPE.add(tYPE37.getTree());
+            stream_tYPE.add(tYPE36.getTree());
             // Grammar.g:56:29: ( ',' IDF ':' tYPE )*
             loop11:
             do {
@@ -1155,21 +1149,21 @@ public class GrammarParser extends Parser {
             	case 1 :
             	    // Grammar.g:56:30: ',' IDF ':' tYPE
             	    {
-            	    char_literal38=(Token)match(input,40,FOLLOW_40_in_mETHOD_ARGS421);  
-            	    stream_40.add(char_literal38);
+            	    char_literal37=(Token)match(input,40,FOLLOW_40_in_mETHOD_ARGS419);  
+            	    stream_40.add(char_literal37);
 
-            	    IDF39=(Token)match(input,IDF,FOLLOW_IDF_in_mETHOD_ARGS423);  
-            	    stream_IDF.add(IDF39);
+            	    IDF38=(Token)match(input,IDF,FOLLOW_IDF_in_mETHOD_ARGS421);  
+            	    stream_IDF.add(IDF38);
 
-            	    char_literal40=(Token)match(input,36,FOLLOW_36_in_mETHOD_ARGS425);  
-            	    stream_36.add(char_literal40);
+            	    char_literal39=(Token)match(input,36,FOLLOW_36_in_mETHOD_ARGS423);  
+            	    stream_36.add(char_literal39);
 
-            	    pushFollow(FOLLOW_tYPE_in_mETHOD_ARGS427);
-            	    tYPE41=tYPE();
+            	    pushFollow(FOLLOW_tYPE_in_mETHOD_ARGS425);
+            	    tYPE40=tYPE();
 
             	    state._fsp--;
 
-            	    stream_tYPE.add(tYPE41.getTree());
+            	    stream_tYPE.add(tYPE40.getTree());
 
             	    }
             	    break;
@@ -1246,67 +1240,67 @@ public class GrammarParser extends Parser {
 
         CommonTree root_0 = null;
 
-        Token IDF42=null;
-        Token string_literal43=null;
-        Token char_literal45=null;
-        Token IfStat46=null;
-        Token ThenStat48=null;
-        Token string_literal50=null;
-        Token FiStat52=null;
-        Token ForStat53=null;
-        Token IDF54=null;
-        Token InStat55=null;
-        Token string_literal57=null;
-        Token DoStat59=null;
-        Token EndStat61=null;
-        Token char_literal62=null;
-        Token char_literal65=null;
-        Token DoStat66=null;
-        Token char_literal68=null;
-        GrammarParser.eXPRESSION_return eXPRESSION44 = null;
+        Token IDF41=null;
+        Token string_literal42=null;
+        Token char_literal44=null;
+        Token IfStat45=null;
+        Token ThenStat47=null;
+        Token string_literal49=null;
+        Token FiStat51=null;
+        Token ForStat52=null;
+        Token IDF53=null;
+        Token InStat54=null;
+        Token string_literal56=null;
+        Token DoStat58=null;
+        Token EndStat60=null;
+        Token char_literal61=null;
+        Token char_literal64=null;
+        Token DoStat65=null;
+        Token char_literal67=null;
+        GrammarParser.eXPRESSION_return eXPRESSION43 = null;
 
-        GrammarParser.eXPRESSION_return eXPRESSION47 = null;
+        GrammarParser.eXPRESSION_return eXPRESSION46 = null;
 
-        GrammarParser.iNSTRUCTION_return iNSTRUCTION49 = null;
+        GrammarParser.iNSTRUCTION_return iNSTRUCTION48 = null;
 
-        GrammarParser.iNSTRUCTION_return iNSTRUCTION51 = null;
+        GrammarParser.iNSTRUCTION_return iNSTRUCTION50 = null;
 
-        GrammarParser.eXPRESSION_return eXPRESSION56 = null;
+        GrammarParser.eXPRESSION_return eXPRESSION55 = null;
 
-        GrammarParser.eXPRESSION_return eXPRESSION58 = null;
+        GrammarParser.eXPRESSION_return eXPRESSION57 = null;
 
-        GrammarParser.iNSTRUCTION_return iNSTRUCTION60 = null;
+        GrammarParser.iNSTRUCTION_return iNSTRUCTION59 = null;
 
-        GrammarParser.vAR_DECL_return vAR_DECL63 = null;
+        GrammarParser.vAR_DECL_return vAR_DECL62 = null;
 
-        GrammarParser.iNSTRUCTION_return iNSTRUCTION64 = null;
+        GrammarParser.iNSTRUCTION_return iNSTRUCTION63 = null;
 
-        GrammarParser.eXPRESSION_return eXPRESSION67 = null;
+        GrammarParser.eXPRESSION_return eXPRESSION66 = null;
 
-        GrammarParser.pRINT_return pRINT69 = null;
+        GrammarParser.pRINT_return pRINT68 = null;
 
-        GrammarParser.rEAD_return rEAD70 = null;
+        GrammarParser.rEAD_return rEAD69 = null;
 
-        GrammarParser.rETURN2_return rETURN271 = null;
+        GrammarParser.rETURN2_return rETURN270 = null;
 
 
-        CommonTree IDF42_tree=null;
-        CommonTree string_literal43_tree=null;
-        CommonTree char_literal45_tree=null;
-        CommonTree IfStat46_tree=null;
-        CommonTree ThenStat48_tree=null;
-        CommonTree string_literal50_tree=null;
-        CommonTree FiStat52_tree=null;
-        CommonTree ForStat53_tree=null;
-        CommonTree IDF54_tree=null;
-        CommonTree InStat55_tree=null;
-        CommonTree string_literal57_tree=null;
-        CommonTree DoStat59_tree=null;
-        CommonTree EndStat61_tree=null;
-        CommonTree char_literal62_tree=null;
-        CommonTree char_literal65_tree=null;
-        CommonTree DoStat66_tree=null;
-        CommonTree char_literal68_tree=null;
+        CommonTree IDF41_tree=null;
+        CommonTree string_literal42_tree=null;
+        CommonTree char_literal44_tree=null;
+        CommonTree IfStat45_tree=null;
+        CommonTree ThenStat47_tree=null;
+        CommonTree string_literal49_tree=null;
+        CommonTree FiStat51_tree=null;
+        CommonTree ForStat52_tree=null;
+        CommonTree IDF53_tree=null;
+        CommonTree InStat54_tree=null;
+        CommonTree string_literal56_tree=null;
+        CommonTree DoStat58_tree=null;
+        CommonTree EndStat60_tree=null;
+        CommonTree char_literal61_tree=null;
+        CommonTree char_literal64_tree=null;
+        CommonTree DoStat65_tree=null;
+        CommonTree char_literal67_tree=null;
         RewriteRuleTokenStream stream_37=new RewriteRuleTokenStream(adaptor,"token 37");
         RewriteRuleTokenStream stream_EndStat=new RewriteRuleTokenStream(adaptor,"token EndStat");
         RewriteRuleTokenStream stream_38=new RewriteRuleTokenStream(adaptor,"token 38");
@@ -1379,26 +1373,26 @@ public class GrammarParser extends Parser {
                 case 1 :
                     // Grammar.g:59:17: IDF ':=' ( eXPRESSION ) ';'
                     {
-                    IDF42=(Token)match(input,IDF,FOLLOW_IDF_in_iNSTRUCTION455);  
-                    stream_IDF.add(IDF42);
+                    IDF41=(Token)match(input,IDF,FOLLOW_IDF_in_iNSTRUCTION453);  
+                    stream_IDF.add(IDF41);
 
-                    string_literal43=(Token)match(input,41,FOLLOW_41_in_iNSTRUCTION457);  
-                    stream_41.add(string_literal43);
+                    string_literal42=(Token)match(input,41,FOLLOW_41_in_iNSTRUCTION455);  
+                    stream_41.add(string_literal42);
 
                     // Grammar.g:59:26: ( eXPRESSION )
                     // Grammar.g:59:27: eXPRESSION
                     {
-                    pushFollow(FOLLOW_eXPRESSION_in_iNSTRUCTION460);
-                    eXPRESSION44=eXPRESSION();
+                    pushFollow(FOLLOW_eXPRESSION_in_iNSTRUCTION458);
+                    eXPRESSION43=eXPRESSION();
 
                     state._fsp--;
 
-                    stream_eXPRESSION.add(eXPRESSION44.getTree());
+                    stream_eXPRESSION.add(eXPRESSION43.getTree());
 
                     }
 
-                    char_literal45=(Token)match(input,37,FOLLOW_37_in_iNSTRUCTION463);  
-                    stream_37.add(char_literal45);
+                    char_literal44=(Token)match(input,37,FOLLOW_37_in_iNSTRUCTION461);  
+                    stream_37.add(char_literal44);
 
 
 
@@ -1434,24 +1428,24 @@ public class GrammarParser extends Parser {
                 case 2 :
                     // Grammar.g:60:6: IfStat eXPRESSION ThenStat iNSTRUCTION ( 'else' iNSTRUCTION )? FiStat
                     {
-                    IfStat46=(Token)match(input,IfStat,FOLLOW_IfStat_in_iNSTRUCTION480);  
-                    stream_IfStat.add(IfStat46);
+                    IfStat45=(Token)match(input,IfStat,FOLLOW_IfStat_in_iNSTRUCTION478);  
+                    stream_IfStat.add(IfStat45);
 
-                    pushFollow(FOLLOW_eXPRESSION_in_iNSTRUCTION482);
-                    eXPRESSION47=eXPRESSION();
-
-                    state._fsp--;
-
-                    stream_eXPRESSION.add(eXPRESSION47.getTree());
-                    ThenStat48=(Token)match(input,ThenStat,FOLLOW_ThenStat_in_iNSTRUCTION484);  
-                    stream_ThenStat.add(ThenStat48);
-
-                    pushFollow(FOLLOW_iNSTRUCTION_in_iNSTRUCTION486);
-                    iNSTRUCTION49=iNSTRUCTION();
+                    pushFollow(FOLLOW_eXPRESSION_in_iNSTRUCTION480);
+                    eXPRESSION46=eXPRESSION();
 
                     state._fsp--;
 
-                    stream_iNSTRUCTION.add(iNSTRUCTION49.getTree());
+                    stream_eXPRESSION.add(eXPRESSION46.getTree());
+                    ThenStat47=(Token)match(input,ThenStat,FOLLOW_ThenStat_in_iNSTRUCTION482);  
+                    stream_ThenStat.add(ThenStat47);
+
+                    pushFollow(FOLLOW_iNSTRUCTION_in_iNSTRUCTION484);
+                    iNSTRUCTION48=iNSTRUCTION();
+
+                    state._fsp--;
+
+                    stream_iNSTRUCTION.add(iNSTRUCTION48.getTree());
                     // Grammar.g:60:45: ( 'else' iNSTRUCTION )?
                     int alt12=2;
                     int LA12_0 = input.LA(1);
@@ -1463,23 +1457,23 @@ public class GrammarParser extends Parser {
                         case 1 :
                             // Grammar.g:60:46: 'else' iNSTRUCTION
                             {
-                            string_literal50=(Token)match(input,42,FOLLOW_42_in_iNSTRUCTION489);  
-                            stream_42.add(string_literal50);
+                            string_literal49=(Token)match(input,42,FOLLOW_42_in_iNSTRUCTION487);  
+                            stream_42.add(string_literal49);
 
-                            pushFollow(FOLLOW_iNSTRUCTION_in_iNSTRUCTION491);
-                            iNSTRUCTION51=iNSTRUCTION();
+                            pushFollow(FOLLOW_iNSTRUCTION_in_iNSTRUCTION489);
+                            iNSTRUCTION50=iNSTRUCTION();
 
                             state._fsp--;
 
-                            stream_iNSTRUCTION.add(iNSTRUCTION51.getTree());
+                            stream_iNSTRUCTION.add(iNSTRUCTION50.getTree());
 
                             }
                             break;
 
                     }
 
-                    FiStat52=(Token)match(input,FiStat,FOLLOW_FiStat_in_iNSTRUCTION495);  
-                    stream_FiStat.add(FiStat52);
+                    FiStat51=(Token)match(input,FiStat,FOLLOW_FiStat_in_iNSTRUCTION493);  
+                    stream_FiStat.add(FiStat51);
 
 
 
@@ -1538,32 +1532,32 @@ public class GrammarParser extends Parser {
                 case 3 :
                     // Grammar.g:61:6: ForStat IDF InStat eXPRESSION '..' eXPRESSION DoStat ( iNSTRUCTION )+ EndStat
                     {
-                    ForStat53=(Token)match(input,ForStat,FOLLOW_ForStat_in_iNSTRUCTION523);  
-                    stream_ForStat.add(ForStat53);
+                    ForStat52=(Token)match(input,ForStat,FOLLOW_ForStat_in_iNSTRUCTION521);  
+                    stream_ForStat.add(ForStat52);
 
-                    IDF54=(Token)match(input,IDF,FOLLOW_IDF_in_iNSTRUCTION525);  
-                    stream_IDF.add(IDF54);
+                    IDF53=(Token)match(input,IDF,FOLLOW_IDF_in_iNSTRUCTION523);  
+                    stream_IDF.add(IDF53);
 
-                    InStat55=(Token)match(input,InStat,FOLLOW_InStat_in_iNSTRUCTION527);  
-                    stream_InStat.add(InStat55);
+                    InStat54=(Token)match(input,InStat,FOLLOW_InStat_in_iNSTRUCTION525);  
+                    stream_InStat.add(InStat54);
 
-                    pushFollow(FOLLOW_eXPRESSION_in_iNSTRUCTION529);
-                    eXPRESSION56=eXPRESSION();
-
-                    state._fsp--;
-
-                    stream_eXPRESSION.add(eXPRESSION56.getTree());
-                    string_literal57=(Token)match(input,43,FOLLOW_43_in_iNSTRUCTION531);  
-                    stream_43.add(string_literal57);
-
-                    pushFollow(FOLLOW_eXPRESSION_in_iNSTRUCTION533);
-                    eXPRESSION58=eXPRESSION();
+                    pushFollow(FOLLOW_eXPRESSION_in_iNSTRUCTION527);
+                    eXPRESSION55=eXPRESSION();
 
                     state._fsp--;
 
-                    stream_eXPRESSION.add(eXPRESSION58.getTree());
-                    DoStat59=(Token)match(input,DoStat,FOLLOW_DoStat_in_iNSTRUCTION535);  
-                    stream_DoStat.add(DoStat59);
+                    stream_eXPRESSION.add(eXPRESSION55.getTree());
+                    string_literal56=(Token)match(input,43,FOLLOW_43_in_iNSTRUCTION529);  
+                    stream_43.add(string_literal56);
+
+                    pushFollow(FOLLOW_eXPRESSION_in_iNSTRUCTION531);
+                    eXPRESSION57=eXPRESSION();
+
+                    state._fsp--;
+
+                    stream_eXPRESSION.add(eXPRESSION57.getTree());
+                    DoStat58=(Token)match(input,DoStat,FOLLOW_DoStat_in_iNSTRUCTION533);  
+                    stream_DoStat.add(DoStat58);
 
                     // Grammar.g:61:59: ( iNSTRUCTION )+
                     int cnt13=0;
@@ -1581,12 +1575,12 @@ public class GrammarParser extends Parser {
                     	case 1 :
                     	    // Grammar.g:61:59: iNSTRUCTION
                     	    {
-                    	    pushFollow(FOLLOW_iNSTRUCTION_in_iNSTRUCTION537);
-                    	    iNSTRUCTION60=iNSTRUCTION();
+                    	    pushFollow(FOLLOW_iNSTRUCTION_in_iNSTRUCTION535);
+                    	    iNSTRUCTION59=iNSTRUCTION();
 
                     	    state._fsp--;
 
-                    	    stream_iNSTRUCTION.add(iNSTRUCTION60.getTree());
+                    	    stream_iNSTRUCTION.add(iNSTRUCTION59.getTree());
 
                     	    }
                     	    break;
@@ -1600,8 +1594,8 @@ public class GrammarParser extends Parser {
                         cnt13++;
                     } while (true);
 
-                    EndStat61=(Token)match(input,EndStat,FOLLOW_EndStat_in_iNSTRUCTION540);  
-                    stream_EndStat.add(EndStat61);
+                    EndStat60=(Token)match(input,EndStat,FOLLOW_EndStat_in_iNSTRUCTION538);  
+                    stream_EndStat.add(EndStat60);
 
 
 
@@ -1662,8 +1656,8 @@ public class GrammarParser extends Parser {
                 case 4 :
                     // Grammar.g:62:6: '{' ( vAR_DECL )* ( iNSTRUCTION )+ '}'
                     {
-                    char_literal62=(Token)match(input,38,FOLLOW_38_in_iNSTRUCTION570);  
-                    stream_38.add(char_literal62);
+                    char_literal61=(Token)match(input,38,FOLLOW_38_in_iNSTRUCTION568);  
+                    stream_38.add(char_literal61);
 
                     // Grammar.g:62:10: ( vAR_DECL )*
                     loop14:
@@ -1680,12 +1674,12 @@ public class GrammarParser extends Parser {
                     	case 1 :
                     	    // Grammar.g:62:10: vAR_DECL
                     	    {
-                    	    pushFollow(FOLLOW_vAR_DECL_in_iNSTRUCTION572);
-                    	    vAR_DECL63=vAR_DECL();
+                    	    pushFollow(FOLLOW_vAR_DECL_in_iNSTRUCTION570);
+                    	    vAR_DECL62=vAR_DECL();
 
                     	    state._fsp--;
 
-                    	    stream_vAR_DECL.add(vAR_DECL63.getTree());
+                    	    stream_vAR_DECL.add(vAR_DECL62.getTree());
 
                     	    }
                     	    break;
@@ -1711,12 +1705,12 @@ public class GrammarParser extends Parser {
                     	case 1 :
                     	    // Grammar.g:62:20: iNSTRUCTION
                     	    {
-                    	    pushFollow(FOLLOW_iNSTRUCTION_in_iNSTRUCTION575);
-                    	    iNSTRUCTION64=iNSTRUCTION();
+                    	    pushFollow(FOLLOW_iNSTRUCTION_in_iNSTRUCTION573);
+                    	    iNSTRUCTION63=iNSTRUCTION();
 
                     	    state._fsp--;
 
-                    	    stream_iNSTRUCTION.add(iNSTRUCTION64.getTree());
+                    	    stream_iNSTRUCTION.add(iNSTRUCTION63.getTree());
 
                     	    }
                     	    break;
@@ -1730,8 +1724,8 @@ public class GrammarParser extends Parser {
                         cnt15++;
                     } while (true);
 
-                    char_literal65=(Token)match(input,39,FOLLOW_39_in_iNSTRUCTION578);  
-                    stream_39.add(char_literal65);
+                    char_literal64=(Token)match(input,39,FOLLOW_39_in_iNSTRUCTION576);  
+                    stream_39.add(char_literal64);
 
 
 
@@ -1777,17 +1771,17 @@ public class GrammarParser extends Parser {
                 case 5 :
                     // Grammar.g:63:6: DoStat eXPRESSION ';'
                     {
-                    DoStat66=(Token)match(input,DoStat,FOLLOW_DoStat_in_iNSTRUCTION597);  
-                    stream_DoStat.add(DoStat66);
+                    DoStat65=(Token)match(input,DoStat,FOLLOW_DoStat_in_iNSTRUCTION595);  
+                    stream_DoStat.add(DoStat65);
 
-                    pushFollow(FOLLOW_eXPRESSION_in_iNSTRUCTION599);
-                    eXPRESSION67=eXPRESSION();
+                    pushFollow(FOLLOW_eXPRESSION_in_iNSTRUCTION597);
+                    eXPRESSION66=eXPRESSION();
 
                     state._fsp--;
 
-                    stream_eXPRESSION.add(eXPRESSION67.getTree());
-                    char_literal68=(Token)match(input,37,FOLLOW_37_in_iNSTRUCTION600);  
-                    stream_37.add(char_literal68);
+                    stream_eXPRESSION.add(eXPRESSION66.getTree());
+                    char_literal67=(Token)match(input,37,FOLLOW_37_in_iNSTRUCTION598);  
+                    stream_37.add(char_literal67);
 
 
 
@@ -1824,12 +1818,12 @@ public class GrammarParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_pRINT_in_iNSTRUCTION615);
-                    pRINT69=pRINT();
+                    pushFollow(FOLLOW_pRINT_in_iNSTRUCTION613);
+                    pRINT68=pRINT();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, pRINT69.getTree());
+                    adaptor.addChild(root_0, pRINT68.getTree());
 
                     }
                     break;
@@ -1838,12 +1832,12 @@ public class GrammarParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_rEAD_in_iNSTRUCTION622);
-                    rEAD70=rEAD();
+                    pushFollow(FOLLOW_rEAD_in_iNSTRUCTION620);
+                    rEAD69=rEAD();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, rEAD70.getTree());
+                    adaptor.addChild(root_0, rEAD69.getTree());
 
                     }
                     break;
@@ -1852,12 +1846,12 @@ public class GrammarParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_rETURN2_in_iNSTRUCTION629);
-                    rETURN271=rETURN2();
+                    pushFollow(FOLLOW_rETURN2_in_iNSTRUCTION627);
+                    rETURN270=rETURN2();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, rETURN271.getTree());
+                    adaptor.addChild(root_0, rETURN270.getTree());
 
                     }
                     break;
@@ -1894,13 +1888,13 @@ public class GrammarParser extends Parser {
 
         CommonTree root_0 = null;
 
-        Token WriteStat72=null;
-        Token char_literal74=null;
-        GrammarParser.eXPRESSION_return eXPRESSION73 = null;
+        Token WriteStat71=null;
+        Token char_literal73=null;
+        GrammarParser.eXPRESSION_return eXPRESSION72 = null;
 
 
-        CommonTree WriteStat72_tree=null;
-        CommonTree char_literal74_tree=null;
+        CommonTree WriteStat71_tree=null;
+        CommonTree char_literal73_tree=null;
 
         try {
             // Grammar.g:85:9: ( WriteStat eXPRESSION ';' )
@@ -1908,17 +1902,17 @@ public class GrammarParser extends Parser {
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            WriteStat72=(Token)match(input,WriteStat,FOLLOW_WriteStat_in_pRINT745); 
-            WriteStat72_tree = (CommonTree)adaptor.create(WriteStat72);
-            root_0 = (CommonTree)adaptor.becomeRoot(WriteStat72_tree, root_0);
+            WriteStat71=(Token)match(input,WriteStat,FOLLOW_WriteStat_in_pRINT743); 
+            WriteStat71_tree = (CommonTree)adaptor.create(WriteStat71);
+            root_0 = (CommonTree)adaptor.becomeRoot(WriteStat71_tree, root_0);
 
-            pushFollow(FOLLOW_eXPRESSION_in_pRINT748);
-            eXPRESSION73=eXPRESSION();
+            pushFollow(FOLLOW_eXPRESSION_in_pRINT746);
+            eXPRESSION72=eXPRESSION();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, eXPRESSION73.getTree());
-            char_literal74=(Token)match(input,37,FOLLOW_37_in_pRINT750); 
+            adaptor.addChild(root_0, eXPRESSION72.getTree());
+            char_literal73=(Token)match(input,37,FOLLOW_37_in_pRINT748); 
 
             }
 
@@ -1953,13 +1947,13 @@ public class GrammarParser extends Parser {
 
         CommonTree root_0 = null;
 
-        Token ReadStat75=null;
-        Token IDF76=null;
-        Token char_literal77=null;
+        Token ReadStat74=null;
+        Token IDF75=null;
+        Token char_literal76=null;
 
-        CommonTree ReadStat75_tree=null;
-        CommonTree IDF76_tree=null;
-        CommonTree char_literal77_tree=null;
+        CommonTree ReadStat74_tree=null;
+        CommonTree IDF75_tree=null;
+        CommonTree char_literal76_tree=null;
 
         try {
             // Grammar.g:90:8: ( ReadStat IDF ';' )
@@ -1967,15 +1961,15 @@ public class GrammarParser extends Parser {
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            ReadStat75=(Token)match(input,ReadStat,FOLLOW_ReadStat_in_rEAD779); 
-            ReadStat75_tree = (CommonTree)adaptor.create(ReadStat75);
-            root_0 = (CommonTree)adaptor.becomeRoot(ReadStat75_tree, root_0);
+            ReadStat74=(Token)match(input,ReadStat,FOLLOW_ReadStat_in_rEAD777); 
+            ReadStat74_tree = (CommonTree)adaptor.create(ReadStat74);
+            root_0 = (CommonTree)adaptor.becomeRoot(ReadStat74_tree, root_0);
 
-            IDF76=(Token)match(input,IDF,FOLLOW_IDF_in_rEAD782); 
-            IDF76_tree = (CommonTree)adaptor.create(IDF76);
-            adaptor.addChild(root_0, IDF76_tree);
+            IDF75=(Token)match(input,IDF,FOLLOW_IDF_in_rEAD780); 
+            IDF75_tree = (CommonTree)adaptor.create(IDF75);
+            adaptor.addChild(root_0, IDF75_tree);
 
-            char_literal77=(Token)match(input,37,FOLLOW_37_in_rEAD784); 
+            char_literal76=(Token)match(input,37,FOLLOW_37_in_rEAD782); 
 
             }
 
@@ -2010,17 +2004,17 @@ public class GrammarParser extends Parser {
 
         CommonTree root_0 = null;
 
-        Token ReturnStat78=null;
-        Token char_literal79=null;
+        Token ReturnStat77=null;
+        Token char_literal78=null;
+        Token char_literal80=null;
         Token char_literal81=null;
-        Token char_literal82=null;
-        GrammarParser.eXPRESSION_return eXPRESSION80 = null;
+        GrammarParser.eXPRESSION_return eXPRESSION79 = null;
 
 
-        CommonTree ReturnStat78_tree=null;
-        CommonTree char_literal79_tree=null;
+        CommonTree ReturnStat77_tree=null;
+        CommonTree char_literal78_tree=null;
+        CommonTree char_literal80_tree=null;
         CommonTree char_literal81_tree=null;
-        CommonTree char_literal82_tree=null;
 
         try {
             // Grammar.g:94:11: ( ReturnStat '(' eXPRESSION ')' ';' )
@@ -2028,19 +2022,19 @@ public class GrammarParser extends Parser {
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            ReturnStat78=(Token)match(input,ReturnStat,FOLLOW_ReturnStat_in_rETURN2811); 
-            ReturnStat78_tree = (CommonTree)adaptor.create(ReturnStat78);
-            root_0 = (CommonTree)adaptor.becomeRoot(ReturnStat78_tree, root_0);
+            ReturnStat77=(Token)match(input,ReturnStat,FOLLOW_ReturnStat_in_rETURN2809); 
+            ReturnStat77_tree = (CommonTree)adaptor.create(ReturnStat77);
+            root_0 = (CommonTree)adaptor.becomeRoot(ReturnStat77_tree, root_0);
 
-            char_literal79=(Token)match(input,34,FOLLOW_34_in_rETURN2814); 
-            pushFollow(FOLLOW_eXPRESSION_in_rETURN2817);
-            eXPRESSION80=eXPRESSION();
+            char_literal78=(Token)match(input,34,FOLLOW_34_in_rETURN2812); 
+            pushFollow(FOLLOW_eXPRESSION_in_rETURN2815);
+            eXPRESSION79=eXPRESSION();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, eXPRESSION80.getTree());
-            char_literal81=(Token)match(input,35,FOLLOW_35_in_rETURN2819); 
-            char_literal82=(Token)match(input,37,FOLLOW_37_in_rETURN2822); 
+            adaptor.addChild(root_0, eXPRESSION79.getTree());
+            char_literal80=(Token)match(input,35,FOLLOW_35_in_rETURN2817); 
+            char_literal81=(Token)match(input,37,FOLLOW_37_in_rETURN2820); 
 
             }
 
@@ -2075,19 +2069,19 @@ public class GrammarParser extends Parser {
 
         CommonTree root_0 = null;
 
-        Token INT83=null;
-        Token STRING84=null;
-        Token char_literal85=null;
-        Token char_literal87=null;
-        GrammarParser.eXPRESSION_return eXPRESSION86 = null;
+        Token INT82=null;
+        Token STRING83=null;
+        Token char_literal84=null;
+        Token char_literal86=null;
+        GrammarParser.eXPRESSION_return eXPRESSION85 = null;
 
-        GrammarParser.eXPRESSION2_return eXPRESSION288 = null;
+        GrammarParser.eXPRESSION2_return eXPRESSION287 = null;
 
 
-        CommonTree INT83_tree=null;
-        CommonTree STRING84_tree=null;
-        CommonTree char_literal85_tree=null;
-        CommonTree char_literal87_tree=null;
+        CommonTree INT82_tree=null;
+        CommonTree STRING83_tree=null;
+        CommonTree char_literal84_tree=null;
+        CommonTree char_literal86_tree=null;
 
         try {
             // Grammar.g:100:9: ( INT | STRING | '(' eXPRESSION ')' | eXPRESSION2 )
@@ -2129,9 +2123,9 @@ public class GrammarParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    INT83=(Token)match(input,INT,FOLLOW_INT_in_aTOM855); 
-                    INT83_tree = (CommonTree)adaptor.create(INT83);
-                    adaptor.addChild(root_0, INT83_tree);
+                    INT82=(Token)match(input,INT,FOLLOW_INT_in_aTOM853); 
+                    INT82_tree = (CommonTree)adaptor.create(INT82);
+                    adaptor.addChild(root_0, INT82_tree);
 
 
                     }
@@ -2141,9 +2135,9 @@ public class GrammarParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    STRING84=(Token)match(input,STRING,FOLLOW_STRING_in_aTOM862); 
-                    STRING84_tree = (CommonTree)adaptor.create(STRING84);
-                    adaptor.addChild(root_0, STRING84_tree);
+                    STRING83=(Token)match(input,STRING,FOLLOW_STRING_in_aTOM860); 
+                    STRING83_tree = (CommonTree)adaptor.create(STRING83);
+                    adaptor.addChild(root_0, STRING83_tree);
 
 
                     }
@@ -2153,14 +2147,14 @@ public class GrammarParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    char_literal85=(Token)match(input,34,FOLLOW_34_in_aTOM869); 
-                    pushFollow(FOLLOW_eXPRESSION_in_aTOM872);
-                    eXPRESSION86=eXPRESSION();
+                    char_literal84=(Token)match(input,34,FOLLOW_34_in_aTOM867); 
+                    pushFollow(FOLLOW_eXPRESSION_in_aTOM870);
+                    eXPRESSION85=eXPRESSION();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, eXPRESSION86.getTree());
-                    char_literal87=(Token)match(input,35,FOLLOW_35_in_aTOM874); 
+                    adaptor.addChild(root_0, eXPRESSION85.getTree());
+                    char_literal86=(Token)match(input,35,FOLLOW_35_in_aTOM872); 
 
                     }
                     break;
@@ -2169,12 +2163,12 @@ public class GrammarParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_eXPRESSION2_in_aTOM881);
-                    eXPRESSION288=eXPRESSION2();
+                    pushFollow(FOLLOW_eXPRESSION2_in_aTOM879);
+                    eXPRESSION287=eXPRESSION2();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, eXPRESSION288.getTree());
+                    adaptor.addChild(root_0, eXPRESSION287.getTree());
 
                     }
                     break;
@@ -2211,17 +2205,17 @@ public class GrammarParser extends Parser {
 
         CommonTree root_0 = null;
 
-        Token ThisStat89=null;
-        Token IDF90=null;
-        Token SuperStat91=null;
-        Token NewStat92=null;
-        Token IDFMAJ93=null;
+        Token ThisStat88=null;
+        Token IDF89=null;
+        Token SuperStat90=null;
+        Token NewStat91=null;
+        Token IDFMAJ92=null;
 
-        CommonTree ThisStat89_tree=null;
-        CommonTree IDF90_tree=null;
-        CommonTree SuperStat91_tree=null;
-        CommonTree NewStat92_tree=null;
-        CommonTree IDFMAJ93_tree=null;
+        CommonTree ThisStat88_tree=null;
+        CommonTree IDF89_tree=null;
+        CommonTree SuperStat90_tree=null;
+        CommonTree NewStat91_tree=null;
+        CommonTree IDFMAJ92_tree=null;
 
         try {
             // Grammar.g:106:11: ( ThisStat | IDF | SuperStat | NewStat IDFMAJ )
@@ -2260,9 +2254,9 @@ public class GrammarParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    ThisStat89=(Token)match(input,ThisStat,FOLLOW_ThisStat_in_aTOMBIS898); 
-                    ThisStat89_tree = (CommonTree)adaptor.create(ThisStat89);
-                    adaptor.addChild(root_0, ThisStat89_tree);
+                    ThisStat88=(Token)match(input,ThisStat,FOLLOW_ThisStat_in_aTOMBIS896); 
+                    ThisStat88_tree = (CommonTree)adaptor.create(ThisStat88);
+                    adaptor.addChild(root_0, ThisStat88_tree);
 
 
                     }
@@ -2272,9 +2266,9 @@ public class GrammarParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    IDF90=(Token)match(input,IDF,FOLLOW_IDF_in_aTOMBIS904); 
-                    IDF90_tree = (CommonTree)adaptor.create(IDF90);
-                    adaptor.addChild(root_0, IDF90_tree);
+                    IDF89=(Token)match(input,IDF,FOLLOW_IDF_in_aTOMBIS902); 
+                    IDF89_tree = (CommonTree)adaptor.create(IDF89);
+                    adaptor.addChild(root_0, IDF89_tree);
 
 
                     }
@@ -2284,9 +2278,9 @@ public class GrammarParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    SuperStat91=(Token)match(input,SuperStat,FOLLOW_SuperStat_in_aTOMBIS910); 
-                    SuperStat91_tree = (CommonTree)adaptor.create(SuperStat91);
-                    adaptor.addChild(root_0, SuperStat91_tree);
+                    SuperStat90=(Token)match(input,SuperStat,FOLLOW_SuperStat_in_aTOMBIS908); 
+                    SuperStat90_tree = (CommonTree)adaptor.create(SuperStat90);
+                    adaptor.addChild(root_0, SuperStat90_tree);
 
 
                     }
@@ -2296,13 +2290,13 @@ public class GrammarParser extends Parser {
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
-                    NewStat92=(Token)match(input,NewStat,FOLLOW_NewStat_in_aTOMBIS916); 
-                    NewStat92_tree = (CommonTree)adaptor.create(NewStat92);
-                    root_0 = (CommonTree)adaptor.becomeRoot(NewStat92_tree, root_0);
+                    NewStat91=(Token)match(input,NewStat,FOLLOW_NewStat_in_aTOMBIS914); 
+                    NewStat91_tree = (CommonTree)adaptor.create(NewStat91);
+                    root_0 = (CommonTree)adaptor.becomeRoot(NewStat91_tree, root_0);
 
-                    IDFMAJ93=(Token)match(input,IDFMAJ,FOLLOW_IDFMAJ_in_aTOMBIS919); 
-                    IDFMAJ93_tree = (CommonTree)adaptor.create(IDFMAJ93);
-                    adaptor.addChild(root_0, IDFMAJ93_tree);
+                    IDFMAJ92=(Token)match(input,IDFMAJ,FOLLOW_IDFMAJ_in_aTOMBIS917); 
+                    IDFMAJ92_tree = (CommonTree)adaptor.create(IDFMAJ92);
+                    adaptor.addChild(root_0, IDFMAJ92_tree);
 
 
                     }
@@ -2340,17 +2334,17 @@ public class GrammarParser extends Parser {
 
         CommonTree root_0 = null;
 
-        Token BOOLOPER96=null;
-        GrammarParser.mOINEXPR_return mOINEXPR94 = null;
+        Token BOOLOPER95=null;
+        GrammarParser.mOINEXPR_return mOINEXPR93 = null;
 
-        GrammarParser.nOTMOINSEXPR_return nOTMOINSEXPR95 = null;
+        GrammarParser.nOTMOINSEXPR_return nOTMOINSEXPR94 = null;
 
-        GrammarParser.mOINEXPR_return mOINEXPR97 = null;
+        GrammarParser.mOINEXPR_return mOINEXPR96 = null;
 
-        GrammarParser.nOTMOINSEXPR_return nOTMOINSEXPR98 = null;
+        GrammarParser.nOTMOINSEXPR_return nOTMOINSEXPR97 = null;
 
 
-        CommonTree BOOLOPER96_tree=null;
+        CommonTree BOOLOPER95_tree=null;
 
         try {
             // Grammar.g:113:12: ( ( mOINEXPR | nOTMOINSEXPR ) ( BOOLOPER ( mOINEXPR | nOTMOINSEXPR ) )* )
@@ -2378,24 +2372,24 @@ public class GrammarParser extends Parser {
                 case 1 :
                     // Grammar.g:113:15: mOINEXPR
                     {
-                    pushFollow(FOLLOW_mOINEXPR_in_bOOLEXPR938);
-                    mOINEXPR94=mOINEXPR();
+                    pushFollow(FOLLOW_mOINEXPR_in_bOOLEXPR936);
+                    mOINEXPR93=mOINEXPR();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, mOINEXPR94.getTree());
+                    adaptor.addChild(root_0, mOINEXPR93.getTree());
 
                     }
                     break;
                 case 2 :
                     // Grammar.g:113:24: nOTMOINSEXPR
                     {
-                    pushFollow(FOLLOW_nOTMOINSEXPR_in_bOOLEXPR940);
-                    nOTMOINSEXPR95=nOTMOINSEXPR();
+                    pushFollow(FOLLOW_nOTMOINSEXPR_in_bOOLEXPR938);
+                    nOTMOINSEXPR94=nOTMOINSEXPR();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, nOTMOINSEXPR95.getTree());
+                    adaptor.addChild(root_0, nOTMOINSEXPR94.getTree());
 
                     }
                     break;
@@ -2417,9 +2411,9 @@ public class GrammarParser extends Parser {
             	case 1 :
             	    // Grammar.g:113:39: BOOLOPER ( mOINEXPR | nOTMOINSEXPR )
             	    {
-            	    BOOLOPER96=(Token)match(input,BOOLOPER,FOLLOW_BOOLOPER_in_bOOLEXPR944); 
-            	    BOOLOPER96_tree = (CommonTree)adaptor.create(BOOLOPER96);
-            	    root_0 = (CommonTree)adaptor.becomeRoot(BOOLOPER96_tree, root_0);
+            	    BOOLOPER95=(Token)match(input,BOOLOPER,FOLLOW_BOOLOPER_in_bOOLEXPR942); 
+            	    BOOLOPER95_tree = (CommonTree)adaptor.create(BOOLOPER95);
+            	    root_0 = (CommonTree)adaptor.becomeRoot(BOOLOPER95_tree, root_0);
 
             	    // Grammar.g:113:49: ( mOINEXPR | nOTMOINSEXPR )
             	    int alt20=2;
@@ -2441,24 +2435,24 @@ public class GrammarParser extends Parser {
             	        case 1 :
             	            // Grammar.g:113:50: mOINEXPR
             	            {
-            	            pushFollow(FOLLOW_mOINEXPR_in_bOOLEXPR948);
-            	            mOINEXPR97=mOINEXPR();
+            	            pushFollow(FOLLOW_mOINEXPR_in_bOOLEXPR946);
+            	            mOINEXPR96=mOINEXPR();
 
             	            state._fsp--;
 
-            	            adaptor.addChild(root_0, mOINEXPR97.getTree());
+            	            adaptor.addChild(root_0, mOINEXPR96.getTree());
 
             	            }
             	            break;
             	        case 2 :
             	            // Grammar.g:113:59: nOTMOINSEXPR
             	            {
-            	            pushFollow(FOLLOW_nOTMOINSEXPR_in_bOOLEXPR950);
-            	            nOTMOINSEXPR98=nOTMOINSEXPR();
+            	            pushFollow(FOLLOW_nOTMOINSEXPR_in_bOOLEXPR948);
+            	            nOTMOINSEXPR97=nOTMOINSEXPR();
 
             	            state._fsp--;
 
-            	            adaptor.addChild(root_0, nOTMOINSEXPR98.getTree());
+            	            adaptor.addChild(root_0, nOTMOINSEXPR97.getTree());
 
             	            }
             	            break;
@@ -2508,13 +2502,13 @@ public class GrammarParser extends Parser {
 
         CommonTree root_0 = null;
 
-        Token set100=null;
-        GrammarParser.bOOLEXPR_return bOOLEXPR99 = null;
+        Token set99=null;
+        GrammarParser.bOOLEXPR_return bOOLEXPR98 = null;
 
-        GrammarParser.bOOLEXPR_return bOOLEXPR101 = null;
+        GrammarParser.bOOLEXPR_return bOOLEXPR100 = null;
 
 
-        CommonTree set100_tree=null;
+        CommonTree set99_tree=null;
 
         try {
             // Grammar.g:116:12: ( bOOLEXPR ( ( '*' | '/' ) bOOLEXPR )* )
@@ -2522,12 +2516,12 @@ public class GrammarParser extends Parser {
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            pushFollow(FOLLOW_bOOLEXPR_in_mULTEXPR967);
-            bOOLEXPR99=bOOLEXPR();
+            pushFollow(FOLLOW_bOOLEXPR_in_mULTEXPR965);
+            bOOLEXPR98=bOOLEXPR();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, bOOLEXPR99.getTree());
+            adaptor.addChild(root_0, bOOLEXPR98.getTree());
             // Grammar.g:116:23: ( ( '*' | '/' ) bOOLEXPR )*
             loop22:
             do {
@@ -2543,11 +2537,11 @@ public class GrammarParser extends Parser {
             	case 1 :
             	    // Grammar.g:116:24: ( '*' | '/' ) bOOLEXPR
             	    {
-            	    set100=(Token)input.LT(1);
-            	    set100=(Token)input.LT(1);
+            	    set99=(Token)input.LT(1);
+            	    set99=(Token)input.LT(1);
             	    if ( (input.LA(1)>=44 && input.LA(1)<=45) ) {
             	        input.consume();
-            	        root_0 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(set100), root_0);
+            	        root_0 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(set99), root_0);
             	        state.errorRecovery=false;
             	    }
             	    else {
@@ -2555,12 +2549,12 @@ public class GrammarParser extends Parser {
             	        throw mse;
             	    }
 
-            	    pushFollow(FOLLOW_bOOLEXPR_in_mULTEXPR977);
-            	    bOOLEXPR101=bOOLEXPR();
+            	    pushFollow(FOLLOW_bOOLEXPR_in_mULTEXPR975);
+            	    bOOLEXPR100=bOOLEXPR();
 
             	    state._fsp--;
 
-            	    adaptor.addChild(root_0, bOOLEXPR101.getTree());
+            	    adaptor.addChild(root_0, bOOLEXPR100.getTree());
 
             	    }
             	    break;
@@ -2604,13 +2598,13 @@ public class GrammarParser extends Parser {
 
         CommonTree root_0 = null;
 
-        Token set103=null;
-        GrammarParser.mULTEXPR_return mULTEXPR102 = null;
+        Token set102=null;
+        GrammarParser.mULTEXPR_return mULTEXPR101 = null;
 
-        GrammarParser.mULTEXPR_return mULTEXPR104 = null;
+        GrammarParser.mULTEXPR_return mULTEXPR103 = null;
 
 
-        CommonTree set103_tree=null;
+        CommonTree set102_tree=null;
 
         try {
             // Grammar.g:119:11: ( mULTEXPR ( ( '+' | '-' ) mULTEXPR )* )
@@ -2618,12 +2612,12 @@ public class GrammarParser extends Parser {
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            pushFollow(FOLLOW_mULTEXPR_in_aDDEXPR993);
-            mULTEXPR102=mULTEXPR();
+            pushFollow(FOLLOW_mULTEXPR_in_aDDEXPR991);
+            mULTEXPR101=mULTEXPR();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, mULTEXPR102.getTree());
+            adaptor.addChild(root_0, mULTEXPR101.getTree());
             // Grammar.g:119:22: ( ( '+' | '-' ) mULTEXPR )*
             loop23:
             do {
@@ -2639,11 +2633,11 @@ public class GrammarParser extends Parser {
             	case 1 :
             	    // Grammar.g:119:23: ( '+' | '-' ) mULTEXPR
             	    {
-            	    set103=(Token)input.LT(1);
-            	    set103=(Token)input.LT(1);
+            	    set102=(Token)input.LT(1);
+            	    set102=(Token)input.LT(1);
             	    if ( (input.LA(1)>=46 && input.LA(1)<=47) ) {
             	        input.consume();
-            	        root_0 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(set103), root_0);
+            	        root_0 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(set102), root_0);
             	        state.errorRecovery=false;
             	    }
             	    else {
@@ -2651,12 +2645,12 @@ public class GrammarParser extends Parser {
             	        throw mse;
             	    }
 
-            	    pushFollow(FOLLOW_mULTEXPR_in_aDDEXPR1003);
-            	    mULTEXPR104=mULTEXPR();
+            	    pushFollow(FOLLOW_mULTEXPR_in_aDDEXPR1001);
+            	    mULTEXPR103=mULTEXPR();
 
             	    state._fsp--;
 
-            	    adaptor.addChild(root_0, mULTEXPR104.getTree());
+            	    adaptor.addChild(root_0, mULTEXPR103.getTree());
 
             	    }
             	    break;
@@ -2700,26 +2694,26 @@ public class GrammarParser extends Parser {
 
         CommonTree root_0 = null;
 
-        Token char_literal105=null;
-        GrammarParser.aTOM_return aTOM106 = null;
+        Token char_literal104=null;
+        GrammarParser.aTOM_return aTOM105 = null;
 
 
-        CommonTree char_literal105_tree=null;
+        CommonTree char_literal104_tree=null;
         RewriteRuleTokenStream stream_47=new RewriteRuleTokenStream(adaptor,"token 47");
         RewriteRuleSubtreeStream stream_aTOM=new RewriteRuleSubtreeStream(adaptor,"rule aTOM");
         try {
             // Grammar.g:122:11: ( '-' aTOM -> ^( '-' aTOM ) )
             // Grammar.g:122:13: '-' aTOM
             {
-            char_literal105=(Token)match(input,47,FOLLOW_47_in_mOINEXPR1018);  
-            stream_47.add(char_literal105);
+            char_literal104=(Token)match(input,47,FOLLOW_47_in_mOINEXPR1016);  
+            stream_47.add(char_literal104);
 
-            pushFollow(FOLLOW_aTOM_in_mOINEXPR1020);
-            aTOM106=aTOM();
+            pushFollow(FOLLOW_aTOM_in_mOINEXPR1018);
+            aTOM105=aTOM();
 
             state._fsp--;
 
-            stream_aTOM.add(aTOM106.getTree());
+            stream_aTOM.add(aTOM105.getTree());
 
 
             // AST REWRITE
@@ -2781,7 +2775,7 @@ public class GrammarParser extends Parser {
 
         CommonTree root_0 = null;
 
-        GrammarParser.aTOM_return aTOM107 = null;
+        GrammarParser.aTOM_return aTOM106 = null;
 
 
 
@@ -2791,12 +2785,12 @@ public class GrammarParser extends Parser {
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            pushFollow(FOLLOW_aTOM_in_nOTMOINSEXPR1037);
-            aTOM107=aTOM();
+            pushFollow(FOLLOW_aTOM_in_nOTMOINSEXPR1035);
+            aTOM106=aTOM();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, aTOM107.getTree());
+            adaptor.addChild(root_0, aTOM106.getTree());
 
             }
 
@@ -2831,7 +2825,7 @@ public class GrammarParser extends Parser {
 
         CommonTree root_0 = null;
 
-        GrammarParser.aDDEXPR_return aDDEXPR108 = null;
+        GrammarParser.aDDEXPR_return aDDEXPR107 = null;
 
 
 
@@ -2841,12 +2835,12 @@ public class GrammarParser extends Parser {
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            pushFollow(FOLLOW_aDDEXPR_in_eXPRESSION1048);
-            aDDEXPR108=aDDEXPR();
+            pushFollow(FOLLOW_aDDEXPR_in_eXPRESSION1046);
+            aDDEXPR107=aDDEXPR();
 
             state._fsp--;
 
-            adaptor.addChild(root_0, aDDEXPR108.getTree());
+            adaptor.addChild(root_0, aDDEXPR107.getTree());
 
             }
 
@@ -2881,9 +2875,9 @@ public class GrammarParser extends Parser {
 
         CommonTree root_0 = null;
 
-        GrammarParser.aTOMBIS_return aTOMBIS109 = null;
+        GrammarParser.aTOMBIS_return aTOMBIS108 = null;
 
-        GrammarParser.sUITE_return sUITE110 = null;
+        GrammarParser.sUITE_return sUITE109 = null;
 
 
 
@@ -2893,12 +2887,12 @@ public class GrammarParser extends Parser {
             {
             root_0 = (CommonTree)adaptor.nil();
 
-            pushFollow(FOLLOW_aTOMBIS_in_eXPRESSION21062);
-            aTOMBIS109=aTOMBIS();
+            pushFollow(FOLLOW_aTOMBIS_in_eXPRESSION21060);
+            aTOMBIS108=aTOMBIS();
 
             state._fsp--;
 
-            root_0 = (CommonTree)adaptor.becomeRoot(aTOMBIS109.getTree(), root_0);
+            root_0 = (CommonTree)adaptor.becomeRoot(aTOMBIS108.getTree(), root_0);
             // Grammar.g:129:26: ( sUITE )*
             loop24:
             do {
@@ -2914,12 +2908,12 @@ public class GrammarParser extends Parser {
             	case 1 :
             	    // Grammar.g:129:26: sUITE
             	    {
-            	    pushFollow(FOLLOW_sUITE_in_eXPRESSION21065);
-            	    sUITE110=sUITE();
+            	    pushFollow(FOLLOW_sUITE_in_eXPRESSION21063);
+            	    sUITE109=sUITE();
 
             	    state._fsp--;
 
-            	    adaptor.addChild(root_0, sUITE110.getTree());
+            	    adaptor.addChild(root_0, sUITE109.getTree());
 
             	    }
             	    break;
@@ -2963,21 +2957,21 @@ public class GrammarParser extends Parser {
 
         CommonTree root_0 = null;
 
-        Token char_literal111=null;
-        Token IDF112=null;
-        Token char_literal113=null;
-        Token char_literal115=null;
-        Token char_literal117=null;
-        GrammarParser.eXPRESSION_return eXPRESSION114 = null;
+        Token char_literal110=null;
+        Token IDF111=null;
+        Token char_literal112=null;
+        Token char_literal114=null;
+        Token char_literal116=null;
+        GrammarParser.eXPRESSION_return eXPRESSION113 = null;
 
-        GrammarParser.eXPRESSION_return eXPRESSION116 = null;
+        GrammarParser.eXPRESSION_return eXPRESSION115 = null;
 
 
-        CommonTree char_literal111_tree=null;
-        CommonTree IDF112_tree=null;
-        CommonTree char_literal113_tree=null;
-        CommonTree char_literal115_tree=null;
-        CommonTree char_literal117_tree=null;
+        CommonTree char_literal110_tree=null;
+        CommonTree IDF111_tree=null;
+        CommonTree char_literal112_tree=null;
+        CommonTree char_literal114_tree=null;
+        CommonTree char_literal116_tree=null;
 
         try {
             // Grammar.g:131:10: ( ( '.' IDF '(' ( eXPRESSION ( ',' eXPRESSION )* )? ')' ) )
@@ -2988,12 +2982,12 @@ public class GrammarParser extends Parser {
             // Grammar.g:131:12: ( '.' IDF '(' ( eXPRESSION ( ',' eXPRESSION )* )? ')' )
             // Grammar.g:131:13: '.' IDF '(' ( eXPRESSION ( ',' eXPRESSION )* )? ')'
             {
-            char_literal111=(Token)match(input,48,FOLLOW_48_in_sUITE1078); 
-            IDF112=(Token)match(input,IDF,FOLLOW_IDF_in_sUITE1081); 
-            IDF112_tree = (CommonTree)adaptor.create(IDF112);
-            root_0 = (CommonTree)adaptor.becomeRoot(IDF112_tree, root_0);
+            char_literal110=(Token)match(input,48,FOLLOW_48_in_sUITE1076); 
+            IDF111=(Token)match(input,IDF,FOLLOW_IDF_in_sUITE1079); 
+            IDF111_tree = (CommonTree)adaptor.create(IDF111);
+            root_0 = (CommonTree)adaptor.becomeRoot(IDF111_tree, root_0);
 
-            char_literal113=(Token)match(input,34,FOLLOW_34_in_sUITE1084); 
+            char_literal112=(Token)match(input,34,FOLLOW_34_in_sUITE1082); 
             // Grammar.g:131:28: ( eXPRESSION ( ',' eXPRESSION )* )?
             int alt26=2;
             int LA26_0 = input.LA(1);
@@ -3005,12 +2999,12 @@ public class GrammarParser extends Parser {
                 case 1 :
                     // Grammar.g:131:29: eXPRESSION ( ',' eXPRESSION )*
                     {
-                    pushFollow(FOLLOW_eXPRESSION_in_sUITE1088);
-                    eXPRESSION114=eXPRESSION();
+                    pushFollow(FOLLOW_eXPRESSION_in_sUITE1086);
+                    eXPRESSION113=eXPRESSION();
 
                     state._fsp--;
 
-                    adaptor.addChild(root_0, eXPRESSION114.getTree());
+                    adaptor.addChild(root_0, eXPRESSION113.getTree());
                     // Grammar.g:131:40: ( ',' eXPRESSION )*
                     loop25:
                     do {
@@ -3026,13 +3020,13 @@ public class GrammarParser extends Parser {
                     	case 1 :
                     	    // Grammar.g:131:41: ',' eXPRESSION
                     	    {
-                    	    char_literal115=(Token)match(input,40,FOLLOW_40_in_sUITE1091); 
-                    	    pushFollow(FOLLOW_eXPRESSION_in_sUITE1094);
-                    	    eXPRESSION116=eXPRESSION();
+                    	    char_literal114=(Token)match(input,40,FOLLOW_40_in_sUITE1089); 
+                    	    pushFollow(FOLLOW_eXPRESSION_in_sUITE1092);
+                    	    eXPRESSION115=eXPRESSION();
 
                     	    state._fsp--;
 
-                    	    adaptor.addChild(root_0, eXPRESSION116.getTree());
+                    	    adaptor.addChild(root_0, eXPRESSION115.getTree());
 
                     	    }
                     	    break;
@@ -3048,7 +3042,7 @@ public class GrammarParser extends Parser {
 
             }
 
-            char_literal117=(Token)match(input,35,FOLLOW_35_in_sUITE1100); 
+            char_literal116=(Token)match(input,35,FOLLOW_35_in_sUITE1098); 
 
             }
 
@@ -3108,92 +3102,91 @@ public class GrammarParser extends Parser {
     public static final BitSet FOLLOW_38_in_mETHOD_DECL323 = new BitSet(new long[]{0x0000004001D48C00L});
     public static final BitSet FOLLOW_vAR_DECL_in_mETHOD_DECL325 = new BitSet(new long[]{0x0000004001D48C00L});
     public static final BitSet FOLLOW_iNSTRUCTION_in_mETHOD_DECL328 = new BitSet(new long[]{0x000000C001D48C00L});
-    public static final BitSet FOLLOW_39_in_mETHOD_DECL331 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_37_in_mETHOD_DECL333 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_mETHOD_TYPE368 = new BitSet(new long[]{0x0000000000003100L});
-    public static final BitSet FOLLOW_tYPE_in_mETHOD_TYPE370 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDF_in_mETHOD_ARGS414 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_36_in_mETHOD_ARGS416 = new BitSet(new long[]{0x0000000000003100L});
-    public static final BitSet FOLLOW_tYPE_in_mETHOD_ARGS418 = new BitSet(new long[]{0x0000010000000002L});
-    public static final BitSet FOLLOW_40_in_mETHOD_ARGS421 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_IDF_in_mETHOD_ARGS423 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_36_in_mETHOD_ARGS425 = new BitSet(new long[]{0x0000000000003100L});
-    public static final BitSet FOLLOW_tYPE_in_mETHOD_ARGS427 = new BitSet(new long[]{0x0000010000000002L});
-    public static final BitSet FOLLOW_IDF_in_iNSTRUCTION455 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_41_in_iNSTRUCTION457 = new BitSet(new long[]{0x000080043E000800L});
-    public static final BitSet FOLLOW_eXPRESSION_in_iNSTRUCTION460 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_37_in_iNSTRUCTION463 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IfStat_in_iNSTRUCTION480 = new BitSet(new long[]{0x000080043E000800L});
-    public static final BitSet FOLLOW_eXPRESSION_in_iNSTRUCTION482 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_ThenStat_in_iNSTRUCTION484 = new BitSet(new long[]{0x0000004001D48C00L});
-    public static final BitSet FOLLOW_iNSTRUCTION_in_iNSTRUCTION486 = new BitSet(new long[]{0x0000040000020000L});
-    public static final BitSet FOLLOW_42_in_iNSTRUCTION489 = new BitSet(new long[]{0x0000004001D48C00L});
-    public static final BitSet FOLLOW_iNSTRUCTION_in_iNSTRUCTION491 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_FiStat_in_iNSTRUCTION495 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ForStat_in_iNSTRUCTION523 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_IDF_in_iNSTRUCTION525 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_InStat_in_iNSTRUCTION527 = new BitSet(new long[]{0x000080043E000800L});
-    public static final BitSet FOLLOW_eXPRESSION_in_iNSTRUCTION529 = new BitSet(new long[]{0x0000080000000000L});
-    public static final BitSet FOLLOW_43_in_iNSTRUCTION531 = new BitSet(new long[]{0x000080043E000800L});
-    public static final BitSet FOLLOW_eXPRESSION_in_iNSTRUCTION533 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_DoStat_in_iNSTRUCTION535 = new BitSet(new long[]{0x0000004001D48C00L});
-    public static final BitSet FOLLOW_iNSTRUCTION_in_iNSTRUCTION537 = new BitSet(new long[]{0x0000004001F48C00L});
-    public static final BitSet FOLLOW_EndStat_in_iNSTRUCTION540 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_iNSTRUCTION570 = new BitSet(new long[]{0x0000004001D48C00L});
-    public static final BitSet FOLLOW_vAR_DECL_in_iNSTRUCTION572 = new BitSet(new long[]{0x0000004001D48C00L});
-    public static final BitSet FOLLOW_iNSTRUCTION_in_iNSTRUCTION575 = new BitSet(new long[]{0x000000C001D48C00L});
-    public static final BitSet FOLLOW_39_in_iNSTRUCTION578 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DoStat_in_iNSTRUCTION597 = new BitSet(new long[]{0x000080043E000800L});
-    public static final BitSet FOLLOW_eXPRESSION_in_iNSTRUCTION599 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_37_in_iNSTRUCTION600 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_pRINT_in_iNSTRUCTION615 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rEAD_in_iNSTRUCTION622 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rETURN2_in_iNSTRUCTION629 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WriteStat_in_pRINT745 = new BitSet(new long[]{0x000080043E000800L});
-    public static final BitSet FOLLOW_eXPRESSION_in_pRINT748 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_37_in_pRINT750 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ReadStat_in_rEAD779 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_IDF_in_rEAD782 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_37_in_rEAD784 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ReturnStat_in_rETURN2811 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_34_in_rETURN2814 = new BitSet(new long[]{0x000080043E000800L});
-    public static final BitSet FOLLOW_eXPRESSION_in_rETURN2817 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_35_in_rETURN2819 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_37_in_rETURN2822 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_INT_in_aTOM855 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STRING_in_aTOM862 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_aTOM869 = new BitSet(new long[]{0x000080043E000800L});
-    public static final BitSet FOLLOW_eXPRESSION_in_aTOM872 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_35_in_aTOM874 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_eXPRESSION2_in_aTOM881 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ThisStat_in_aTOMBIS898 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDF_in_aTOMBIS904 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SuperStat_in_aTOMBIS910 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NewStat_in_aTOMBIS916 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_IDFMAJ_in_aTOMBIS919 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_mOINEXPR_in_bOOLEXPR938 = new BitSet(new long[]{0x0000000040000002L});
-    public static final BitSet FOLLOW_nOTMOINSEXPR_in_bOOLEXPR940 = new BitSet(new long[]{0x0000000040000002L});
-    public static final BitSet FOLLOW_BOOLOPER_in_bOOLEXPR944 = new BitSet(new long[]{0x000080043E000800L});
-    public static final BitSet FOLLOW_mOINEXPR_in_bOOLEXPR948 = new BitSet(new long[]{0x0000000040000002L});
-    public static final BitSet FOLLOW_nOTMOINSEXPR_in_bOOLEXPR950 = new BitSet(new long[]{0x0000000040000002L});
-    public static final BitSet FOLLOW_bOOLEXPR_in_mULTEXPR967 = new BitSet(new long[]{0x0000300000000002L});
-    public static final BitSet FOLLOW_set_in_mULTEXPR970 = new BitSet(new long[]{0x000080043E000800L});
-    public static final BitSet FOLLOW_bOOLEXPR_in_mULTEXPR977 = new BitSet(new long[]{0x0000300000000002L});
-    public static final BitSet FOLLOW_mULTEXPR_in_aDDEXPR993 = new BitSet(new long[]{0x0000C00000000002L});
-    public static final BitSet FOLLOW_set_in_aDDEXPR996 = new BitSet(new long[]{0x000080043E000800L});
-    public static final BitSet FOLLOW_mULTEXPR_in_aDDEXPR1003 = new BitSet(new long[]{0x0000C00000000002L});
-    public static final BitSet FOLLOW_47_in_mOINEXPR1018 = new BitSet(new long[]{0x000080043E000800L});
-    public static final BitSet FOLLOW_aTOM_in_mOINEXPR1020 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_aTOM_in_nOTMOINSEXPR1037 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_aDDEXPR_in_eXPRESSION1048 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_aTOMBIS_in_eXPRESSION21062 = new BitSet(new long[]{0x0001000000000002L});
-    public static final BitSet FOLLOW_sUITE_in_eXPRESSION21065 = new BitSet(new long[]{0x0001000000000002L});
-    public static final BitSet FOLLOW_48_in_sUITE1078 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_IDF_in_sUITE1081 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_34_in_sUITE1084 = new BitSet(new long[]{0x0000800C3E000800L});
-    public static final BitSet FOLLOW_eXPRESSION_in_sUITE1088 = new BitSet(new long[]{0x0000010800000000L});
-    public static final BitSet FOLLOW_40_in_sUITE1091 = new BitSet(new long[]{0x000080043E000800L});
-    public static final BitSet FOLLOW_eXPRESSION_in_sUITE1094 = new BitSet(new long[]{0x0000010800000000L});
-    public static final BitSet FOLLOW_35_in_sUITE1100 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_mETHOD_DECL331 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_mETHOD_TYPE366 = new BitSet(new long[]{0x0000000000003100L});
+    public static final BitSet FOLLOW_tYPE_in_mETHOD_TYPE368 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDF_in_mETHOD_ARGS412 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_36_in_mETHOD_ARGS414 = new BitSet(new long[]{0x0000000000003100L});
+    public static final BitSet FOLLOW_tYPE_in_mETHOD_ARGS416 = new BitSet(new long[]{0x0000010000000002L});
+    public static final BitSet FOLLOW_40_in_mETHOD_ARGS419 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_IDF_in_mETHOD_ARGS421 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_36_in_mETHOD_ARGS423 = new BitSet(new long[]{0x0000000000003100L});
+    public static final BitSet FOLLOW_tYPE_in_mETHOD_ARGS425 = new BitSet(new long[]{0x0000010000000002L});
+    public static final BitSet FOLLOW_IDF_in_iNSTRUCTION453 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_41_in_iNSTRUCTION455 = new BitSet(new long[]{0x000080043E000800L});
+    public static final BitSet FOLLOW_eXPRESSION_in_iNSTRUCTION458 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_37_in_iNSTRUCTION461 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IfStat_in_iNSTRUCTION478 = new BitSet(new long[]{0x000080043E000800L});
+    public static final BitSet FOLLOW_eXPRESSION_in_iNSTRUCTION480 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_ThenStat_in_iNSTRUCTION482 = new BitSet(new long[]{0x0000004001D48C00L});
+    public static final BitSet FOLLOW_iNSTRUCTION_in_iNSTRUCTION484 = new BitSet(new long[]{0x0000040000020000L});
+    public static final BitSet FOLLOW_42_in_iNSTRUCTION487 = new BitSet(new long[]{0x0000004001D48C00L});
+    public static final BitSet FOLLOW_iNSTRUCTION_in_iNSTRUCTION489 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_FiStat_in_iNSTRUCTION493 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ForStat_in_iNSTRUCTION521 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_IDF_in_iNSTRUCTION523 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_InStat_in_iNSTRUCTION525 = new BitSet(new long[]{0x000080043E000800L});
+    public static final BitSet FOLLOW_eXPRESSION_in_iNSTRUCTION527 = new BitSet(new long[]{0x0000080000000000L});
+    public static final BitSet FOLLOW_43_in_iNSTRUCTION529 = new BitSet(new long[]{0x000080043E000800L});
+    public static final BitSet FOLLOW_eXPRESSION_in_iNSTRUCTION531 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_DoStat_in_iNSTRUCTION533 = new BitSet(new long[]{0x0000004001D48C00L});
+    public static final BitSet FOLLOW_iNSTRUCTION_in_iNSTRUCTION535 = new BitSet(new long[]{0x0000004001F48C00L});
+    public static final BitSet FOLLOW_EndStat_in_iNSTRUCTION538 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_38_in_iNSTRUCTION568 = new BitSet(new long[]{0x0000004001D48C00L});
+    public static final BitSet FOLLOW_vAR_DECL_in_iNSTRUCTION570 = new BitSet(new long[]{0x0000004001D48C00L});
+    public static final BitSet FOLLOW_iNSTRUCTION_in_iNSTRUCTION573 = new BitSet(new long[]{0x000000C001D48C00L});
+    public static final BitSet FOLLOW_39_in_iNSTRUCTION576 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DoStat_in_iNSTRUCTION595 = new BitSet(new long[]{0x000080043E000800L});
+    public static final BitSet FOLLOW_eXPRESSION_in_iNSTRUCTION597 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_37_in_iNSTRUCTION598 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_pRINT_in_iNSTRUCTION613 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rEAD_in_iNSTRUCTION620 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rETURN2_in_iNSTRUCTION627 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_WriteStat_in_pRINT743 = new BitSet(new long[]{0x000080043E000800L});
+    public static final BitSet FOLLOW_eXPRESSION_in_pRINT746 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_37_in_pRINT748 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ReadStat_in_rEAD777 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_IDF_in_rEAD780 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_37_in_rEAD782 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ReturnStat_in_rETURN2809 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_34_in_rETURN2812 = new BitSet(new long[]{0x000080043E000800L});
+    public static final BitSet FOLLOW_eXPRESSION_in_rETURN2815 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_35_in_rETURN2817 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_37_in_rETURN2820 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_INT_in_aTOM853 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STRING_in_aTOM860 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_aTOM867 = new BitSet(new long[]{0x000080043E000800L});
+    public static final BitSet FOLLOW_eXPRESSION_in_aTOM870 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_35_in_aTOM872 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_eXPRESSION2_in_aTOM879 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ThisStat_in_aTOMBIS896 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDF_in_aTOMBIS902 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SuperStat_in_aTOMBIS908 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NewStat_in_aTOMBIS914 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_IDFMAJ_in_aTOMBIS917 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_mOINEXPR_in_bOOLEXPR936 = new BitSet(new long[]{0x0000000040000002L});
+    public static final BitSet FOLLOW_nOTMOINSEXPR_in_bOOLEXPR938 = new BitSet(new long[]{0x0000000040000002L});
+    public static final BitSet FOLLOW_BOOLOPER_in_bOOLEXPR942 = new BitSet(new long[]{0x000080043E000800L});
+    public static final BitSet FOLLOW_mOINEXPR_in_bOOLEXPR946 = new BitSet(new long[]{0x0000000040000002L});
+    public static final BitSet FOLLOW_nOTMOINSEXPR_in_bOOLEXPR948 = new BitSet(new long[]{0x0000000040000002L});
+    public static final BitSet FOLLOW_bOOLEXPR_in_mULTEXPR965 = new BitSet(new long[]{0x0000300000000002L});
+    public static final BitSet FOLLOW_set_in_mULTEXPR968 = new BitSet(new long[]{0x000080043E000800L});
+    public static final BitSet FOLLOW_bOOLEXPR_in_mULTEXPR975 = new BitSet(new long[]{0x0000300000000002L});
+    public static final BitSet FOLLOW_mULTEXPR_in_aDDEXPR991 = new BitSet(new long[]{0x0000C00000000002L});
+    public static final BitSet FOLLOW_set_in_aDDEXPR994 = new BitSet(new long[]{0x000080043E000800L});
+    public static final BitSet FOLLOW_mULTEXPR_in_aDDEXPR1001 = new BitSet(new long[]{0x0000C00000000002L});
+    public static final BitSet FOLLOW_47_in_mOINEXPR1016 = new BitSet(new long[]{0x000080043E000800L});
+    public static final BitSet FOLLOW_aTOM_in_mOINEXPR1018 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_aTOM_in_nOTMOINSEXPR1035 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_aDDEXPR_in_eXPRESSION1046 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_aTOMBIS_in_eXPRESSION21060 = new BitSet(new long[]{0x0001000000000002L});
+    public static final BitSet FOLLOW_sUITE_in_eXPRESSION21063 = new BitSet(new long[]{0x0001000000000002L});
+    public static final BitSet FOLLOW_48_in_sUITE1076 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_IDF_in_sUITE1079 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_34_in_sUITE1082 = new BitSet(new long[]{0x0000800C3E000800L});
+    public static final BitSet FOLLOW_eXPRESSION_in_sUITE1086 = new BitSet(new long[]{0x0000010800000000L});
+    public static final BitSet FOLLOW_40_in_sUITE1089 = new BitSet(new long[]{0x000080043E000800L});
+    public static final BitSet FOLLOW_eXPRESSION_in_sUITE1092 = new BitSet(new long[]{0x0000010800000000L});
+    public static final BitSet FOLLOW_35_in_sUITE1098 = new BitSet(new long[]{0x0000000000000002L});
 
 }
