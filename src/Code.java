@@ -99,6 +99,12 @@ public class Code {
 						String forCode = generateFor(t2);
 						code += forCode;
 					}
+					else{
+						if (t2.getText().equals("if")){
+							String ifCode = generateIf(t2);
+							code += ifCode;
+						}
+					}
 				}
 			}
 		}
