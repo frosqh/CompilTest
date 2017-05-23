@@ -103,22 +103,6 @@ public class TDS {
 			currentScope = temp;
 			//System.out.println("On est maintenant dans " + currentScope.getOrigin());
 			return 1;
-		case "then" : // On est dans la premi�re branche d'un If
-			temp = new Scope("then", currentScope, "Then");
-			currentScope.addScopeInner(temp);
-			currentScope = temp;
-			main2.ifCount++;
-			//System.out.println("On est maintenant dans " + currentScope.getOrigin());
-
-			return 1;
-		case "else" : // On est dans la seconde branche d'un If
-			temp = new Scope("else", currentScope, "Else");
-			currentScope.addScopeInner(temp);
-			currentScope = temp;
-			main2.elseCount++;
-			//System.out.println("On est maintenant dans " + currentScope.getOrigin());
-
-			return 1;
 		case "for" : //On est dans un for
 			main2.forCount++;
 			temp = new Scope("for", currentScope, "for"+main2.forCount );

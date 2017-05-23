@@ -4,6 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import org.antlr.runtime.tree.BaseTree;
 import org.antlr.runtime.tree.CommonTree;
@@ -135,6 +136,7 @@ public class Code {
 			return generateValue(t2);
 		}
 		else{
+			System.out.println(t2.getText());
 			switch (t2.getText()){
 			case "+":
 				return generateAdd(t2);
@@ -162,74 +164,68 @@ public class Code {
 	}
 	
 	public String generateDiff(BaseTree t2) throws Exception{
-		/*TODO Modifier le tout*/
 		BaseTree leftSide = (BaseTree) t2.getChild(0);
 		BaseTree rightSide = (BaseTree) t2.getChild(1);
 		String code1 = generateOperation(leftSide);
 		String code = code1+"stw R0, (R15)+\n\n";
 		String code2 = generateOperation(rightSide);
 		code += code2;
-		code += "ldw R1, -(R15)\n\n" + "add R1, R0, R0\n\n";
+		code += "ldw R1, -(R15)\n\n" + "CMP R1, R0\n\n";
 		return code;
 	}
 	
 	public String generateG(BaseTree t2) throws Exception{
-		/*TODO Modifier le tout*/
 		BaseTree leftSide = (BaseTree) t2.getChild(0);
 		BaseTree rightSide = (BaseTree) t2.getChild(1);
 		String code1 = generateOperation(leftSide);
 		String code = code1+"stw R0, (R15)+\n\n";
 		String code2 = generateOperation(rightSide);
 		code += code2;
-		code += "ldw R1, -(R15)\n\n" + "add R1, R0, R0\n\n";
+		code += "ldw R1, -(R15)\n\n" + "CMP R1, R0\n\n";
 		return code;
 	}
 	
 	public String generateGeq(BaseTree t2) throws Exception{
-		/*TODO Modifier le tout*/
 		BaseTree leftSide = (BaseTree) t2.getChild(0);
 		BaseTree rightSide = (BaseTree) t2.getChild(1);
 		String code1 = generateOperation(leftSide);
 		String code = code1+"stw R0, (R15)+\n\n";
 		String code2 = generateOperation(rightSide);
 		code += code2;
-		code += "ldw R1, -(R15)\n\n" + "add R1, R0, R0\n\n";
+		code += "ldw R1, -(R15)\n\n" + "CMP R1, R0\n\n";
 		return code;
 	}
 	
 	public String generateEq(BaseTree t2) throws Exception{
-		/*TODO Modifier le tout*/
 		BaseTree leftSide = (BaseTree) t2.getChild(0);
 		BaseTree rightSide = (BaseTree) t2.getChild(1);
 		String code1 = generateOperation(leftSide);
 		String code = code1+"stw R0, (R15)+\n\n";
 		String code2 = generateOperation(rightSide);
 		code += code2;
-		code += "ldw R1, -(R15)\n\n" + "add R1, R0, R0\n\n";
+		code += "ldw R1, -(R15)\n\n" + "CMP R1, R0\n\n";
 		return code;
 	}
 	
 	public String generateLeq(BaseTree t2) throws Exception{
-		/*TODO Modifier le tout*/
 		BaseTree leftSide = (BaseTree) t2.getChild(0);
 		BaseTree rightSide = (BaseTree) t2.getChild(1);
 		String code1 = generateOperation(leftSide);
 		String code = code1+"stw R0, (R15)+\n\n";
 		String code2 = generateOperation(rightSide);
 		code += code2;
-		code += "ldw R1, -(R15)\n\n" + "add R1, R0, R0\n\n";
+		code += "ldw R1, -(R15)\n\n" + "CMP R1, R0\n\n";
 		return code;
 	}
 	
 	public String generateL(BaseTree t2) throws Exception{
-		/*TODO Modifier le tout*/
 		BaseTree leftSide = (BaseTree) t2.getChild(0);
 		BaseTree rightSide = (BaseTree) t2.getChild(1);
 		String code1 = generateOperation(leftSide);
 		String code = code1+"stw R0, (R15)+\n\n";
 		String code2 = generateOperation(rightSide);
 		code += code2;
-		code += "ldw R1, -(R15)\n\n" + "add R1, R0, R0\n\n";
+		code += "ldw R1, -(R15)\n\n" + "CMP R1, R0\n\n";
 		return code;
 	}
 	
@@ -247,12 +243,19 @@ public class Code {
 	public String generateSub(BaseTree t2) throws Exception{
 		BaseTree leftSide = (BaseTree) t2.getChild(0);
 		BaseTree rightSide = (BaseTree) t2.getChild(1);
-		String code1 = generateOperation(leftSide);
-		String code = code1+"stw R0, (R15)+\n\n";
-		String code2 = generateOperation(rightSide);
-		code += code2;
-		code += "ldw R1, -(R15)\n\n" + "sub R1, R0, R0\n\n";
-		return code;
+		if (rightSide == null){
+			String code1 = generateOperation(leftSide);
+			String code2 = "LDW R2, #-1\n\n";
+			return code1+code2+"%UL R0,R2,R0 \n\n";
+		}
+		else{
+			String code1 = generateOperation(leftSide);
+			String code = code1+"stw R0, (R15)+\n\n";
+			String code2 = generateOperation(rightSide);
+			code += code2;
+			code += "ldw R1, -(R15)\n\n" + "sub R1, R0, R0\n\n";
+			return code;
+		}
 	}
 	
 	public String generateFor(BaseTree t2) throws NumberFormatException, Exception{
@@ -343,6 +346,60 @@ public class Code {
 	        if(Character.digit(s.charAt(i),radix) < 0) return false;
 	    }
 	    return true;
+	}
+	public String generateIf(BaseTree t2) throws Exception{
+		String code = "";
+		Tree bool = t2.getChild(0);
+		BaseTree then = (BaseTree) t2.getChild(1);
+		code += generateOperation((BaseTree) bool);
+		ifCount++;
+		int ic = ifCount;
+		String jump="";
+		switch(bool.getText()){
+		case ">":
+			jump="JLE ";
+			break;
+		case ">=":
+			jump="JLW ";
+			break;
+		case "<":
+			jump = "JGE ";
+			break;
+		case "<=":
+			jump = "JGT ";
+			break;
+		case "==":
+			jump = "JNE ";
+			break;
+		case "!=":
+			jump = "JEQ ";
+			break;
+		}
+		String labelif = "if"+ic;
+		
+		code += jump + "#"+labelif+"-$-2\n\n";
+		
+		List<BaseTree> l2 = then.getChildren();
+		
+		for (BaseTree t : l2){
+			code += generbis(t);
+		}
+		
+		if (t2.getChildCount()>2){
+			code += "JMP #else"+ic+"-$-2\n\n";
+			code += labelif+"\n\n";
+			BaseTree elseT = (BaseTree) t2.getChild(2);
+			List<BaseTree> l3 = elseT.getChildren();
+			
+			for (BaseTree t : l2){
+				code += generbis(t);
+			}
+			code += "else"+ic+"\n\n";
+		}
+		else{
+			code += labelif+"\n\n";
+		}
+		return code;
 	}
 }
 
