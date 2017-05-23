@@ -11,7 +11,12 @@ public class main2 {
 	
 	public static int i;
 	public static TDS Tds;
-	public static void main(String[] args) throws IOException, RecognitionException{
+	public static int forCount = 0;
+	public static int ifCount = 0;
+	public static int elseCount = 0;
+	
+	
+	public static void main(String[] args) throws Exception{
 		
 		CharStream input = null;
 		String output = "./code";
@@ -33,11 +38,11 @@ public class main2 {
 		Tds = new TDS();
 		parseTree(t, Tds, false);
 		System.out.println(Tds);
-		generateCode(t, output);
+		generateCode(t, output, Tds.getScope());
 	}
 
-	private static void generateCode(CommonTree t, String output) {
-		Code codeGen = new Code(output, Tds);
+	private static void generateCode(CommonTree t, String output, Scope sc) throws Exception {
+		Code codeGen = new Code(output, Tds, sc);
 		codeGen.generate(t);
 		try {
 			codeGen.save();

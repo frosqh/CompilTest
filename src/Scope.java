@@ -12,6 +12,7 @@ public class Scope {
 	private HashMap<String, ArrayList<String>> table;
 	private HashMap<String, Scope> secondTable;
 	private String name;
+	private int deplacement;
 	
 	public String getName() {
 		return name;
@@ -56,11 +57,19 @@ public class Scope {
 	public Scope(String id, Scope anc, String string){
 		table = new HashMap<String, ArrayList<String>>();
 		secondTable = new HashMap<String, Scope>();
+		if (anc != null)
+			deplacement = anc.getDeplacement();
+		else
+			deplacement = 2;
 		setOrigin(id);
 		setAncestor(anc);
 		setName(string);
 	}
 	
+	private int getDeplacement() {
+		return deplacement;
+	}
+
 	public ArrayList<Scope> getInnerScopeList() {
 		return innerScopeList;
 	}
@@ -73,6 +82,7 @@ public class Scope {
 		secondTable = new HashMap<String, Scope>();
 		table = new HashMap<String, ArrayList<String>>();
 		setOrigin(id);
+		deplacement = 2;
 	}
 	
 	public HashMap<String, Scope> getSecondTable() {
@@ -104,10 +114,16 @@ public class Scope {
 				System.out.println("Warning : \"Var name surcharged : " + name+"\"");
 			}
 			checkType(type);
+			int deplacement = 0;
+			System.out.println(type);
+			if (type.equals("int"))
+				deplacement = this.deplacement;
+				this.deplacement+=2;
 			ArrayList<String> param = new ArrayList<String>();
 			
 			param.add(string);
 			param.add(type);
+			param.add(String.valueOf(deplacement));
 			param.add("param");
 			
 			table.put(name, param);
@@ -128,10 +144,15 @@ public class Scope {
 			String type = children.get(1).toString();
 			
 			checkType(type);
+			int deplacement = 0;
+			if (type.equals("int"))
+				deplacement = this.deplacement;
+				this.deplacement+=2;
 			
 			ArrayList<String> param = new ArrayList<String>();
 			param.add(string);
 			param.add(type);
+			param.add(String.valueOf(deplacement));
 			
 			table.put(name, param);
 			main2.Tds.getListe().put(name, "var");
@@ -262,6 +283,27 @@ public class Scope {
 		else{
 			return false;
 		}
+	}
+
+	public ArrayList<String> find(String text) throws Exception {
+		if (isIn(text)){
+			return getTable().get(text);
+		}
+		else{
+			return getFromAncestor(text);
+		}
+		
+	}
+
+	public void addManual(String string, String string2) {
+		int deplacement = this.deplacement;
+		this.deplacement+=2;
+		ArrayList<String> param = new ArrayList<String>();
+		param.add(string);
+		param.add("int");
+		param.add(String.valueOf(deplacement));
+		table.put(string2, param);
+		
 	}
 
 }

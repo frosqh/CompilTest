@@ -107,6 +107,7 @@ public class TDS {
 			temp = new Scope("then", currentScope, "Then");
 			currentScope.addScopeInner(temp);
 			currentScope = temp;
+			main2.ifCount++;
 			//System.out.println("On est maintenant dans " + currentScope.getOrigin());
 
 			return 1;
@@ -114,16 +115,20 @@ public class TDS {
 			temp = new Scope("else", currentScope, "Else");
 			currentScope.addScopeInner(temp);
 			currentScope = temp;
+			main2.elseCount++;
 			//System.out.println("On est maintenant dans " + currentScope.getOrigin());
 
 			return 1;
-		case "do" : //On est dans un for
-			temp = new Scope("do", currentScope, "Do" );
+		case "for" : //On est dans un for
+			main2.forCount++;
+			temp = new Scope("for", currentScope, "for"+main2.forCount );
 			currentScope.addScopeInner(temp);
 			currentScope = temp;
 			//System.out.println("On est maintenant dans " + currentScope.getOrigin());
 
 			return 1;
+		case "in":
+			currentScope.addManual("var", "bornefor"+main2.forCount);
 		default: //On sait pas o� on est
 			return 0;
 		}
