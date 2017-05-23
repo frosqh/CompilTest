@@ -20,6 +20,7 @@ public class Code {
 	private int forCount = 0;
 	private int ifCount = 0;
 	private int elseCount = 0;
+	private int innerCount = 0;
 	
 	public Code(String toSave, TDS tds, Scope sc2){
 		sc = sc2;
@@ -38,7 +39,7 @@ public class Code {
 	
 	public boolean save() throws Exception{
 		File out = new File(output);
-		System.out.println(code);
+		//System.out.println(code);
 		code += "TRP #EXIT_EXC\n\n"
 				+ "LDW R14, #EXIT_EXC\n\n"
 				+ "TRP R14\n\n";
@@ -65,6 +66,7 @@ public class Code {
 			
 			if (l != null){
 				for (BaseTree t2 : l){
+					//System.out.println(t2.getText());
 					code += generbis(t2);
 				}
 			}	
@@ -104,6 +106,27 @@ public class Code {
 						if (t2.getText().equals("if")){
 							String ifCode = generateIf(t2);
 							code += ifCode;
+						}
+						else{
+							if (t2.getText().equals("Inner")){
+
+								int ic = innerCount;
+								innerCount++;
+								
+								ArrayList<Scope> l = sc.getInnerScopeList();
+								
+								for (Scope s : l){
+									//System.out.println("Parcours  : " + s.getName());
+									if (s.getName().equals("Inner"+ic)){
+										sc  = s;
+									}
+								}
+								
+								List<BaseTree> l2 = t2.getChildren();
+								for (BaseTree t : l2){
+									code += generbis(t);
+								}
+							}
 						}
 					}
 				}
@@ -270,6 +293,7 @@ public class Code {
 				sc  = s;
 			}
 		}
+		//System.out.println(sc.getName());
 		int deplacementBorneSup = Integer.valueOf(sc.find("bornefor"+fc).get(2));
 		//TODO A modifier si l'on veut pouvoir gérer des expressions dans les for
 		int borneInf = Integer.valueOf(in.getChild(1).getText());
@@ -282,7 +306,7 @@ public class Code {
 		code += "LDW R0, (R13)-"+deplacementVar+"\n\n";
 		code += "LDW R1, (R13)-"+deplacementBorneSup+"\n\n";
 		code += "CMP R0, R1 \n\n";
-		code += "JGE #endfor"+fc+"-$-2\n\n";
+		code += "JGT #endfor"+fc+"-$-2\n\n";
 		java.util.List<BaseTree> l2 = doo.getChildren();
 		for (BaseTree t : l2){
 			code += generbis((CommonTree) t);

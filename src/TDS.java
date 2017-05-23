@@ -13,13 +13,20 @@ public class TDS {
 	private String[] util = {"DoExpr", "Void", "Inner", "inherit", "class", "var", "method", "if", "then", "fi", "for", "in", 
 			"do", "end", "write", "read", "return", "this", "super", "new", "int", "String", ":=", "+", "-", "*", "/", ">", "<", "<=", "==", ">=", "else"};
 	private String[] op = {"+", "-", "*", ">", "<", "<=", "==", ">="};
+	private int innerCount;
 	
 	public TDS(){
 		currentScope = new Scope("General", null, "General");
 	}
 	
 	public void goBack(){
+		if (currentScope.getOrigin().equals("class")){
+			for (String t : currentScope.getTable().keySet()){
+					currentScope.setDeplacementDynamique(2);
+			}
+		}
 		currentScope = currentScope.getAncestor();
+		
 		//System.out.println("On est maintenant dans " + currentScope.getOrigin());
 	}
 	
@@ -49,9 +56,9 @@ public class TDS {
 					}
 					if (scope.isIn(tree.getChild(0).getText())){
 						Scope sc2 = scope.getSecondTable().get(tree.getChild(0).getText());
+						currentScope.setDeplacement(sc2.getDeplacement());
 						for (String k : sc2.getTable().keySet()){
 							ArrayList<String> b = sc2.getTable().get(k);
-							System.out.println("b :" +  b + "-----------------");
 							b.add("inherit");
 							currentScope.getTable().put(k, b);
 						}
@@ -98,7 +105,7 @@ public class TDS {
 				}
 			}
 		case "Inner" : //On est dans un bloc interne
-			temp = new Scope("Inner", currentScope, "Inner");
+			temp = new Scope("Inner", currentScope, "Inner"+innerCount);
 			currentScope.addScopeInner(temp);
 			currentScope = temp;
 			//System.out.println("On est maintenant dans " + currentScope.getOrigin());
@@ -278,7 +285,6 @@ public class TDS {
 						Scope scope = currentScope;
 						boolean b = false;
 						while (!scope.getOrigin().equals("General")){
-							System.out.println(scope.getOrigin() + scope.getName());
 							if (scope.getOrigin().equals("class")){
 								b = true;
 								break;

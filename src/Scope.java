@@ -66,7 +66,7 @@ public class Scope {
 		setName(string);
 	}
 	
-	private int getDeplacement() {
+	public int getDeplacement() {
 		return deplacement;
 	}
 
@@ -230,6 +230,10 @@ public class Scope {
 		}
 	}
 
+	public void setDeplacement(int deplacement) {
+		this.deplacement = deplacement;
+	}
+
 	public void addSolo(String string, Tree child) throws Exception {
 		addSolo(string, child, false);
 		
@@ -242,7 +246,7 @@ public class Scope {
 			param.add(string);
 			if (b)
 				param.add("inherit");
-			
+			param.add(String.valueOf(main2.deplacementDynamique));
 			table.put(name, param);
 			main2.Tds.getListe().put(name, "class");
 		}
@@ -303,6 +307,11 @@ public class Scope {
 		param.add("int");
 		param.add(String.valueOf(deplacement));
 		table.put(string2, param);
+		
+	}
+
+	public void setDeplacementDynamique(int i) {
+		main2.deplacementDynamique += (i);
 		
 	}
 

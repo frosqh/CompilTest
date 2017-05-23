@@ -14,6 +14,7 @@ public class main2 {
 	public static int forCount = 0;
 	public static int ifCount = 0;
 	public static int elseCount = 0;
+	public static int deplacementDynamique = 0;
 	
 	
 	public static void main(String[] args) throws Exception{
