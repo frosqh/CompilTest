@@ -227,27 +227,32 @@ public class TDS {
 						}
 					}}
 				}
-				if (Arrays.asList(op).contains(t2.getText())){
-					check(t2, aST);
+				if (aST.getText().equals("-") && t2 == null){
+					
 				}
 				else{
-					if (t2.getText().matches("^-?\\d+$")){} 
+					if (Arrays.asList(op).contains(t2.getText())){
+						check(t2, aST);
+					}
 					else{
-						if (currentScope.isIn(t2.getText())){
-							ArrayList<String> k = currentScope.getTable().get(t2.getText());
-							if (!k.get(1).equals("int")){
-								throw new Exception (t2.getText() + " is not an Integer");
-							}
-						}
+						if (t2.getText().matches("^-?\\d+$")){} 
 						else{
-							if (currentScope.isInAncestor(t2.getText())){
-								ArrayList<String> k = currentScope.getFromAncestor(t2.getText());
+							if (currentScope.isIn(t2.getText())){
+								ArrayList<String> k = currentScope.getTable().get(t2.getText());
 								if (!k.get(1).equals("int")){
 									throw new Exception (t2.getText() + " is not an Integer");
 								}
 							}
 							else{
-								throw new Exception(t2.getText() + " is not an Integer");
+								if (currentScope.isInAncestor(t2.getText())){
+									ArrayList<String> k = currentScope.getFromAncestor(t2.getText());
+									if (!k.get(1).equals("int")){
+										throw new Exception (t2.getText() + " is not an Integer");
+									}
+								}
+								else{
+									throw new Exception(t2.getText() + " is not an Integer");
+								}
 							}
 						}
 					}

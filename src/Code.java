@@ -136,7 +136,6 @@ public class Code {
 			return generateValue(t2);
 		}
 		else{
-			System.out.println(t2.getText());
 			switch (t2.getText()){
 			case "+":
 				return generateAdd(t2);
@@ -246,7 +245,7 @@ public class Code {
 		if (rightSide == null){
 			String code1 = generateOperation(leftSide);
 			String code2 = "LDW R2, #-1\n\n";
-			return code1+code2+"%UL R0,R2,R0 \n\n";
+			return code1+code2+"MUL R0,R2,R0 \n\n";
 		}
 		else{
 			String code1 = generateOperation(leftSide);
@@ -391,7 +390,7 @@ public class Code {
 			BaseTree elseT = (BaseTree) t2.getChild(2);
 			List<BaseTree> l3 = elseT.getChildren();
 			
-			for (BaseTree t : l2){
+			for (BaseTree t : l3){
 				code += generbis(t);
 			}
 			code += "else"+ic+"\n\n";
