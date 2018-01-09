@@ -1,0 +1,57 @@
+class Animal =
+(
+    var name : int;
+    
+    method setName(n : int)
+    {
+        name := n;
+    }
+    
+    method whoami()
+    {
+        write name;
+    }
+)
+
+class Dog inherit Animal =
+(
+    var type : int;
+
+    method setType(n : int)
+    {
+        type := n;
+    }
+
+    method whoami()
+    {
+        write name;
+        write type;
+    }
+)
+
+class Cat inherit Animal =
+(
+
+    var type : int;
+    method whoami()
+    {
+        do super.whoami();
+        write type;
+    }
+
+    method setType(n : int)
+    {
+        type := n;
+    }
+)
+
+var a1 : Animal;
+var a2 : Animal;
+
+a1 := new Dog;
+do a1.setName("boo");
+a2 := new Cat;
+do a2.setName("foo");
+
+do a1.whoami();
+do a2.whoami();
