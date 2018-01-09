@@ -4,12 +4,11 @@ import org.antlr.runtime.tree.BaseTree;
 import org.antlr.runtime.tree.Tree;
 
 public class TDS {
-	private HashMap<String, String> liste = new HashMap<String, String>();
+	private HashMap<String, String> liste = new HashMap<>();
 	private Scope currentScope;
-	private Scope temp;
-	private String[] util = {"DoExpr", "Void", "Inner", "inherit", "class", "var", "method", "if", "then", "fi", "for", "in", 
+	private final String[] util = {"DoExpr", "Void", "Inner", "inherit", "class", "var", "method", "if", "then", "fi", "for", "in",
 			"do", "end", "write", "read", "return", "this", "super", "new", "int", "String", ":=", "+", "-", "*", "/", ">", "<", "<=", "==", ">=", "else"};
-	private String[] op = {"+", "-", "*", ">", "<", "<=", "==", ">="};
+	private final String[] op = {"+", "-", "*", ">", "<", "<=", "==", ">="};
 	private int innerCount;
 	
 	public TDS(){
@@ -35,16 +34,18 @@ public class TDS {
 				currentScope.add("var", (List<BaseTree>) t.getChildren());
 				return 0;
 			} catch (Exception e) {
-				System.out.println("Error : \""+ e.getMessage()+"\"");
+				System.err.println("Error : \""+ e.getMessage()+"\"at "+t.getLine()+":"+t.getCharPositionInLine());
+				System.exit(-1);
 				//e.printStackTrace();
 			}
 			return 2;
 		case "class" : //On est dans une cr�ation de classe
+			Scope temp;
 			try {
 				Tree tree = t.getChild(1);
 				if (tree.getText().equals("inherit")){
 					currentScope.addSolo("class", t.getChild(0), true);
-					temp= new Scope("class", currentScope, t.getChild(0).toString());
+					temp = new Scope("class", currentScope, t.getChild(0).toString());
 					currentScope.addScopeNotInner(t.getChild(0).toString(), temp);
 					currentScope = temp;
 					Scope scope = currentScope;
@@ -67,14 +68,15 @@ public class TDS {
 				}
 				else{
 					currentScope.addSolo("class", t.getChild(0));
-					temp= new Scope("class", currentScope, t.getChild(0).toString());
+					temp = new Scope("class", currentScope, t.getChild(0).toString());
 					currentScope.addScopeNotInner(t.getChild(0).toString(), temp);
 					currentScope = temp;
 				}
 				//System.out.println("On est maintenant dans " + currentScope.getOrigin());
 				return 1;
 			} catch (Exception e) {
-				System.out.println("Error : \""+ e.getMessage()+"\"");
+				System.err.println("Error : \""+ e.getMessage()+"\"at "+t.getLine()+":"+t.getCharPositionInLine());
+				System.exit(-1);
 				//e.printStackTrace();
 			}
 			return 2;
@@ -92,7 +94,8 @@ public class TDS {
 				//System.out.println("On est maintenant dans " + currentScope.getOrigin());
 				return 1;
 			} catch (Exception e) {
-				System.out.println("Error : \""+ e.getMessage()+"\"");
+				System.err.println("Error : \""+ e.getMessage()+"\"at "+t.getLine()+":"+t.getCharPositionInLine());
+				System.exit(-1);
 				//e.printStackTrace();
 				if (e.getMessage().startsWith("Var")){
 					return 1;
@@ -143,7 +146,7 @@ public class TDS {
 					//System.out.println(ancetre);
 					if (!liste.get(ancetre).equals("method")){
 						
-						ArrayList<String> ancetreb = null;
+						ArrayList<String> ancetreb;
 						if (currentScope.isIn(ancetre)){
 							
 							ancetreb = currentScope.getTable().get(ancetre);
@@ -331,7 +334,7 @@ public class TDS {
 		}
 	}
 	
-	public int getNumber(String str, char c){
+	private int getNumber(String str, char c){
 		char tempc;
 		int charCount = 0;
 		for( int i = 0; i < str.length( ); i++ )

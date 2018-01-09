@@ -8,7 +8,7 @@ import org.antlr.runtime.tree.Tree;
 public class Scope {
 	private Scope ancestor = null;
 	private String origin;
-	private ArrayList<Scope> innerScopeList = new ArrayList<Scope>();
+	private ArrayList<Scope> innerScopeList = new ArrayList<>();
 	private HashMap<String, ArrayList<String>> table;
 	private HashMap<String, Scope> secondTable;
 	private String name;
@@ -26,19 +26,19 @@ public class Scope {
 		if (table.isEmpty()){
 			return null;
 		}
-		String tabu = "";
+		StringBuilder tabu = new StringBuilder();
 		for (int i =0 ; i< tab; i++){
-			tabu += "    ";
+			tabu.append("    ");
 		}
-		String s = tabu.substring(0,  tabu.length()-4) + "Scope " + name + "\n";
+		StringBuilder s = new StringBuilder(tabu.substring(0, tabu.length() - 4) + "Scope " + name + "\n");
 		for (String k : table.keySet()){
-			s += tabu + k + " : " + table.get(k) + "\n";
+			s.append(tabu).append(k).append(" : ").append(table.get(k)).append("\n");
 		}
 		if (secondTable != null){
 			for (String k : secondTable.keySet()){
 				String temp = secondTable.get(k).toString(tab+1);
 				if (temp != null){
-					s +=temp+ "\n";
+					s.append(temp).append("\n");
 				}
 			}
 		}
@@ -46,16 +46,16 @@ public class Scope {
 			for (Scope sc : innerScopeList){
 				String temp =sc.toString(tab+1);
 				if (temp != null){
-					s +=temp+ "\n";
+					s.append(temp).append("\n");
 				}
 			}
 		}
-		return s;
+		return s.toString();
 	}
 	
 	public Scope(String id, Scope anc, String string){
-		table = new HashMap<String, ArrayList<String>>();
-		secondTable = new HashMap<String, Scope>();
+		table = new HashMap<>();
+		secondTable = new HashMap<>();
 		if (anc != null)
 			deplacement = anc.getDeplacement();
 		else
@@ -78,8 +78,8 @@ public class Scope {
 	}
 
 	public Scope(String id){
-		secondTable = new HashMap<String, Scope>();
-		table = new HashMap<String, ArrayList<String>>();
+		secondTable = new HashMap<>();
+		table = new HashMap<>();
 		setOrigin(id);
 		deplacement = 2;
 	}
@@ -110,15 +110,14 @@ public class Scope {
 		String type = child.getChild(0).getText();
 		if (!isIn(name)){
 			if (isInAncestor(name)){
-				System.out.println("Warning : \"Var name surcharged : " + name+"\"");
+				System.out.println("Warning : \"Var name surcharged : " + name+"\" at "+child.getLine()+":"+child.getCharPositionInLine());
 			}
-			checkType(type);
+			checkType(type, child.getLine(), child.getCharPositionInLine());
 			int deplacement = 0;
-			System.out.println(type);
 			if (type.equals("int"))
 				deplacement = this.deplacement;
 				this.deplacement+=2;
-			ArrayList<String> param = new ArrayList<String>();
+			ArrayList<String> param = new ArrayList<>();
 			
 			param.add(string);
 			param.add(type);
@@ -129,26 +128,25 @@ public class Scope {
 			main2.Tds.getListe().put(name, "var");
 		}
 		else{
-			throw new Exception("Var name already used : " + name);
+			throw new Exception("Var name already used : " + name +" at "+child.getLine()+":"+child.getCharPositionInLine());
 		}
 	}
 
 	public void add(String string, List<BaseTree> children) throws Exception {
 		String name = children.get(0).toString();
-		//System.out.println(name+" "+isIn(name));
 		if (!isIn(name)){
 			if (isInAncestor(name)){
-				System.out.println("Warning : \"Var name surcharged : " + name+"\"");
+				System.out.println("Warning : \"Var name surcharged : " + name+"\" at "+children.get(0).getLine()+":"+children.get(0).getCharPositionInLine());
 			}
 			String type = children.get(1).toString();
-			
-			checkType(type);
+
+			checkType(type, children.get(0).getLine(), children.get(0).getCharPositionInLine());
 			int deplacement = 0;
 			if (type.equals("int"))
 				deplacement = this.deplacement;
 				this.deplacement+=2;
 			
-			ArrayList<String> param = new ArrayList<String>();
+			ArrayList<String> param = new ArrayList<>();
 			param.add(string);
 			param.add(type);
 			param.add(String.valueOf(deplacement));
@@ -157,13 +155,13 @@ public class Scope {
 			main2.Tds.getListe().put(name, "var");
 		}
 		else{
-			throw new Exception("Var name already used : " + name);
+			throw new Exception("Var name already used : " + name  +"at "+children.get(0).getLine()+":"+children.get(0).getCharPositionInLine());
 		}
 		
 		
 	}
 
-	private void checkType(String type) throws Exception {
+	private void checkType(String type, int line, int posLine) throws Exception {
 		if (!type.equals("int") && !type.equals("String")){
 			if (isIn(type)){
 				if (!table.get(type).get(0).equals("class")){
@@ -202,7 +200,7 @@ public class Scope {
 		String name = child.toString();
 		if (!isIn(name)){
 			if (isInAncestor(name)){
-				System.out.println("Warning : \"Method name surcharged : " + name+"\"");
+				System.out.println("Warning : \"Method name surcharged : " + name+"\" at "+child.getLine()+":"+child.getCharPositionInLine());
 			}
 			String returnType;
 			if (child.getChildCount() >0){
@@ -211,7 +209,7 @@ public class Scope {
 			else{
 				returnType = "Void";
 			}
-			ArrayList<String> param = new ArrayList<String>();
+			ArrayList<String> param = new ArrayList<>();
 			param.add(string);
 			param.add(returnType);
 			table.put(name, param);
@@ -221,7 +219,7 @@ public class Scope {
 			if (getTable().get(name).contains("inherit")){
 				getTable().remove(name);
 				addMethod(string, child);
-				System.out.println("Warning : \"Method name surcharged : " + name+"\"");
+				System.out.println("Warning : \"Method name surcharged : " + name+"\" at "+child.getLine()+":"+child.getCharPositionInLine());
 			}
 			else{
 				throw new Exception("Method name already used : " + name);
@@ -241,7 +239,7 @@ public class Scope {
 	public void addSolo(String string, Tree child, boolean b) throws Exception {
 		String name = child.toString();
 		if (!isIn(name)){
-			ArrayList<String> param = new ArrayList<String>();
+			ArrayList<String> param = new ArrayList<>();
 			param.add(string);
 			if (b)
 				param.add("inherit");
@@ -279,14 +277,9 @@ public class Scope {
 		return table.containsKey(name);
 	}
 	
-	public boolean isInAncestor(String name){
-		if (ancestor != null){
-			return ancestor.isIn(name) || ancestor.isInAncestor(name);
-		}
-		else{
-			return false;
-		}
-	}
+	public boolean isInAncestor(String name) {
+        return ancestor != null && (ancestor.isIn(name) || ancestor.isInAncestor(name));
+    }
 
 	public ArrayList<String> find(String text) throws Exception {
 		if (isIn(text)){
@@ -301,7 +294,7 @@ public class Scope {
 	public void addManual(String string, String string2) {
 		int deplacement = this.deplacement;
 		this.deplacement+=2;
-		ArrayList<String> param = new ArrayList<String>();
+		ArrayList<String> param = new ArrayList<>();
 		param.add(string);
 		param.add("int");
 		param.add(String.valueOf(deplacement));

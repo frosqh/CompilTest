@@ -1,11 +1,9 @@
-import java.io.IOException;
 import java.util.List;
 
 import org.antlr.runtime.ANTLRFileStream;
 import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.runtime.CharStream;
 import org.antlr.runtime.CommonTokenStream;
-import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.tree.BaseTree;
 import org.antlr.runtime.tree.CommonTree;
 public class main2 {
@@ -19,8 +17,7 @@ public class main2 {
 	
 	
 	public static void main(String[] args) throws Exception{
-		
-		CharStream input = null;
+		CharStream input;
 		String output = "./code";
 		if (args.length > 0){
 			input = new ANTLRFileStream(args[0]);
@@ -39,18 +36,20 @@ public class main2 {
 		CommonTree t = r.tree;
 		Tds = new TDS();
 		parseTree(t, Tds, false);
-		System.out.println(Tds);
+		//System.out.println(Tds);
 		generateCode(t, output, Tds.getScope());
+		System.exit(0);
 	}
 
 	private static void generateCode(CommonTree t, String output, Scope sc) throws Exception {
-		Code codeGen = new Code(output, Tds, sc);
+		Code codeGen = new Code(output, sc);
 		codeGen.generate(t);
 		try {
 			codeGen.save();
 		} catch (Exception e) {
 			System.out.println("Error : " + e.getMessage());
 			e.printStackTrace();
+			System.exit(-1);
 		}
 	}
 
@@ -63,7 +62,6 @@ public class main2 {
 			//i++;
 			for (BaseTree AST : l){
 				hasChanged = Tds.add(AST);
-				//System.out.println(hasChanged);
 				/*
 				 * Pour chaque arbre, on regarde si c'est un noeud type de l'AST
 				 * Sinon, idf -> dans la TDS ?

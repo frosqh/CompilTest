@@ -12,17 +12,16 @@ import org.antlr.runtime.tree.Tree;
 
 public class Code {
 
-    private String[] op = {"+", "-", "*", ">", "<", "<=", "==", ">=", "!="};
+    private final String[] op = {"+", "-", "*", ">", "<", "<=", "==", ">=", "!="};
     private Scope sc;
     private String code;
-    private String outputFile;
-    private TDS tds;
+    private final String outputFile;
     private int forCount = 0;
     private int ifCount = 0;
-    private int elseCount = 0;
+    //private int elseCount = 0;
     private int innerCount = 0;
 
-    public Code(String toSave, TDS tds, Scope sc2) {  //Initialisation
+    Code(String toSave, Scope sc2) {  //Initialisation
         sc = sc2;
         code = "EXIT_EXC EQU 64\n\n";
         code += "READ_EXC EQU 65\n\n";
@@ -34,10 +33,9 @@ public class Code {
         code += "start debut\n\n";
         code += "\ndebut\n\n";
         outputFile = toSave;
-        this.tds = tds;
     }
 
-    public boolean save() throws Exception { //Finalisation + sauvegarde du code
+    public void save() throws Exception { //Finalisation + sauvegarde du code
         File out = new File(outputFile);
         //System.out.println(code);
         code += "TRP #EXIT_EXC\n\n"
@@ -54,45 +52,45 @@ public class Code {
         }
         s.write(code);
         s.close();
-        return true;
     }
 
-    public boolean generate(CommonTree t) throws Exception { //Launch function
+    public void generate(CommonTree t) throws Exception { //Launch function
+        StringBuilder codeBuilder = new StringBuilder();
         if (t.getText() != null) { //If leaf, generate
-            code += generbis(t);
+            codeBuilder.append(generbis(t));
         } else { //Else, parse
             java.util.List<BaseTree> l = (List<BaseTree>) t.getChildren();
             if (l != null) {
                 for (BaseTree t2 : l) {
-                    code += generbis(t2);
+                    codeBuilder.append(generbis(t2));
                 }
             }
         }
-        return true;
+        code += codeBuilder;
     }
 
     private String generbis(BaseTree t2) throws Exception {
-        String code = "";
+        StringBuilder codeBuilder = new StringBuilder();
         if (t2.getText().equals("DoExpr")) { //Do -> Operation or Procedure
             String co = generateOperation((BaseTree) t2.getChild(0));
-            code += co;
+            codeBuilder.append(co);
         } else {
             if (t2.getText().equals("write")) { //Write -> Operation or Procedure
                 String co = generateOperation((BaseTree) t2.getChild(0));
                 co += "TRP R0\n\n"; //To test/complete, works partially
-                code += co;
+                codeBuilder.append(co);
             } else {
                 if (t2.getText().equals(":=")) { //Affectation
                     String var = generAffect(t2);
-                    code += var;
+                    codeBuilder.append(var);
                 } else {
                     if (t2.getText().equals("for")) { //For
                         String forCode = generateFor(t2);
-                        code += forCode;
+                        codeBuilder.append(forCode);
                     } else {
                         if (t2.getText().equals("if")) { //If
                             String ifCode = generateIf(t2);
-                            code += ifCode;
+                            codeBuilder.append(ifCode);
                         } else {
                             if (t2.getText().equals("Inner")) { //InnerBlock
 
@@ -110,7 +108,7 @@ public class Code {
 
                                 List<BaseTree> l2 = (List<BaseTree>) t2.getChildren(); //parse Block
                                 for (BaseTree t : l2) {
-                                    code += generbis(t);
+                                    codeBuilder.append(generbis(t));
                                 }
                             }
                         }
@@ -118,20 +116,19 @@ public class Code {
                 }
             }
         }
-        return code;
+        return codeBuilder.toString();
     }
 
     private String generAffect(BaseTree t) throws Exception { //Affectation (format "x := op")
-        String code = "";
+        StringBuilder codeBuilder = new StringBuilder();
         Tree t1 = t.getChild(0); //x
         Tree t2 = t.getChild(1); //op
-
         String ope = generateOperation((BaseTree) t2); //Calcul de op
         int deplacement = getDeplacement(t1.getText()); //Récupération du déplacement de x (dans la TDS)
         String var = "STW R0, (R13)-" + deplacement + "\n\n";
-        code += ope;
-        code += var;
-        return code;
+        codeBuilder.append(ope);
+        codeBuilder.append(var);
+        return codeBuilder.toString();
 
     }
 
@@ -140,7 +137,7 @@ public class Code {
         return Integer.valueOf(l.get(2));
     }
 
-    public String generateOperation(BaseTree t2) throws Exception {
+    private String generateOperation(BaseTree t2) throws Exception {
         if (!Arrays.asList(op).contains(t2.getText())) { //Si ce n'est pas une opération
             return generateValue(t2);
         } else {
@@ -170,7 +167,7 @@ public class Code {
         }
     }
 
-    public String generateDiff(BaseTree t2) throws Exception { //!equal (format "op1-op2")
+    private String generateDiff(BaseTree t2) throws Exception { //!equal (format "op1-op2")
         BaseTree leftSide = (BaseTree) t2.getChild(0); //op1
         BaseTree rightSide = (BaseTree) t2.getChild(1); //op2
         String code1 = generateOperation(leftSide); //Calcul de op1
@@ -181,7 +178,7 @@ public class Code {
         return code;
     }
 
-    public String generateG(BaseTree t2) throws Exception { //Same as diff
+    private String generateG(BaseTree t2) throws Exception { //Same as diff
         BaseTree leftSide = (BaseTree) t2.getChild(0);
         BaseTree rightSide = (BaseTree) t2.getChild(1);
         String code1 = generateOperation(leftSide);
@@ -192,7 +189,7 @@ public class Code {
         return code;
     }
 
-    public String generateGeq(BaseTree t2) throws Exception { //Same as diff
+    private String generateGeq(BaseTree t2) throws Exception { //Same as diff
         BaseTree leftSide = (BaseTree) t2.getChild(0);
         BaseTree rightSide = (BaseTree) t2.getChild(1);
         String code1 = generateOperation(leftSide);
@@ -203,7 +200,7 @@ public class Code {
         return code;
     }
 
-    public String generateEq(BaseTree t2) throws Exception { //Still the same x)
+    private String generateEq(BaseTree t2) throws Exception { //Still the same x)
         BaseTree leftSide = (BaseTree) t2.getChild(0);
         BaseTree rightSide = (BaseTree) t2.getChild(1);
         String code1 = generateOperation(leftSide);
@@ -214,7 +211,7 @@ public class Code {
         return code;
     }
 
-    public String generateLeq(BaseTree t2) throws Exception { //Still the same
+    private String generateLeq(BaseTree t2) throws Exception { //Still the same
         BaseTree leftSide = (BaseTree) t2.getChild(0);
         BaseTree rightSide = (BaseTree) t2.getChild(1);
         String code1 = generateOperation(leftSide);
@@ -225,7 +222,7 @@ public class Code {
         return code;
     }
 
-    public String generateL(BaseTree t2) throws Exception { //Still the same
+    private String generateL(BaseTree t2) throws Exception { //Still the same
         BaseTree leftSide = (BaseTree) t2.getChild(0);
         BaseTree rightSide = (BaseTree) t2.getChild(1);
         String code1 = generateOperation(leftSide);
@@ -236,7 +233,7 @@ public class Code {
         return code;
     }
 
-    public String generateAdd(BaseTree t2) throws Exception { //Addition > (format "op1+op2")
+    private String generateAdd(BaseTree t2) throws Exception { //Addition > (format "op1+op2")
         BaseTree leftSide = (BaseTree) t2.getChild(0); //op1
         BaseTree rightSide = (BaseTree) t2.getChild(1); //op2
         String code1 = generateOperation(leftSide); //Calcul de op1
@@ -247,7 +244,7 @@ public class Code {
         return code;
     }
 
-    public String generateSub(BaseTree t2) throws Exception { //Substraction > (format "op1-op2")
+    private String generateSub(BaseTree t2) throws Exception { //Substraction > (format "op1-op2")
         BaseTree leftSide = (BaseTree) t2.getChild(0); //op1
         BaseTree rightSide = (BaseTree) t2.getChild(1); //op2
         if (rightSide == null) { //Soustraction unaire (si op2 = null, i.e format "-op1")
@@ -264,8 +261,8 @@ public class Code {
         }
     }
 
-    public String generateFor(BaseTree t2) throws NumberFormatException, Exception { //For
-        String code = ""; //Init
+    private String generateFor(BaseTree t2) throws Exception { //For
+        StringBuilder codeBuilder = new StringBuilder(); //Init
         BaseTree in = (BaseTree) t2.getChild(0);
         BaseTree doo = (BaseTree) t2.getChild(1);
         ArrayList<Scope> l = sc.getInnerScopeList();
@@ -281,30 +278,30 @@ public class Code {
         //TODO A modifier si l'on veut pouvoir gérer des expressions dans les for
         int borneInf = Integer.valueOf(in.getChild(1).getText());
         int borneSup = Integer.valueOf(in.getChild(2).getText());
-        code += "LDW R0, #" + borneSup + "\n\n";
-        code += "STW R0, (R13)-" + deplacementBorneSup + "\n\n";
-        code += "LDW R0, #" + borneInf + "\n\n";
-        code += "STW R0, (R13)-" + deplacementVar + "\n\n";
-        code += "for" + fc + "\n\n";
-        code += "LDW R0, (R13)-" + deplacementVar + "\n\n";
-        code += "LDW R1, (R13)-" + deplacementBorneSup + "\n\n";
-        code += "CMP R0, R1 \n\n";
-        code += "JGT #endfor" + fc + "-$-2\n\n";
+        codeBuilder.append("LDW R0, #").append(borneSup).append("\n\n");
+        codeBuilder.append("STW R0, (R13)-").append(deplacementBorneSup).append("\n\n");
+        codeBuilder.append("LDW R0, #").append(borneInf).append("\n\n");
+        codeBuilder.append("STW R0, (R13)-").append(deplacementVar).append("\n\n");
+        codeBuilder.append("for").append(fc).append("\n\n");
+        codeBuilder.append("LDW R0, (R13)-").append(deplacementVar).append("\n\n");
+        codeBuilder.append("LDW R1, (R13)-").append(deplacementBorneSup).append("\n\n");
+        codeBuilder.append("CMP R0, R1 \n\n");
+        codeBuilder.append("JGT #endfor").append(fc).append("-$-2\n\n");
         java.util.List<BaseTree> l2 = (List<BaseTree>) doo.getChildren();
         for (BaseTree t : l2) {
-            code += generbis(t);
+            codeBuilder.append(generbis(t));
         }
-        code += "LDW R0, (R13)-" + deplacementVar + "\n\n";
-        code += "ADI R0, R0, #1\n\n";
-        code += "STW R0, (R13)-" + deplacementVar + "\n\n";
-        code += "JMP #for" + fc + "-$-2\n\n";
-        code += "endfor" + fc + "\n\n";
+        codeBuilder.append("LDW R0, (R13)-").append(deplacementVar).append("\n\n");
+        codeBuilder.append("ADI R0, R0, #1\n\n");
+        codeBuilder.append("STW R0, (R13)-").append(deplacementVar).append("\n\n");
+        codeBuilder.append("JMP #for").append(fc).append("-$-2\n\n");
+        codeBuilder.append("endfor").append(fc).append("\n\n");
         sc = sc.getAncestor();
-        return code;
+        return codeBuilder.toString();
 
     }
 
-    public String generateMul(BaseTree t2) throws Exception {
+    private String generateMul(BaseTree t2) throws Exception {
         BaseTree leftSide = (BaseTree) t2.getChild(0);
         BaseTree rightSide = (BaseTree) t2.getChild(1);
         String code1 = generateOperation(leftSide);
@@ -315,7 +312,7 @@ public class Code {
         return code;
     }
 
-    public String generateValue(BaseTree t2) throws Exception {
+    private String generateValue(BaseTree t2) throws Exception {
         String s = t2.getText();
         if (isInteger(s)) {
             return "ldw R0, #" + Integer.parseInt(s) + "\n\n";
@@ -336,27 +333,23 @@ public class Code {
 		return code;
 	}*/
 
-    public static boolean isInteger(String s) {
-        return isInteger(s, 10);
-    }
-
-    public static boolean isInteger(String s, int in) {
+    private static boolean isInteger(String s) {
         if (s.isEmpty()) return false;
         for (int i = 0; i < s.length(); i++) {
             if (i == 0 && s.charAt(i) == '-') {
                 if (s.length() == 1) return false;
                 else continue;
             }
-            if (Character.digit(s.charAt(i), in) < 0) return false;
+            if (Character.digit(s.charAt(i), 10) < 0) return false;
         }
         return true;
     }
 
-    public String generateIf(BaseTree t2) throws Exception {
-        String code = "";
+    private String generateIf(BaseTree t2) throws Exception {
+        StringBuilder codeBuilder = new StringBuilder();
         Tree bool = t2.getChild(0);
         BaseTree then = (BaseTree) t2.getChild(1);
-        code += generateOperation((BaseTree) bool);
+        codeBuilder.append(generateOperation((BaseTree) bool));
         ifCount++;
         int ic = ifCount;
         String jump = "";
@@ -382,27 +375,27 @@ public class Code {
         }
         String labelif = "if" + ic;
 
-        code += jump + "#" + labelif + "-$-2\n\n";
+        codeBuilder.append(jump).append("#").append(labelif).append("-$-2\n\n");
 
         List<BaseTree> l2 = (List<BaseTree>) then.getChildren();
 
         for (BaseTree t : l2) {
-            code += generbis(t);
+            codeBuilder.append(generbis(t));
         }
 
         if (t2.getChildCount() > 2) {
-            code += "JMP #else" + ic + "-$-2\n\n";
-            code += labelif + "\n\n";
+            codeBuilder.append("JMP #else").append(ic).append("-$-2\n\n");
+            codeBuilder.append(labelif).append("\n\n");
             BaseTree elseT = (BaseTree) t2.getChild(2);
             List<BaseTree> l3 = (List<BaseTree>) elseT.getChildren();
 
             for (BaseTree t : l3) {
-                code += generbis(t);
+                codeBuilder.append(generbis(t));
             }
-            code += "else" + ic + "\n\n";
+            codeBuilder.append("else").append(ic).append("\n\n");
         } else {
-            code += labelif + "\n\n";
+            codeBuilder.append(labelif).append("\n\n");
         }
-        return code;
+        return codeBuilder.toString();
     }
 }

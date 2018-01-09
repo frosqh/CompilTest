@@ -56,7 +56,7 @@ public class GrammarLexer extends Lexer {
     // delegates
     // delegators
 
-    public GrammarLexer() {;} 
+    public GrammarLexer() {}
     public GrammarLexer(CharStream input) {
         this(input, new RecognizerSharedState());
     }
