@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashMap;
+import java.util.*;
 
 import org.antlr.runtime.tree.BaseTree;
 import org.antlr.runtime.tree.Tree;
@@ -35,7 +32,7 @@ public class TDS {
 		switch (t.toString()){
 		case "var" : //Si on veut cr�er une variable
 			try {
-				currentScope.add("var",t.getChildren());
+				currentScope.add("var", (List<BaseTree>) t.getChildren());
 				return 0;
 			} catch (Exception e) {
 				System.out.println("Error : \""+ e.getMessage()+"\"");

@@ -30,8 +30,7 @@ public class Scope {
 		for (int i =0 ; i< tab; i++){
 			tabu += "    ";
 		}
-		String s = tabu.substring(0,  tabu.length()-4) + "Scope " + name +"\n";
-		//System.out.println(table);
+		String s = tabu.substring(0,  tabu.length()-4) + "Scope " + name + "\n";
 		for (String k : table.keySet()){
 			s += tabu + k + " : " + table.get(k) + "\n";
 		}

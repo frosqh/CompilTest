@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.util.List;
 
 import org.antlr.runtime.ANTLRFileStream;
 import org.antlr.runtime.ANTLRInputStream;
@@ -56,7 +57,7 @@ public class main2 {
 	private static void parseTree(CommonTree t, TDS Tds, boolean b) {
 		int hasChanged;
 		//System.out.println("On est dans l'arbre : " + t.toStringTree());
-		java.util.List<BaseTree> l = t.getChildren();
+		java.util.List<BaseTree> l = (List<BaseTree>) t.getChildren();
 		//System.out.println(l);
 		if (l != null){
 			//i++;
