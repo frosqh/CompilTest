@@ -5,6 +5,7 @@ import java.util.List;
 import org.antlr.runtime.tree.BaseTree;
 import org.antlr.runtime.tree.Tree;
 
+@SuppressWarnings("unchecked")
 public class Scope {
 	private Scope ancestor = null;
 	private String origin;

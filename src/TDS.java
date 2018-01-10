@@ -25,7 +25,7 @@ public class TDS {
 		
 		//System.out.println("On est maintenant dans " + currentScope.getOrigin());
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public int add(BaseTree t) {
 		switch (t.toString()){

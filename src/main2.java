@@ -6,13 +6,15 @@ import org.antlr.runtime.CharStream;
 import org.antlr.runtime.CommonTokenStream;
 import org.antlr.runtime.tree.BaseTree;
 import org.antlr.runtime.tree.CommonTree;
+
+@SuppressWarnings("unchecked")
 public class main2 {
 	
-	public static int i;
+	//public static int i;
 	public static TDS Tds;
 	public static int forCount = 0;
-	public static int ifCount = 0;
-	public static int elseCount = 0;
+	//public static int ifCount = 0;
+	//public static int elseCount = 0;
 	public static int deplacementDynamique = 0;
 	
 	

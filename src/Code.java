@@ -10,6 +10,7 @@ import org.antlr.runtime.tree.BaseTree;
 import org.antlr.runtime.tree.CommonTree;
 import org.antlr.runtime.tree.Tree;
 
+@SuppressWarnings("unchecked")
 public class Code {
 
     private final String[] op = {"+", "-", "*", ">", "<", "<=", "==", ">=", "!="};
@@ -325,13 +326,6 @@ public class Code {
             }
         }
     }
-	
-	/*public String generateWite(BaseTree t2) throws Exception{
-		String code1 = generateOperation((BaseTree) t2.getChild(0));
-		String code = code1;
-		code += "TRP R0\n\n";
-		return code;
-	}*/
 
     private static boolean isInteger(String s) {
         if (s.isEmpty()) return false;
