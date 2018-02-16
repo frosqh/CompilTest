@@ -2,7 +2,7 @@ grammar newGrammar;
 
 options {
 	backtrack 		= false;
-	k 		= 1;
+	k 		= 2;
 	output 		= AST;
 	ASTLabelType	= CommonTree;
 }
@@ -11,6 +11,7 @@ tokens {
 	BLOCK;
 	NEW;
 	VEC;
+	CALLFUN;
 }
 @members{
 boolean mainFound = false;
@@ -32,7 +33,7 @@ declStruct : 'struct' IDF '{' args? '}' -> ^('struct' IDF args?) //Ok !
 args : IDF ':' type (',' IDF ':' type)* -> (^(IDF type))*//Ok ! 
 ;
 
-declFun : 'fn' (IDF '(' args? ')' ('->' type)? block -> ^('fn' IDF args ^('->' type) block)
+declFun : 'fn' (IDF '(' args? ')' ('->' type)? block -> ^('fn' IDF args ^('->' type)? block)
 	|	{mainFound = true;}MAIN '(' ')' block -> ^('fn' MAIN block))
 ;
 
@@ -45,17 +46,14 @@ block : '{' instruct* '}'-> ^(BLOCK instruct*) //Voir pour le dernier return (si
 ;
 
 
-callFun : '(' expr (',' expr)? ')';
+callFun : '(' expr (',' expr)* ')' -> expr*;
 
 newStruc : '{' IDF ':' bigExpr (',' IDF ':' bigExpr)* '}' -> ^(NEW ^(IDF bigExpr)*);
 
-
-
-
 instruct : 
-expr ';' -> expr
+		expr ';' -> expr
 | ';' -> 
-| 'let' 'mut'? dotIDF '=' bigExpr ';' -> ^('let' 'mut'? ^('=' dotIDF bigExpr)) 
+| 'let' 'mut'? dotIDF (':' type)? '=' bigExpr ';' -> ^('let' 'mut'? (type)? ^('=' dotIDF bigExpr)) 
 | 'while' expr block -> ^('while' expr block)
 | 'return' expr? ';' -> ^('return' expr?)
 | 'loop' block -> ^('loop' block)
@@ -69,50 +67,93 @@ IDF ('.'^ IDF)?;
 ifExpr : 'if' expr block ('else' block )? -> ^('if' expr block ^('else' block)?)
 ;
 
-binExpr : unExpr (BINAIRE^ unExpr)*; 
+binExpr1 : binExpr2 (EQUAL^ binExpr2)*; 
 
-vectExpr : atom ('[' expr ']' ->^(VEC atom expr)
-| );
+binExpr2 : binExpr3(ORBOOL^ binExpr3)*; 
+
+binExpr3 : binExpr4(ANDBOOL^ binExpr4)*; 
+
+binExpr4 : binExpr5((PREV^|OPBOOLEQ^|NEXT^) binExpr5)*; 
+
+binExpr5 : binExpr6(ADDSUB^ binExpr6)*; 
+
+binExpr6 : unExpr ((STAR^|DIV^) unExpr)*; 
 
 
-dotExpr : vectExpr ('.'^ (IDF | 'len' '('')'))?; 
+vectExpr : starExpr ('['^ expr ']'!)?;
 
-unExpr : UNAIRE? dotExpr;
+starExpr 
+	:	 STAR^? moinsExpr;
+	
+moinsExpr 
+	:	 '-'^?atom;
+
+
+dotExpr : vectExpr ('.'^ (IDF | 'len' '('!')'! ))?;
+
+unExpr : (UNAIRE^|EPERLU^)? dotExpr;
 
 atom : INT
 | BOOL
-|	 IDF ((callFun))?
-| '('expr')';
+|	 IDF^ ((callFun))?
+| '('expr')'-> expr; 
 
-expr : 'vec' '!' '[' expr ']'
-| 'print' '!' '(' expr ')'
+expr : 'vec' '!' '[' expr ']' -> ^('vec' expr)
+| 'print' '!' '(' expr ')' -> ^('print' expr)
 | block
-|	binExpr;
+|	binExpr1;
 
 
-bigbinExpr : bigunExpr (BINAIRE bigunExpr)*;
+bigbinExpr1 : bigbinExpr2 (EQUAL^ bigbinExpr2)*; 
+
+bigbinExpr2 : bigbinExpr3(ORBOOL^ bigbinExpr3)*; 
+
+bigbinExpr3 : bigbinExpr4(ANDBOOL^ bigbinExpr4)*; 
+
+bigbinExpr4 : bigbinExpr5((PREV^|OPBOOLEQ^|NEXT^) bigbinExpr5)*; 
+
+bigbinExpr5 : bigbinExpr6(ADDSUB^ bigbinExpr6)*; 
+
+bigbinExpr6 : bigunExpr ((STAR^|DIV^) bigunExpr)*; 
 
 bigvectExpr : bigatom ('[' bigExpr ']')?;
 
-bigdotExpr : bigvectExpr ('.' (IDF | 'len' '('')'))?;
+bigdotExpr : bigvectExpr ('.'^ (IDF | 'len' '('')'))?;
 
-bigunExpr : UNAIRE? bigdotExpr;
+bigunExpr : UNAIRE^? bigdotExpr;
 
 bigExpr 
-:	'vec' '!' '[' expr (',' expr)*']'
-| 'print' '!' '(' expr ')'
+:	'vec' '!' '[' expr (',' expr)*']' -> ^('vec' expr*)
+| 'print' '!' '(' expr ')' -> ^('print' expr)
 | block
-|	bigbinExpr;
+|	bigbinExpr1;
 
 bigatom : INT
 | BOOL
-|	 IDF (newStruc|callFun)?
-| '('bigExpr')';
+|	 IDF^ (newStruc|callFun)?
+| '('bigExpr')' -> bigExpr;
 
 
+EQUAL : '=';
 
-BINAIRE :  '+' | '-' | '*' | '/' | '&&' | '||' | '<' | '<=' | '>' | '>=' | '==' | '!=';
+ORBOOL : '||';
+
+ANDBOOL : '&&';
+
+PREV 	:	 '<';
+NEXT 	:	 '>';
+
+OPBOOLEQ : '=='|'!='|'<='|'>=';
+
+ADDSUB : '+'|'-';
+
+STAR 	:	 '*';
+
+DIV : '/';
+
 UNAIRE :  '!';
+
+EPERLU 	:	 '&';
 
 IF 	:	 'if'
 ;

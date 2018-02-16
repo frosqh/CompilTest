@@ -1,3 +1,0 @@
-fn main5(){
- let i = i+1;
-}

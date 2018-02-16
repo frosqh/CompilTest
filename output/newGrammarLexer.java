@@ -1,4 +1,4 @@
-// $ANTLR null /home/etudiants/raimondi3u/CompilTest/newGrammar.g 2018-01-26 17:37:20
+// $ANTLR null /home/frosqh/workspace/CompilTest/newGrammar.g 2018-02-16 15:47:40
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -8,16 +8,6 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class newGrammarLexer extends Lexer {
 	public static final int EOF=-1;
-	public static final int T__18=18;
-	public static final int T__19=19;
-	public static final int T__20=20;
-	public static final int T__21=21;
-	public static final int T__22=22;
-	public static final int T__23=23;
-	public static final int T__24=24;
-	public static final int T__25=25;
-	public static final int T__26=26;
-	public static final int T__27=27;
 	public static final int T__28=28;
 	public static final int T__29=29;
 	public static final int T__30=30;
@@ -35,20 +25,37 @@ public class newGrammarLexer extends Lexer {
 	public static final int T__42=42;
 	public static final int T__43=43;
 	public static final int T__44=44;
-	public static final int ATTRIBUTE=4;
-	public static final int BINAIRE=5;
-	public static final int BLOCK=6;
-	public static final int BOOL=7;
-	public static final int COMMENT=8;
-	public static final int IDF=9;
-	public static final int IF=10;
-	public static final int INT=11;
-	public static final int MAIN=12;
-	public static final int NEW=13;
-	public static final int STRING=14;
-	public static final int UNAIRE=15;
-	public static final int VEC=16;
-	public static final int WS=17;
+	public static final int T__45=45;
+	public static final int T__46=46;
+	public static final int T__47=47;
+	public static final int T__48=48;
+	public static final int T__49=49;
+	public static final int T__50=50;
+	public static final int T__51=51;
+	public static final int ADDSUB=4;
+	public static final int ANDBOOL=5;
+	public static final int ATTRIBUTE=6;
+	public static final int BLOCK=7;
+	public static final int BOOL=8;
+	public static final int CALLFUN=9;
+	public static final int COMMENT=10;
+	public static final int DIV=11;
+	public static final int EPERLU=12;
+	public static final int EQUAL=13;
+	public static final int IDF=14;
+	public static final int IF=15;
+	public static final int INT=16;
+	public static final int MAIN=17;
+	public static final int NEW=18;
+	public static final int NEXT=19;
+	public static final int OPBOOLEQ=20;
+	public static final int ORBOOL=21;
+	public static final int PREV=22;
+	public static final int STAR=23;
+	public static final int STRING=24;
+	public static final int UNAIRE=25;
+	public static final int VEC=26;
+	public static final int WS=27;
 
 	// delegates
 	// delegators
@@ -63,218 +70,17 @@ public class newGrammarLexer extends Lexer {
 	public newGrammarLexer(CharStream input, RecognizerSharedState state) {
 		super(input,state);
 	}
-	@Override public String getGrammarFileName() { return "/home/etudiants/raimondi3u/CompilTest/newGrammar.g"; }
-
-	// $ANTLR start "T__18"
-	public final void mT__18() throws RecognitionException {
-		try {
-			int _type = T__18;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:2:7: ( '&' )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:2:9: '&'
-			{
-			match('&'); 
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "T__18"
-
-	// $ANTLR start "T__19"
-	public final void mT__19() throws RecognitionException {
-		try {
-			int _type = T__19;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:3:7: ( '(' )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:3:9: '('
-			{
-			match('('); 
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "T__19"
-
-	// $ANTLR start "T__20"
-	public final void mT__20() throws RecognitionException {
-		try {
-			int _type = T__20;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:4:7: ( ')' )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:4:9: ')'
-			{
-			match(')'); 
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "T__20"
-
-	// $ANTLR start "T__21"
-	public final void mT__21() throws RecognitionException {
-		try {
-			int _type = T__21;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:5:7: ( ',' )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:5:9: ','
-			{
-			match(','); 
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "T__21"
-
-	// $ANTLR start "T__22"
-	public final void mT__22() throws RecognitionException {
-		try {
-			int _type = T__22;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:6:7: ( '->' )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:6:9: '->'
-			{
-			match("->"); 
-
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "T__22"
-
-	// $ANTLR start "T__23"
-	public final void mT__23() throws RecognitionException {
-		try {
-			int _type = T__23;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:7:7: ( '.' )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:7:9: '.'
-			{
-			match('.'); 
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "T__23"
-
-	// $ANTLR start "T__24"
-	public final void mT__24() throws RecognitionException {
-		try {
-			int _type = T__24;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:8:7: ( ':' )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:8:9: ':'
-			{
-			match(':'); 
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "T__24"
-
-	// $ANTLR start "T__25"
-	public final void mT__25() throws RecognitionException {
-		try {
-			int _type = T__25;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:9:7: ( ';' )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:9:9: ';'
-			{
-			match(';'); 
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "T__25"
-
-	// $ANTLR start "T__26"
-	public final void mT__26() throws RecognitionException {
-		try {
-			int _type = T__26;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:10:7: ( '<' )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:10:9: '<'
-			{
-			match('<'); 
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "T__26"
-
-	// $ANTLR start "T__27"
-	public final void mT__27() throws RecognitionException {
-		try {
-			int _type = T__27;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:11:7: ( '=' )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:11:9: '='
-			{
-			match('='); 
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "T__27"
+	@Override public String getGrammarFileName() { return "/home/frosqh/workspace/CompilTest/newGrammar.g"; }
 
 	// $ANTLR start "T__28"
 	public final void mT__28() throws RecognitionException {
 		try {
 			int _type = T__28;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:12:7: ( '>' )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:12:9: '>'
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:2:7: ( '(' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:2:9: '('
 			{
-			match('>'); 
+			match('('); 
 			}
 
 			state.type = _type;
@@ -291,10 +97,10 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = T__29;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:13:7: ( '[' )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:13:9: '['
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:3:7: ( ')' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:3:9: ')'
 			{
-			match('['); 
+			match(')'); 
 			}
 
 			state.type = _type;
@@ -311,10 +117,10 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = T__30;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:14:7: ( ']' )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:14:9: ']'
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:4:7: ( ',' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:4:9: ','
 			{
-			match(']'); 
+			match(','); 
 			}
 
 			state.type = _type;
@@ -331,11 +137,10 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = T__31;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:15:7: ( 'break' )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:15:9: 'break'
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:5:7: ( '-' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:5:9: '-'
 			{
-			match("break"); 
-
+			match('-'); 
 			}
 
 			state.type = _type;
@@ -352,10 +157,10 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = T__32;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:16:7: ( 'else' )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:16:9: 'else'
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:6:7: ( '->' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:6:9: '->'
 			{
-			match("else"); 
+			match("->"); 
 
 			}
 
@@ -373,11 +178,10 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = T__33;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:17:7: ( 'fn' )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:17:9: 'fn'
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:7:7: ( '.' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:7:9: '.'
 			{
-			match("fn"); 
-
+			match('.'); 
 			}
 
 			state.type = _type;
@@ -394,11 +198,10 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = T__34;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:18:7: ( 'len' )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:18:9: 'len'
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:8:7: ( ':' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:8:9: ':'
 			{
-			match("len"); 
-
+			match(':'); 
 			}
 
 			state.type = _type;
@@ -415,11 +218,10 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = T__35;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:19:7: ( 'let' )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:19:9: 'let'
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:9:7: ( ';' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:9:9: ';'
 			{
-			match("let"); 
-
+			match(';'); 
 			}
 
 			state.type = _type;
@@ -436,11 +238,10 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = T__36;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:20:7: ( 'loop' )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:20:9: 'loop'
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:10:7: ( '[' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:10:9: '['
 			{
-			match("loop"); 
-
+			match('['); 
 			}
 
 			state.type = _type;
@@ -457,11 +258,10 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = T__37;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:21:7: ( 'mut' )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:21:9: 'mut'
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:11:7: ( ']' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:11:9: ']'
 			{
-			match("mut"); 
-
+			match(']'); 
 			}
 
 			state.type = _type;
@@ -478,10 +278,10 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = T__38;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:22:7: ( 'print' )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:22:9: 'print'
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:12:7: ( 'break' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:12:9: 'break'
 			{
-			match("print"); 
+			match("break"); 
 
 			}
 
@@ -499,10 +299,10 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = T__39;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:23:7: ( 'return' )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:23:9: 'return'
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:13:7: ( 'else' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:13:9: 'else'
 			{
-			match("return"); 
+			match("else"); 
 
 			}
 
@@ -520,10 +320,10 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = T__40;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:24:7: ( 'struct' )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:24:9: 'struct'
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:14:7: ( 'fn' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:14:9: 'fn'
 			{
-			match("struct"); 
+			match("fn"); 
 
 			}
 
@@ -541,10 +341,10 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = T__41;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:25:7: ( 'vec' )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:25:9: 'vec'
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:15:7: ( 'len' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:15:9: 'len'
 			{
-			match("vec"); 
+			match("len"); 
 
 			}
 
@@ -562,10 +362,10 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = T__42;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:26:7: ( 'while' )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:26:9: 'while'
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:16:7: ( 'let' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:16:9: 'let'
 			{
-			match("while"); 
+			match("let"); 
 
 			}
 
@@ -583,10 +383,11 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = T__43;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:27:7: ( '{' )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:27:9: '{'
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:17:7: ( 'loop' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:17:9: 'loop'
 			{
-			match('{'); 
+			match("loop"); 
+
 			}
 
 			state.type = _type;
@@ -603,10 +404,11 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = T__44;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:28:7: ( '}' )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:28:9: '}'
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:18:7: ( 'mut' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:18:9: 'mut'
 			{
-			match('}'); 
+			match("mut"); 
+
 			}
 
 			state.type = _type;
@@ -618,78 +420,279 @@ public class newGrammarLexer extends Lexer {
 	}
 	// $ANTLR end "T__44"
 
-	// $ANTLR start "BINAIRE"
-	public final void mBINAIRE() throws RecognitionException {
+	// $ANTLR start "T__45"
+	public final void mT__45() throws RecognitionException {
 		try {
-			int _type = BINAIRE;
+			int _type = T__45;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:114:9: ( '+' | '-' | '*' | '/' | '&&' | '||' | '<' | '<=' | '>' | '>=' | '==' | '!=' )
-			int alt1=12;
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:19:7: ( 'print' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:19:9: 'print'
+			{
+			match("print"); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "T__45"
+
+	// $ANTLR start "T__46"
+	public final void mT__46() throws RecognitionException {
+		try {
+			int _type = T__46;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:20:7: ( 'return' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:20:9: 'return'
+			{
+			match("return"); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "T__46"
+
+	// $ANTLR start "T__47"
+	public final void mT__47() throws RecognitionException {
+		try {
+			int _type = T__47;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:21:7: ( 'struct' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:21:9: 'struct'
+			{
+			match("struct"); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "T__47"
+
+	// $ANTLR start "T__48"
+	public final void mT__48() throws RecognitionException {
+		try {
+			int _type = T__48;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:22:7: ( 'vec' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:22:9: 'vec'
+			{
+			match("vec"); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "T__48"
+
+	// $ANTLR start "T__49"
+	public final void mT__49() throws RecognitionException {
+		try {
+			int _type = T__49;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:23:7: ( 'while' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:23:9: 'while'
+			{
+			match("while"); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "T__49"
+
+	// $ANTLR start "T__50"
+	public final void mT__50() throws RecognitionException {
+		try {
+			int _type = T__50;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:24:7: ( '{' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:24:9: '{'
+			{
+			match('{'); 
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "T__50"
+
+	// $ANTLR start "T__51"
+	public final void mT__51() throws RecognitionException {
+		try {
+			int _type = T__51;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:25:7: ( '}' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:25:9: '}'
+			{
+			match('}'); 
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "T__51"
+
+	// $ANTLR start "EQUAL"
+	public final void mEQUAL() throws RecognitionException {
+		try {
+			int _type = EQUAL;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:137:7: ( '=' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:137:9: '='
+			{
+			match('='); 
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "EQUAL"
+
+	// $ANTLR start "ORBOOL"
+	public final void mORBOOL() throws RecognitionException {
+		try {
+			int _type = ORBOOL;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:139:8: ( '||' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:139:10: '||'
+			{
+			match("||"); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "ORBOOL"
+
+	// $ANTLR start "ANDBOOL"
+	public final void mANDBOOL() throws RecognitionException {
+		try {
+			int _type = ANDBOOL;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:141:9: ( '&&' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:141:11: '&&'
+			{
+			match("&&"); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "ANDBOOL"
+
+	// $ANTLR start "PREV"
+	public final void mPREV() throws RecognitionException {
+		try {
+			int _type = PREV;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:143:7: ( '<' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:143:10: '<'
+			{
+			match('<'); 
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "PREV"
+
+	// $ANTLR start "NEXT"
+	public final void mNEXT() throws RecognitionException {
+		try {
+			int _type = NEXT;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:144:7: ( '>' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:144:10: '>'
+			{
+			match('>'); 
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "NEXT"
+
+	// $ANTLR start "OPBOOLEQ"
+	public final void mOPBOOLEQ() throws RecognitionException {
+		try {
+			int _type = OPBOOLEQ;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:146:10: ( '==' | '!=' | '<=' | '>=' )
+			int alt1=4;
 			switch ( input.LA(1) ) {
-			case '+':
+			case '=':
 				{
 				alt1=1;
 				}
 				break;
-			case '-':
+			case '!':
 				{
 				alt1=2;
 				}
 				break;
-			case '*':
+			case '<':
 				{
 				alt1=3;
 				}
 				break;
-			case '/':
-				{
-				alt1=4;
-				}
-				break;
-			case '&':
-				{
-				alt1=5;
-				}
-				break;
-			case '|':
-				{
-				alt1=6;
-				}
-				break;
-			case '<':
-				{
-				int LA1_7 = input.LA(2);
-				if ( (LA1_7=='=') ) {
-					alt1=8;
-				}
-
-				else {
-					alt1=7;
-				}
-
-				}
-				break;
 			case '>':
 				{
-				int LA1_8 = input.LA(2);
-				if ( (LA1_8=='=') ) {
-					alt1=10;
-				}
-
-				else {
-					alt1=9;
-				}
-
-				}
-				break;
-			case '=':
-				{
-				alt1=11;
-				}
-				break;
-			case '!':
-				{
-				alt1=12;
+				alt1=4;
 				}
 				break;
 			default:
@@ -699,80 +702,30 @@ public class newGrammarLexer extends Lexer {
 			}
 			switch (alt1) {
 				case 1 :
-					// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:114:12: '+'
-					{
-					match('+'); 
-					}
-					break;
-				case 2 :
-					// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:114:18: '-'
-					{
-					match('-'); 
-					}
-					break;
-				case 3 :
-					// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:114:24: '*'
-					{
-					match('*'); 
-					}
-					break;
-				case 4 :
-					// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:114:30: '/'
-					{
-					match('/'); 
-					}
-					break;
-				case 5 :
-					// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:114:36: '&&'
-					{
-					match("&&"); 
-
-					}
-					break;
-				case 6 :
-					// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:114:43: '||'
-					{
-					match("||"); 
-
-					}
-					break;
-				case 7 :
-					// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:114:50: '<'
-					{
-					match('<'); 
-					}
-					break;
-				case 8 :
-					// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:114:56: '<='
-					{
-					match("<="); 
-
-					}
-					break;
-				case 9 :
-					// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:114:63: '>'
-					{
-					match('>'); 
-					}
-					break;
-				case 10 :
-					// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:114:69: '>='
-					{
-					match(">="); 
-
-					}
-					break;
-				case 11 :
-					// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:114:76: '=='
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:146:12: '=='
 					{
 					match("=="); 
 
 					}
 					break;
-				case 12 :
-					// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:114:83: '!='
+				case 2 :
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:146:17: '!='
 					{
 					match("!="); 
+
+					}
+					break;
+				case 3 :
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:146:22: '<='
+					{
+					match("<="); 
+
+					}
+					break;
+				case 4 :
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:146:27: '>='
+					{
+					match(">="); 
 
 					}
 					break;
@@ -785,15 +738,82 @@ public class newGrammarLexer extends Lexer {
 			// do for sure before leaving
 		}
 	}
-	// $ANTLR end "BINAIRE"
+	// $ANTLR end "OPBOOLEQ"
+
+	// $ANTLR start "ADDSUB"
+	public final void mADDSUB() throws RecognitionException {
+		try {
+			int _type = ADDSUB;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:148:8: ( '+' | '-' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:
+			{
+			if ( input.LA(1)=='+'||input.LA(1)=='-' ) {
+				input.consume();
+			}
+			else {
+				MismatchedSetException mse = new MismatchedSetException(null,input);
+				recover(mse);
+				throw mse;
+			}
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "ADDSUB"
+
+	// $ANTLR start "STAR"
+	public final void mSTAR() throws RecognitionException {
+		try {
+			int _type = STAR;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:150:7: ( '*' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:150:10: '*'
+			{
+			match('*'); 
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "STAR"
+
+	// $ANTLR start "DIV"
+	public final void mDIV() throws RecognitionException {
+		try {
+			int _type = DIV;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:152:5: ( '/' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:152:7: '/'
+			{
+			match('/'); 
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "DIV"
 
 	// $ANTLR start "UNAIRE"
 	public final void mUNAIRE() throws RecognitionException {
 		try {
 			int _type = UNAIRE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:115:8: ( '!' )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:115:11: '!'
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:154:8: ( '!' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:154:11: '!'
 			{
 			match('!'); 
 			}
@@ -807,13 +827,33 @@ public class newGrammarLexer extends Lexer {
 	}
 	// $ANTLR end "UNAIRE"
 
+	// $ANTLR start "EPERLU"
+	public final void mEPERLU() throws RecognitionException {
+		try {
+			int _type = EPERLU;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:156:9: ( '&' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:156:12: '&'
+			{
+			match('&'); 
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "EPERLU"
+
 	// $ANTLR start "IF"
 	public final void mIF() throws RecognitionException {
 		try {
 			int _type = IF;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:117:5: ( 'if' )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:117:8: 'if'
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:158:5: ( 'if' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:158:8: 'if'
 			{
 			match("if"); 
 
@@ -833,8 +873,8 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = MAIN;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:120:7: ( 'main' )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:120:9: 'main'
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:161:7: ( 'main' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:161:9: 'main'
 			{
 			match("main"); 
 
@@ -854,7 +894,7 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = BOOL;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:123:7: ( 'true' | 'false' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:164:7: ( 'true' | 'false' )
 			int alt2=2;
 			int LA2_0 = input.LA(1);
 			if ( (LA2_0=='t') ) {
@@ -872,14 +912,14 @@ public class newGrammarLexer extends Lexer {
 
 			switch (alt2) {
 				case 1 :
-					// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:123:9: 'true'
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:164:9: 'true'
 					{
 					match("true"); 
 
 					}
 					break;
 				case 2 :
-					// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:123:17: 'false'
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:164:17: 'false'
 					{
 					match("false"); 
 
@@ -901,8 +941,8 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = IDF;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:126:8: ( ( 'a' .. 'z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )* )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:126:10: ( 'a' .. 'z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:167:8: ( ( 'a' .. 'z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )* )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:167:10: ( 'a' .. 'z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
 			{
 			if ( (input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 				input.consume();
@@ -912,7 +952,7 @@ public class newGrammarLexer extends Lexer {
 				recover(mse);
 				throw mse;
 			}
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:126:21: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:167:21: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
 			loop3:
 			while (true) {
 				int alt3=2;
@@ -923,7 +963,7 @@ public class newGrammarLexer extends Lexer {
 
 				switch (alt3) {
 				case 1 :
-					// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:
 					{
 					if ( (input.LA(1) >= '0' && input.LA(1) <= '9')||(input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 						input.consume();
@@ -957,10 +997,10 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = INT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:130:8: ( ( '0' .. '9' )+ )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:130:10: ( '0' .. '9' )+
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:171:8: ( ( '0' .. '9' )+ )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:171:10: ( '0' .. '9' )+
 			{
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:130:10: ( '0' .. '9' )+
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:171:10: ( '0' .. '9' )+
 			int cnt4=0;
 			loop4:
 			while (true) {
@@ -972,7 +1012,7 @@ public class newGrammarLexer extends Lexer {
 
 				switch (alt4) {
 				case 1 :
-					// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:
 					{
 					if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
 						input.consume();
@@ -1009,11 +1049,11 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = STRING;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:136:3: ( '\"' (~ ( '\\r' | '\\n' | '\"' ) )* '\"' )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:136:3: '\"' (~ ( '\\r' | '\\n' | '\"' ) )* '\"'
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:177:3: ( '\"' (~ ( '\\r' | '\\n' | '\"' ) )* '\"' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:177:3: '\"' (~ ( '\\r' | '\\n' | '\"' ) )* '\"'
 			{
 			match('\"'); 
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:136:7: (~ ( '\\r' | '\\n' | '\"' ) )*
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:177:7: (~ ( '\\r' | '\\n' | '\"' ) )*
 			loop5:
 			while (true) {
 				int alt5=2;
@@ -1024,7 +1064,7 @@ public class newGrammarLexer extends Lexer {
 
 				switch (alt5) {
 				case 1 :
-					// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:
 					{
 					if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\t')||(input.LA(1) >= '\u000B' && input.LA(1) <= '\f')||(input.LA(1) >= '\u000E' && input.LA(1) <= '!')||(input.LA(1) >= '#' && input.LA(1) <= '\uFFFF') ) {
 						input.consume();
@@ -1059,12 +1099,12 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = COMMENT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:139:11: ( '/*' ( options {greedy=false; } : . )* '*/' )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:139:13: '/*' ( options {greedy=false; } : . )* '*/'
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:180:11: ( '/*' ( options {greedy=false; } : . )* '*/' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:180:13: '/*' ( options {greedy=false; } : . )* '*/'
 			{
 			match("/*"); 
 
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:139:18: ( options {greedy=false; } : . )*
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:180:18: ( options {greedy=false; } : . )*
 			loop6:
 			while (true) {
 				int alt6=2;
@@ -1085,7 +1125,7 @@ public class newGrammarLexer extends Lexer {
 
 				switch (alt6) {
 				case 1 :
-					// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:139:46: .
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:180:46: .
 					{
 					matchAny(); 
 					}
@@ -1115,11 +1155,11 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = ATTRIBUTE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:141:11: ( '#' ( options {greedy=false; } : . )* ( '\\n' | '\\t' ) )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:141:13: '#' ( options {greedy=false; } : . )* ( '\\n' | '\\t' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:182:11: ( '#' ( options {greedy=false; } : . )* ( '\\n' | '\\t' ) )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:182:13: '#' ( options {greedy=false; } : . )* ( '\\n' | '\\t' )
 			{
 			match('#'); 
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:141:17: ( options {greedy=false; } : . )*
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:182:17: ( options {greedy=false; } : . )*
 			loop7:
 			while (true) {
 				int alt7=2;
@@ -1133,7 +1173,7 @@ public class newGrammarLexer extends Lexer {
 
 				switch (alt7) {
 				case 1 :
-					// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:141:45: .
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:182:45: .
 					{
 					matchAny(); 
 					}
@@ -1169,8 +1209,8 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = WS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:143:8: ( ( ' ' | '\\t' | '\\r' | '\\n' ) )
-			// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:143:10: ( ' ' | '\\t' | '\\r' | '\\n' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:184:8: ( ( ' ' | '\\t' | '\\r' | '\\n' ) )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:184:10: ( ' ' | '\\t' | '\\r' | '\\n' )
 			{
 			if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
 				input.consume();
@@ -1194,271 +1234,313 @@ public class newGrammarLexer extends Lexer {
 
 	@Override
 	public void mTokens() throws RecognitionException {
-		// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:8: ( T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | BINAIRE | UNAIRE | IF | MAIN | BOOL | IDF | INT | STRING | COMMENT | ATTRIBUTE | WS )
-		int alt8=38;
+		// /home/frosqh/workspace/CompilTest/newGrammar.g:1:8: ( T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | EQUAL | ORBOOL | ANDBOOL | PREV | NEXT | OPBOOLEQ | ADDSUB | STAR | DIV | UNAIRE | EPERLU | IF | MAIN | BOOL | IDF | INT | STRING | COMMENT | ATTRIBUTE | WS )
+		int alt8=44;
 		alt8 = dfa8.predict(input);
 		switch (alt8) {
 			case 1 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:10: T__18
-				{
-				mT__18(); 
-
-				}
-				break;
-			case 2 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:16: T__19
-				{
-				mT__19(); 
-
-				}
-				break;
-			case 3 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:22: T__20
-				{
-				mT__20(); 
-
-				}
-				break;
-			case 4 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:28: T__21
-				{
-				mT__21(); 
-
-				}
-				break;
-			case 5 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:34: T__22
-				{
-				mT__22(); 
-
-				}
-				break;
-			case 6 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:40: T__23
-				{
-				mT__23(); 
-
-				}
-				break;
-			case 7 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:46: T__24
-				{
-				mT__24(); 
-
-				}
-				break;
-			case 8 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:52: T__25
-				{
-				mT__25(); 
-
-				}
-				break;
-			case 9 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:58: T__26
-				{
-				mT__26(); 
-
-				}
-				break;
-			case 10 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:64: T__27
-				{
-				mT__27(); 
-
-				}
-				break;
-			case 11 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:70: T__28
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:10: T__28
 				{
 				mT__28(); 
 
 				}
 				break;
-			case 12 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:76: T__29
+			case 2 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:16: T__29
 				{
 				mT__29(); 
 
 				}
 				break;
-			case 13 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:82: T__30
+			case 3 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:22: T__30
 				{
 				mT__30(); 
 
 				}
 				break;
-			case 14 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:88: T__31
+			case 4 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:28: T__31
 				{
 				mT__31(); 
 
 				}
 				break;
-			case 15 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:94: T__32
+			case 5 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:34: T__32
 				{
 				mT__32(); 
 
 				}
 				break;
-			case 16 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:100: T__33
+			case 6 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:40: T__33
 				{
 				mT__33(); 
 
 				}
 				break;
-			case 17 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:106: T__34
+			case 7 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:46: T__34
 				{
 				mT__34(); 
 
 				}
 				break;
-			case 18 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:112: T__35
+			case 8 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:52: T__35
 				{
 				mT__35(); 
 
 				}
 				break;
-			case 19 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:118: T__36
+			case 9 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:58: T__36
 				{
 				mT__36(); 
 
 				}
 				break;
-			case 20 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:124: T__37
+			case 10 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:64: T__37
 				{
 				mT__37(); 
 
 				}
 				break;
-			case 21 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:130: T__38
+			case 11 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:70: T__38
 				{
 				mT__38(); 
 
 				}
 				break;
-			case 22 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:136: T__39
+			case 12 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:76: T__39
 				{
 				mT__39(); 
 
 				}
 				break;
-			case 23 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:142: T__40
+			case 13 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:82: T__40
 				{
 				mT__40(); 
 
 				}
 				break;
-			case 24 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:148: T__41
+			case 14 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:88: T__41
 				{
 				mT__41(); 
 
 				}
 				break;
-			case 25 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:154: T__42
+			case 15 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:94: T__42
 				{
 				mT__42(); 
 
 				}
 				break;
-			case 26 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:160: T__43
+			case 16 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:100: T__43
 				{
 				mT__43(); 
 
 				}
 				break;
-			case 27 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:166: T__44
+			case 17 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:106: T__44
 				{
 				mT__44(); 
 
 				}
 				break;
-			case 28 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:172: BINAIRE
+			case 18 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:112: T__45
 				{
-				mBINAIRE(); 
+				mT__45(); 
+
+				}
+				break;
+			case 19 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:118: T__46
+				{
+				mT__46(); 
+
+				}
+				break;
+			case 20 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:124: T__47
+				{
+				mT__47(); 
+
+				}
+				break;
+			case 21 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:130: T__48
+				{
+				mT__48(); 
+
+				}
+				break;
+			case 22 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:136: T__49
+				{
+				mT__49(); 
+
+				}
+				break;
+			case 23 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:142: T__50
+				{
+				mT__50(); 
+
+				}
+				break;
+			case 24 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:148: T__51
+				{
+				mT__51(); 
+
+				}
+				break;
+			case 25 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:154: EQUAL
+				{
+				mEQUAL(); 
+
+				}
+				break;
+			case 26 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:160: ORBOOL
+				{
+				mORBOOL(); 
+
+				}
+				break;
+			case 27 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:167: ANDBOOL
+				{
+				mANDBOOL(); 
+
+				}
+				break;
+			case 28 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:175: PREV
+				{
+				mPREV(); 
 
 				}
 				break;
 			case 29 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:180: UNAIRE
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:180: NEXT
+				{
+				mNEXT(); 
+
+				}
+				break;
+			case 30 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:185: OPBOOLEQ
+				{
+				mOPBOOLEQ(); 
+
+				}
+				break;
+			case 31 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:194: ADDSUB
+				{
+				mADDSUB(); 
+
+				}
+				break;
+			case 32 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:201: STAR
+				{
+				mSTAR(); 
+
+				}
+				break;
+			case 33 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:206: DIV
+				{
+				mDIV(); 
+
+				}
+				break;
+			case 34 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:210: UNAIRE
 				{
 				mUNAIRE(); 
 
 				}
 				break;
-			case 30 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:187: IF
+			case 35 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:217: EPERLU
+				{
+				mEPERLU(); 
+
+				}
+				break;
+			case 36 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:224: IF
 				{
 				mIF(); 
 
 				}
 				break;
-			case 31 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:190: MAIN
+			case 37 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:227: MAIN
 				{
 				mMAIN(); 
 
 				}
 				break;
-			case 32 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:195: BOOL
+			case 38 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:232: BOOL
 				{
 				mBOOL(); 
 
 				}
 				break;
-			case 33 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:200: IDF
+			case 39 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:237: IDF
 				{
 				mIDF(); 
 
 				}
 				break;
-			case 34 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:204: INT
+			case 40 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:241: INT
 				{
 				mINT(); 
 
 				}
 				break;
-			case 35 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:208: STRING
+			case 41 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:245: STRING
 				{
 				mSTRING(); 
 
 				}
 				break;
-			case 36 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:215: COMMENT
+			case 42 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:252: COMMENT
 				{
 				mCOMMENT(); 
 
 				}
 				break;
-			case 37 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:223: ATTRIBUTE
+			case 43 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:260: ATTRIBUTE
 				{
 				mATTRIBUTE(); 
 
 				}
 				break;
-			case 38 :
-				// /home/etudiants/raimondi3u/CompilTest/newGrammar.g:1:233: WS
+			case 44 :
+				// /home/frosqh/workspace/CompilTest/newGrammar.g:1:270: WS
 				{
 				mWS(); 
 
@@ -1471,72 +1553,75 @@ public class newGrammarLexer extends Lexer {
 
 	protected DFA8 dfa8 = new DFA8(this);
 	static final String DFA8_eotS =
-		"\1\uffff\1\44\3\uffff\1\32\3\uffff\1\46\1\47\1\50\2\uffff\12\37\3\uffff"+
-		"\1\32\1\67\2\37\12\uffff\2\37\1\74\12\37\2\uffff\1\110\3\37\1\uffff\1"+
-		"\37\1\115\1\116\1\37\1\120\4\37\1\125\1\37\1\uffff\2\37\1\131\1\37\2\uffff"+
-		"\1\133\1\uffff\1\134\3\37\1\uffff\1\37\1\141\1\142\1\uffff\1\141\2\uffff"+
-		"\1\143\2\37\1\146\3\uffff\1\147\1\150\3\uffff";
+		"\4\uffff\1\47\5\uffff\12\41\2\uffff\1\66\1\uffff\1\70\1\71\1\72\1\73\2"+
+		"\uffff\1\75\2\41\7\uffff\2\41\1\102\12\41\11\uffff\1\116\3\41\1\uffff"+
+		"\1\41\1\123\1\124\1\41\1\126\4\41\1\133\1\41\1\uffff\2\41\1\137\1\41\2"+
+		"\uffff\1\141\1\uffff\1\142\3\41\1\uffff\1\41\1\147\1\150\1\uffff\1\147"+
+		"\2\uffff\1\151\2\41\1\154\3\uffff\1\155\1\156\3\uffff";
 	static final String DFA8_eofS =
-		"\151\uffff";
+		"\157\uffff";
 	static final String DFA8_minS =
-		"\1\11\1\46\3\uffff\1\76\3\uffff\3\75\2\uffff\1\162\1\154\1\141\1\145\1"+
-		"\141\1\162\1\145\1\164\1\145\1\150\3\uffff\1\52\1\75\1\146\1\162\12\uffff"+
-		"\1\145\1\163\1\60\1\154\1\156\1\157\1\164\2\151\1\164\1\162\1\143\1\151"+
-		"\2\uffff\1\60\1\165\1\141\1\145\1\uffff\1\163\2\60\1\160\1\60\2\156\2"+
-		"\165\1\60\1\154\1\uffff\1\145\1\153\1\60\1\145\2\uffff\1\60\1\uffff\1"+
-		"\60\1\164\1\162\1\143\1\uffff\1\145\2\60\1\uffff\1\60\2\uffff\1\60\1\156"+
-		"\1\164\1\60\3\uffff\2\60\3\uffff";
+		"\1\11\3\uffff\1\76\5\uffff\1\162\1\154\1\141\1\145\1\141\1\162\1\145\1"+
+		"\164\1\145\1\150\2\uffff\1\75\1\uffff\1\46\3\75\2\uffff\1\52\1\146\1\162"+
+		"\7\uffff\1\145\1\163\1\60\1\154\1\156\1\157\1\164\2\151\1\164\1\162\1"+
+		"\143\1\151\11\uffff\1\60\1\165\1\141\1\145\1\uffff\1\163\2\60\1\160\1"+
+		"\60\2\156\2\165\1\60\1\154\1\uffff\1\145\1\153\1\60\1\145\2\uffff\1\60"+
+		"\1\uffff\1\60\1\164\1\162\1\143\1\uffff\1\145\2\60\1\uffff\1\60\2\uffff"+
+		"\1\60\1\156\1\164\1\60\3\uffff\2\60\3\uffff";
 	static final String DFA8_maxS =
-		"\1\175\1\46\3\uffff\1\76\3\uffff\3\75\2\uffff\1\162\1\154\1\156\1\157"+
-		"\1\165\1\162\1\145\1\164\1\145\1\150\3\uffff\1\52\1\75\1\146\1\162\12"+
-		"\uffff\1\145\1\163\1\172\1\154\1\164\1\157\1\164\2\151\1\164\1\162\1\143"+
-		"\1\151\2\uffff\1\172\1\165\1\141\1\145\1\uffff\1\163\2\172\1\160\1\172"+
-		"\2\156\2\165\1\172\1\154\1\uffff\1\145\1\153\1\172\1\145\2\uffff\1\172"+
-		"\1\uffff\1\172\1\164\1\162\1\143\1\uffff\1\145\2\172\1\uffff\1\172\2\uffff"+
-		"\1\172\1\156\1\164\1\172\3\uffff\2\172\3\uffff";
+		"\1\175\3\uffff\1\76\5\uffff\1\162\1\154\1\156\1\157\1\165\1\162\1\145"+
+		"\1\164\1\145\1\150\2\uffff\1\75\1\uffff\1\46\3\75\2\uffff\1\52\1\146\1"+
+		"\162\7\uffff\1\145\1\163\1\172\1\154\1\164\1\157\1\164\2\151\1\164\1\162"+
+		"\1\143\1\151\11\uffff\1\172\1\165\1\141\1\145\1\uffff\1\163\2\172\1\160"+
+		"\1\172\2\156\2\165\1\172\1\154\1\uffff\1\145\1\153\1\172\1\145\2\uffff"+
+		"\1\172\1\uffff\1\172\1\164\1\162\1\143\1\uffff\1\145\2\172\1\uffff\1\172"+
+		"\2\uffff\1\172\1\156\1\164\1\172\3\uffff\2\172\3\uffff";
 	static final String DFA8_acceptS =
-		"\2\uffff\1\2\1\3\1\4\1\uffff\1\6\1\7\1\10\3\uffff\1\14\1\15\12\uffff\1"+
-		"\32\1\33\1\34\4\uffff\1\41\1\42\1\43\1\45\1\46\1\1\1\5\1\11\1\12\1\13"+
-		"\15\uffff\1\44\1\35\4\uffff\1\20\13\uffff\1\36\4\uffff\1\21\1\22\1\uffff"+
-		"\1\24\4\uffff\1\30\3\uffff\1\17\1\uffff\1\23\1\37\4\uffff\1\40\1\16\1"+
-		"\25\2\uffff\1\31\1\26\1\27";
+		"\1\uffff\1\1\1\2\1\3\1\uffff\1\6\1\7\1\10\1\11\1\12\12\uffff\1\27\1\30"+
+		"\1\uffff\1\32\4\uffff\1\37\1\40\3\uffff\1\47\1\50\1\51\1\53\1\54\1\5\1"+
+		"\4\15\uffff\1\36\1\31\1\33\1\43\1\34\1\35\1\42\1\52\1\41\4\uffff\1\15"+
+		"\13\uffff\1\44\4\uffff\1\16\1\17\1\uffff\1\21\4\uffff\1\25\3\uffff\1\14"+
+		"\1\uffff\1\20\1\45\4\uffff\1\46\1\13\1\22\2\uffff\1\26\1\23\1\24";
 	static final String DFA8_specialS =
-		"\151\uffff}>";
+		"\157\uffff}>";
 	static final String[] DFA8_transitionS = {
-			"\2\43\2\uffff\1\43\22\uffff\1\43\1\34\1\41\1\42\2\uffff\1\1\1\uffff\1"+
-			"\2\1\3\2\32\1\4\1\5\1\6\1\33\12\40\1\7\1\10\1\11\1\12\1\13\34\uffff\1"+
-			"\14\1\uffff\1\15\3\uffff\1\37\1\16\2\37\1\17\1\20\2\37\1\35\2\37\1\21"+
-			"\1\22\2\37\1\23\1\37\1\24\1\25\1\36\1\37\1\26\1\27\3\37\1\30\1\32\1\31",
-			"\1\32",
+			"\2\45\2\uffff\1\45\22\uffff\1\45\1\33\1\43\1\44\2\uffff\1\30\1\uffff"+
+			"\1\1\1\2\1\35\1\34\1\3\1\4\1\5\1\36\12\42\1\6\1\7\1\31\1\26\1\32\34\uffff"+
+			"\1\10\1\uffff\1\11\3\uffff\1\41\1\12\2\41\1\13\1\14\2\41\1\37\2\41\1"+
+			"\15\1\16\2\41\1\17\1\41\1\20\1\21\1\40\1\41\1\22\1\23\3\41\1\24\1\27"+
+			"\1\25",
 			"",
 			"",
 			"",
-			"\1\45",
+			"\1\46",
 			"",
 			"",
 			"",
-			"\1\32",
-			"\1\32",
-			"\1\32",
 			"",
 			"",
+			"\1\50",
 			"\1\51",
-			"\1\52",
-			"\1\54\14\uffff\1\53",
-			"\1\55\11\uffff\1\56",
-			"\1\60\23\uffff\1\57",
+			"\1\53\14\uffff\1\52",
+			"\1\54\11\uffff\1\55",
+			"\1\57\23\uffff\1\56",
+			"\1\60",
 			"\1\61",
 			"\1\62",
 			"\1\63",
 			"\1\64",
+			"",
+			"",
+			"\1\65",
+			"",
+			"\1\67",
+			"\1\65",
+			"\1\65",
 			"\1\65",
 			"",
 			"",
-			"",
-			"\1\66",
-			"\1\32",
-			"\1\70",
-			"\1\71",
+			"\1\74",
+			"\1\76",
+			"\1\77",
 			"",
 			"",
 			"",
@@ -1544,70 +1629,74 @@ public class newGrammarLexer extends Lexer {
 			"",
 			"",
 			"",
-			"",
-			"",
-			"",
-			"\1\72",
-			"\1\73",
-			"\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
-			"\1\75",
-			"\1\76\5\uffff\1\77",
 			"\1\100",
 			"\1\101",
-			"\1\102",
+			"\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
 			"\1\103",
-			"\1\104",
-			"\1\105",
+			"\1\104\5\uffff\1\105",
 			"\1\106",
 			"\1\107",
-			"",
-			"",
-			"\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
+			"\1\110",
 			"\1\111",
 			"\1\112",
 			"\1\113",
-			"",
 			"\1\114",
-			"\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
-			"\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
-			"\1\117",
-			"\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
-			"\1\121",
-			"\1\122",
-			"\1\123",
-			"\1\124",
-			"\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
-			"\1\126",
+			"\1\115",
 			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+			"\1\117",
+			"\1\120",
+			"\1\121",
+			"",
+			"\1\122",
+			"\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+			"\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+			"\1\125",
+			"\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
 			"\1\127",
 			"\1\130",
-			"\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
+			"\1\131",
 			"\1\132",
+			"\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+			"\1\134",
 			"",
-			"",
-			"\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
-			"",
-			"\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
 			"\1\135",
 			"\1\136",
-			"\1\137",
-			"",
+			"\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
 			"\1\140",
-			"\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
-			"\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
-			"",
-			"\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
 			"",
 			"",
-			"\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
+			"\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+			"",
+			"\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+			"\1\143",
 			"\1\144",
 			"\1\145",
-			"\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
+			"",
+			"\1\146",
+			"\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+			"\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+			"",
+			"\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+			"",
+			"",
+			"\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+			"\1\152",
+			"\1\153",
+			"\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
 			"",
 			"",
 			"",
-			"\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
-			"\12\37\7\uffff\32\37\4\uffff\1\37\1\uffff\32\37",
+			"\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+			"\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
 			"",
 			"",
 			""
@@ -1644,7 +1733,7 @@ public class newGrammarLexer extends Lexer {
 		}
 		@Override
 		public String getDescription() {
-			return "1:1: Tokens : ( T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | BINAIRE | UNAIRE | IF | MAIN | BOOL | IDF | INT | STRING | COMMENT | ATTRIBUTE | WS );";
+			return "1:1: Tokens : ( T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | EQUAL | ORBOOL | ANDBOOL | PREV | NEXT | OPBOOLEQ | ADDSUB | STAR | DIV | UNAIRE | EPERLU | IF | MAIN | BOOL | IDF | INT | STRING | COMMENT | ATTRIBUTE | WS );";
 		}
 	}
 
