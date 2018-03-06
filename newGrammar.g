@@ -64,8 +64,7 @@ instruct :
 dotIDF 	: 
 IDF ('.'^ IDF)?;
 
-ifExpr : 'if' expr block ('else' block )? -> ^('if' expr block ^('else' block)?)
-;
+ifExpr : 'if' expr block ('else' block )? -> ^('if' expr block ^('else' block)?);
 
 binExpr1 : binExpr2 (EQUAL^ binExpr2)*; 
 
@@ -78,7 +77,6 @@ binExpr4 : binExpr5((PREV^|OPBOOLEQ^|NEXT^) binExpr5)*;
 binExpr5 : binExpr6(ADDSUB^ binExpr6)*; 
 
 binExpr6 : unExpr ((STAR^|DIV^) unExpr)*; 
-
 
 vectExpr : starExpr ('['^ expr ']'!)?;
 

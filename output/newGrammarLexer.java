@@ -1,4 +1,4 @@
-// $ANTLR null /home/frosqh/workspace/CompilTest/newGrammar.g 2018-02-16 15:47:40
+// $ANTLR null /home/frosqh/workspace/CompilTest/newGrammar.g 2018-03-06 11:11:50
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -570,8 +570,8 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = EQUAL;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:137:7: ( '=' )
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:137:9: '='
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:135:7: ( '=' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:135:9: '='
 			{
 			match('='); 
 			}
@@ -590,8 +590,8 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = ORBOOL;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:139:8: ( '||' )
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:139:10: '||'
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:137:8: ( '||' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:137:10: '||'
 			{
 			match("||"); 
 
@@ -611,8 +611,8 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = ANDBOOL;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:141:9: ( '&&' )
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:141:11: '&&'
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:139:9: ( '&&' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:139:11: '&&'
 			{
 			match("&&"); 
 
@@ -632,8 +632,8 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = PREV;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:143:7: ( '<' )
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:143:10: '<'
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:141:7: ( '<' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:141:10: '<'
 			{
 			match('<'); 
 			}
@@ -652,8 +652,8 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = NEXT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:144:7: ( '>' )
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:144:10: '>'
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:142:7: ( '>' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:142:10: '>'
 			{
 			match('>'); 
 			}
@@ -672,7 +672,7 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = OPBOOLEQ;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:146:10: ( '==' | '!=' | '<=' | '>=' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:144:10: ( '==' | '!=' | '<=' | '>=' )
 			int alt1=4;
 			switch ( input.LA(1) ) {
 			case '=':
@@ -702,28 +702,28 @@ public class newGrammarLexer extends Lexer {
 			}
 			switch (alt1) {
 				case 1 :
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:146:12: '=='
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:144:12: '=='
 					{
 					match("=="); 
 
 					}
 					break;
 				case 2 :
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:146:17: '!='
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:144:17: '!='
 					{
 					match("!="); 
 
 					}
 					break;
 				case 3 :
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:146:22: '<='
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:144:22: '<='
 					{
 					match("<="); 
 
 					}
 					break;
 				case 4 :
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:146:27: '>='
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:144:27: '>='
 					{
 					match(">="); 
 
@@ -745,7 +745,7 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = ADDSUB;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:148:8: ( '+' | '-' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:146:8: ( '+' | '-' )
 			// /home/frosqh/workspace/CompilTest/newGrammar.g:
 			{
 			if ( input.LA(1)=='+'||input.LA(1)=='-' ) {
@@ -772,8 +772,8 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = STAR;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:150:7: ( '*' )
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:150:10: '*'
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:148:7: ( '*' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:148:10: '*'
 			{
 			match('*'); 
 			}
@@ -792,8 +792,8 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = DIV;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:152:5: ( '/' )
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:152:7: '/'
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:150:5: ( '/' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:150:7: '/'
 			{
 			match('/'); 
 			}
@@ -812,8 +812,8 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = UNAIRE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:154:8: ( '!' )
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:154:11: '!'
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:152:8: ( '!' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:152:11: '!'
 			{
 			match('!'); 
 			}
@@ -832,8 +832,8 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = EPERLU;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:156:9: ( '&' )
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:156:12: '&'
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:154:9: ( '&' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:154:12: '&'
 			{
 			match('&'); 
 			}
@@ -852,8 +852,8 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = IF;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:158:5: ( 'if' )
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:158:8: 'if'
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:156:5: ( 'if' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:156:8: 'if'
 			{
 			match("if"); 
 
@@ -873,8 +873,8 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = MAIN;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:161:7: ( 'main' )
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:161:9: 'main'
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:159:7: ( 'main' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:159:9: 'main'
 			{
 			match("main"); 
 
@@ -894,7 +894,7 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = BOOL;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:164:7: ( 'true' | 'false' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:162:7: ( 'true' | 'false' )
 			int alt2=2;
 			int LA2_0 = input.LA(1);
 			if ( (LA2_0=='t') ) {
@@ -912,14 +912,14 @@ public class newGrammarLexer extends Lexer {
 
 			switch (alt2) {
 				case 1 :
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:164:9: 'true'
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:162:9: 'true'
 					{
 					match("true"); 
 
 					}
 					break;
 				case 2 :
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:164:17: 'false'
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:162:17: 'false'
 					{
 					match("false"); 
 
@@ -941,8 +941,8 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = IDF;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:167:8: ( ( 'a' .. 'z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )* )
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:167:10: ( 'a' .. 'z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:165:8: ( ( 'a' .. 'z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )* )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:165:10: ( 'a' .. 'z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
 			{
 			if ( (input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 				input.consume();
@@ -952,7 +952,7 @@ public class newGrammarLexer extends Lexer {
 				recover(mse);
 				throw mse;
 			}
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:167:21: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:165:21: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
 			loop3:
 			while (true) {
 				int alt3=2;
@@ -997,10 +997,10 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = INT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:171:8: ( ( '0' .. '9' )+ )
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:171:10: ( '0' .. '9' )+
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:169:8: ( ( '0' .. '9' )+ )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:169:10: ( '0' .. '9' )+
 			{
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:171:10: ( '0' .. '9' )+
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:169:10: ( '0' .. '9' )+
 			int cnt4=0;
 			loop4:
 			while (true) {
@@ -1049,11 +1049,11 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = STRING;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:177:3: ( '\"' (~ ( '\\r' | '\\n' | '\"' ) )* '\"' )
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:177:3: '\"' (~ ( '\\r' | '\\n' | '\"' ) )* '\"'
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:175:3: ( '\"' (~ ( '\\r' | '\\n' | '\"' ) )* '\"' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:175:3: '\"' (~ ( '\\r' | '\\n' | '\"' ) )* '\"'
 			{
 			match('\"'); 
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:177:7: (~ ( '\\r' | '\\n' | '\"' ) )*
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:175:7: (~ ( '\\r' | '\\n' | '\"' ) )*
 			loop5:
 			while (true) {
 				int alt5=2;
@@ -1099,12 +1099,12 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = COMMENT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:180:11: ( '/*' ( options {greedy=false; } : . )* '*/' )
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:180:13: '/*' ( options {greedy=false; } : . )* '*/'
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:178:11: ( '/*' ( options {greedy=false; } : . )* '*/' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:178:13: '/*' ( options {greedy=false; } : . )* '*/'
 			{
 			match("/*"); 
 
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:180:18: ( options {greedy=false; } : . )*
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:178:18: ( options {greedy=false; } : . )*
 			loop6:
 			while (true) {
 				int alt6=2;
@@ -1125,7 +1125,7 @@ public class newGrammarLexer extends Lexer {
 
 				switch (alt6) {
 				case 1 :
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:180:46: .
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:178:46: .
 					{
 					matchAny(); 
 					}
@@ -1155,11 +1155,11 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = ATTRIBUTE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:182:11: ( '#' ( options {greedy=false; } : . )* ( '\\n' | '\\t' ) )
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:182:13: '#' ( options {greedy=false; } : . )* ( '\\n' | '\\t' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:180:11: ( '#' ( options {greedy=false; } : . )* ( '\\n' | '\\t' ) )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:180:13: '#' ( options {greedy=false; } : . )* ( '\\n' | '\\t' )
 			{
 			match('#'); 
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:182:17: ( options {greedy=false; } : . )*
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:180:17: ( options {greedy=false; } : . )*
 			loop7:
 			while (true) {
 				int alt7=2;
@@ -1173,7 +1173,7 @@ public class newGrammarLexer extends Lexer {
 
 				switch (alt7) {
 				case 1 :
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:182:45: .
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:180:45: .
 					{
 					matchAny(); 
 					}
@@ -1209,8 +1209,8 @@ public class newGrammarLexer extends Lexer {
 		try {
 			int _type = WS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:184:8: ( ( ' ' | '\\t' | '\\r' | '\\n' ) )
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:184:10: ( ' ' | '\\t' | '\\r' | '\\n' )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:182:8: ( ( ' ' | '\\t' | '\\r' | '\\n' ) )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:182:10: ( ' ' | '\\t' | '\\r' | '\\n' )
 			{
 			if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
 				input.consume();

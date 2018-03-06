@@ -1,4 +1,4 @@
-// $ANTLR null /home/frosqh/workspace/CompilTest/newGrammar.g 2018-02-16 15:47:40
+// $ANTLR null /home/frosqh/workspace/CompilTest/newGrammar.g 2018-03-06 11:11:50
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -80,12 +80,12 @@ public class newGrammarParser extends DebugParser {
 
 
 	public static final String[] ruleNames = new String[] {
-		"invalidRule", "bigatom", "bigbinExpr1", "binExpr1", "declStruct", "args", 
-		"binExpr4", "bigExpr", "axiom", "bigbinExpr6", "declFun", "bigbinExpr3", 
-		"bigdotExpr", "binExpr5", "block", "ifExpr", "bigbinExpr5", "bigbinExpr2", 
-		"dotExpr", "callFun", "bigvectExpr", "fichier", "decl", "binExpr2", "dotIDF", 
-		"moinsExpr", "atom", "newStruc", "expr", "bigbinExpr4", "bigunExpr", "type", 
-		"binExpr6", "vectExpr", "binExpr3", "unExpr", "starExpr", "instruct"
+		"invalidRule", "decl", "binExpr5", "starExpr", "declFun", "bigExpr", "moinsExpr", 
+		"fichier", "bigbinExpr1", "binExpr3", "dotIDF", "binExpr6", "bigbinExpr2", 
+		"binExpr4", "bigatom", "block", "vectExpr", "bigvectExpr", "binExpr1", 
+		"bigbinExpr5", "axiom", "atom", "bigdotExpr", "callFun", "binExpr2", "ifExpr", 
+		"declStruct", "args", "bigbinExpr4", "type", "expr", "bigbinExpr3", "newStruc", 
+		"dotExpr", "instruct", "unExpr", "bigunExpr", "bigbinExpr6"
 	};
 
 	public static final boolean[] decisionCanBacktrack = new boolean[] {
@@ -538,7 +538,7 @@ public class newGrammarParser extends DebugParser {
 			stream_51.add(char_literal10);
 
 			// AST REWRITE
-			// elements: 47, IDF, args
+			// elements: IDF, args, 47
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -936,7 +936,7 @@ public class newGrammarParser extends DebugParser {
 
 					stream_block.add(block25.getTree());
 					// AST REWRITE
-					// elements: block, type, 32, 40, IDF, args
+					// elements: args, block, type, 40, IDF, 32
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -1007,7 +1007,7 @@ public class newGrammarParser extends DebugParser {
 
 					stream_block.add(block29.getTree());
 					// AST REWRITE
-					// elements: MAIN, block, 40
+					// elements: MAIN, 40, block
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -1185,7 +1185,7 @@ public class newGrammarParser extends DebugParser {
 					}
 
 					// AST REWRITE
-					// elements: type, 48
+					// elements: 48, type
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -1230,7 +1230,7 @@ public class newGrammarParser extends DebugParser {
 
 					stream_type.add(type36.getTree());
 					// AST REWRITE
-					// elements: EPERLU, type
+					// elements: type, EPERLU
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -2057,7 +2057,7 @@ public class newGrammarParser extends DebugParser {
 					stream_35.add(char_literal64);
 
 					// AST REWRITE
-					// elements: 44, type, dotIDF, 42, bigExpr, EQUAL
+					// elements: 42, dotIDF, 44, EQUAL, bigExpr, type
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -2131,7 +2131,7 @@ public class newGrammarParser extends DebugParser {
 
 					stream_block.add(block67.getTree());
 					// AST REWRITE
-					// elements: 49, block, expr
+					// elements: block, expr, 49
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -2204,7 +2204,7 @@ public class newGrammarParser extends DebugParser {
 					stream_35.add(char_literal70);
 
 					// AST REWRITE
-					// elements: expr, 46
+					// elements: 46, expr
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -2556,7 +2556,7 @@ public class newGrammarParser extends DebugParser {
 			} finally {dbg.exitSubRule(17);}
 
 			// AST REWRITE
-			// elements: block, block, IF, 39, expr
+			// elements: 39, expr, block, IF, block
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -2578,7 +2578,7 @@ public class newGrammarParser extends DebugParser {
 				adaptor.addChild(root_1, stream_expr.nextTree());dbg.location(67,58);
 				adaptor.addChild(root_1, stream_block.nextTree());dbg.location(67,64);
 				// /home/frosqh/workspace/CompilTest/newGrammar.g:67:64: ( ^( 'else' block ) )?
-				if ( stream_block.hasNext()||stream_39.hasNext() ) {
+				if ( stream_39.hasNext()||stream_block.hasNext() ) {
 					dbg.location(67,64);
 					// /home/frosqh/workspace/CompilTest/newGrammar.g:67:64: ^( 'else' block )
 					{
@@ -2591,8 +2591,8 @@ public class newGrammarParser extends DebugParser {
 					}
 
 				}
-				stream_block.reset();
 				stream_39.reset();
+				stream_block.reset();
 
 				adaptor.addChild(root_0, root_1);
 				}
@@ -2618,7 +2618,7 @@ public class newGrammarParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(68, 0);
+		dbg.location(67, 80);
 
 		}
 		finally {
@@ -2640,7 +2640,7 @@ public class newGrammarParser extends DebugParser {
 
 
 	// $ANTLR start "binExpr1"
-	// /home/frosqh/workspace/CompilTest/newGrammar.g:70:1: binExpr1 : binExpr2 ( EQUAL ^ binExpr2 )* ;
+	// /home/frosqh/workspace/CompilTest/newGrammar.g:69:1: binExpr1 : binExpr2 ( EQUAL ^ binExpr2 )* ;
 	public final newGrammarParser.binExpr1_return binExpr1() throws RecognitionException {
 		newGrammarParser.binExpr1_return retval = new newGrammarParser.binExpr1_return();
 		retval.start = input.LT(1);
@@ -2656,25 +2656,25 @@ public class newGrammarParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "binExpr1");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(70, 0);
+		dbg.location(69, 0);
 
 		try {
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:70:10: ( binExpr2 ( EQUAL ^ binExpr2 )* )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:69:10: ( binExpr2 ( EQUAL ^ binExpr2 )* )
 			dbg.enterAlt(1);
 
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:70:12: binExpr2 ( EQUAL ^ binExpr2 )*
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:69:12: binExpr2 ( EQUAL ^ binExpr2 )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(70,12);
-			pushFollow(FOLLOW_binExpr2_in_binExpr1577);
+			dbg.location(69,12);
+			pushFollow(FOLLOW_binExpr2_in_binExpr1576);
 			binExpr284=binExpr2();
 			state._fsp--;
 
 			adaptor.addChild(root_0, binExpr284.getTree());
-			dbg.location(70,21);
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:70:21: ( EQUAL ^ binExpr2 )*
+			dbg.location(69,21);
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:69:21: ( EQUAL ^ binExpr2 )*
 			try { dbg.enterSubRule(18);
 
 			loop18:
@@ -2693,14 +2693,14 @@ public class newGrammarParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:70:22: EQUAL ^ binExpr2
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:69:22: EQUAL ^ binExpr2
 					{
-					dbg.location(70,27);
-					EQUAL85=(Token)match(input,EQUAL,FOLLOW_EQUAL_in_binExpr1580); 
+					dbg.location(69,27);
+					EQUAL85=(Token)match(input,EQUAL,FOLLOW_EQUAL_in_binExpr1579); 
 					EQUAL85_tree = (CommonTree)adaptor.create(EQUAL85);
 					root_0 = (CommonTree)adaptor.becomeRoot(EQUAL85_tree, root_0);
-					dbg.location(70,29);
-					pushFollow(FOLLOW_binExpr2_in_binExpr1583);
+					dbg.location(69,29);
+					pushFollow(FOLLOW_binExpr2_in_binExpr1582);
 					binExpr286=binExpr2();
 					state._fsp--;
 
@@ -2731,7 +2731,7 @@ public class newGrammarParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(70, 38);
+		dbg.location(69, 38);
 
 		}
 		finally {
@@ -2753,7 +2753,7 @@ public class newGrammarParser extends DebugParser {
 
 
 	// $ANTLR start "binExpr2"
-	// /home/frosqh/workspace/CompilTest/newGrammar.g:72:1: binExpr2 : binExpr3 ( ORBOOL ^ binExpr3 )* ;
+	// /home/frosqh/workspace/CompilTest/newGrammar.g:71:1: binExpr2 : binExpr3 ( ORBOOL ^ binExpr3 )* ;
 	public final newGrammarParser.binExpr2_return binExpr2() throws RecognitionException {
 		newGrammarParser.binExpr2_return retval = new newGrammarParser.binExpr2_return();
 		retval.start = input.LT(1);
@@ -2769,25 +2769,25 @@ public class newGrammarParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "binExpr2");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(72, 0);
+		dbg.location(71, 0);
 
 		try {
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:72:10: ( binExpr3 ( ORBOOL ^ binExpr3 )* )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:71:10: ( binExpr3 ( ORBOOL ^ binExpr3 )* )
 			dbg.enterAlt(1);
 
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:72:12: binExpr3 ( ORBOOL ^ binExpr3 )*
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:71:12: binExpr3 ( ORBOOL ^ binExpr3 )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(72,12);
-			pushFollow(FOLLOW_binExpr3_in_binExpr2594);
+			dbg.location(71,12);
+			pushFollow(FOLLOW_binExpr3_in_binExpr2593);
 			binExpr387=binExpr3();
 			state._fsp--;
 
 			adaptor.addChild(root_0, binExpr387.getTree());
-			dbg.location(72,20);
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:72:20: ( ORBOOL ^ binExpr3 )*
+			dbg.location(71,20);
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:71:20: ( ORBOOL ^ binExpr3 )*
 			try { dbg.enterSubRule(19);
 
 			loop19:
@@ -2806,14 +2806,14 @@ public class newGrammarParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:72:21: ORBOOL ^ binExpr3
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:71:21: ORBOOL ^ binExpr3
 					{
-					dbg.location(72,27);
-					ORBOOL88=(Token)match(input,ORBOOL,FOLLOW_ORBOOL_in_binExpr2596); 
+					dbg.location(71,27);
+					ORBOOL88=(Token)match(input,ORBOOL,FOLLOW_ORBOOL_in_binExpr2595); 
 					ORBOOL88_tree = (CommonTree)adaptor.create(ORBOOL88);
 					root_0 = (CommonTree)adaptor.becomeRoot(ORBOOL88_tree, root_0);
-					dbg.location(72,29);
-					pushFollow(FOLLOW_binExpr3_in_binExpr2599);
+					dbg.location(71,29);
+					pushFollow(FOLLOW_binExpr3_in_binExpr2598);
 					binExpr389=binExpr3();
 					state._fsp--;
 
@@ -2844,7 +2844,7 @@ public class newGrammarParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(72, 38);
+		dbg.location(71, 38);
 
 		}
 		finally {
@@ -2866,7 +2866,7 @@ public class newGrammarParser extends DebugParser {
 
 
 	// $ANTLR start "binExpr3"
-	// /home/frosqh/workspace/CompilTest/newGrammar.g:74:1: binExpr3 : binExpr4 ( ANDBOOL ^ binExpr4 )* ;
+	// /home/frosqh/workspace/CompilTest/newGrammar.g:73:1: binExpr3 : binExpr4 ( ANDBOOL ^ binExpr4 )* ;
 	public final newGrammarParser.binExpr3_return binExpr3() throws RecognitionException {
 		newGrammarParser.binExpr3_return retval = new newGrammarParser.binExpr3_return();
 		retval.start = input.LT(1);
@@ -2882,25 +2882,25 @@ public class newGrammarParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "binExpr3");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(74, 0);
+		dbg.location(73, 0);
 
 		try {
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:74:10: ( binExpr4 ( ANDBOOL ^ binExpr4 )* )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:73:10: ( binExpr4 ( ANDBOOL ^ binExpr4 )* )
 			dbg.enterAlt(1);
 
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:74:12: binExpr4 ( ANDBOOL ^ binExpr4 )*
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:73:12: binExpr4 ( ANDBOOL ^ binExpr4 )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(74,12);
-			pushFollow(FOLLOW_binExpr4_in_binExpr3610);
+			dbg.location(73,12);
+			pushFollow(FOLLOW_binExpr4_in_binExpr3609);
 			binExpr490=binExpr4();
 			state._fsp--;
 
 			adaptor.addChild(root_0, binExpr490.getTree());
-			dbg.location(74,20);
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:74:20: ( ANDBOOL ^ binExpr4 )*
+			dbg.location(73,20);
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:73:20: ( ANDBOOL ^ binExpr4 )*
 			try { dbg.enterSubRule(20);
 
 			loop20:
@@ -2919,14 +2919,14 @@ public class newGrammarParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:74:21: ANDBOOL ^ binExpr4
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:73:21: ANDBOOL ^ binExpr4
 					{
-					dbg.location(74,28);
-					ANDBOOL91=(Token)match(input,ANDBOOL,FOLLOW_ANDBOOL_in_binExpr3612); 
+					dbg.location(73,28);
+					ANDBOOL91=(Token)match(input,ANDBOOL,FOLLOW_ANDBOOL_in_binExpr3611); 
 					ANDBOOL91_tree = (CommonTree)adaptor.create(ANDBOOL91);
 					root_0 = (CommonTree)adaptor.becomeRoot(ANDBOOL91_tree, root_0);
-					dbg.location(74,30);
-					pushFollow(FOLLOW_binExpr4_in_binExpr3615);
+					dbg.location(73,30);
+					pushFollow(FOLLOW_binExpr4_in_binExpr3614);
 					binExpr492=binExpr4();
 					state._fsp--;
 
@@ -2957,7 +2957,7 @@ public class newGrammarParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(74, 39);
+		dbg.location(73, 39);
 
 		}
 		finally {
@@ -2979,7 +2979,7 @@ public class newGrammarParser extends DebugParser {
 
 
 	// $ANTLR start "binExpr4"
-	// /home/frosqh/workspace/CompilTest/newGrammar.g:76:1: binExpr4 : binExpr5 ( ( PREV ^| OPBOOLEQ ^| NEXT ^) binExpr5 )* ;
+	// /home/frosqh/workspace/CompilTest/newGrammar.g:75:1: binExpr4 : binExpr5 ( ( PREV ^| OPBOOLEQ ^| NEXT ^) binExpr5 )* ;
 	public final newGrammarParser.binExpr4_return binExpr4() throws RecognitionException {
 		newGrammarParser.binExpr4_return retval = new newGrammarParser.binExpr4_return();
 		retval.start = input.LT(1);
@@ -2999,25 +2999,25 @@ public class newGrammarParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "binExpr4");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(76, 0);
+		dbg.location(75, 0);
 
 		try {
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:76:10: ( binExpr5 ( ( PREV ^| OPBOOLEQ ^| NEXT ^) binExpr5 )* )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:75:10: ( binExpr5 ( ( PREV ^| OPBOOLEQ ^| NEXT ^) binExpr5 )* )
 			dbg.enterAlt(1);
 
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:76:12: binExpr5 ( ( PREV ^| OPBOOLEQ ^| NEXT ^) binExpr5 )*
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:75:12: binExpr5 ( ( PREV ^| OPBOOLEQ ^| NEXT ^) binExpr5 )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(76,12);
-			pushFollow(FOLLOW_binExpr5_in_binExpr4626);
+			dbg.location(75,12);
+			pushFollow(FOLLOW_binExpr5_in_binExpr4625);
 			binExpr593=binExpr5();
 			state._fsp--;
 
 			adaptor.addChild(root_0, binExpr593.getTree());
-			dbg.location(76,20);
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:76:20: ( ( PREV ^| OPBOOLEQ ^| NEXT ^) binExpr5 )*
+			dbg.location(75,20);
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:75:20: ( ( PREV ^| OPBOOLEQ ^| NEXT ^) binExpr5 )*
 			try { dbg.enterSubRule(22);
 
 			loop22:
@@ -3036,10 +3036,10 @@ public class newGrammarParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:76:21: ( PREV ^| OPBOOLEQ ^| NEXT ^) binExpr5
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:75:21: ( PREV ^| OPBOOLEQ ^| NEXT ^) binExpr5
 					{
-					dbg.location(76,21);
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:76:21: ( PREV ^| OPBOOLEQ ^| NEXT ^)
+					dbg.location(75,21);
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:75:21: ( PREV ^| OPBOOLEQ ^| NEXT ^)
 					int alt21=3;
 					try { dbg.enterSubRule(21);
 					try { dbg.enterDecision(21, decisionCanBacktrack[21]);
@@ -3072,10 +3072,10 @@ public class newGrammarParser extends DebugParser {
 						case 1 :
 							dbg.enterAlt(1);
 
-							// /home/frosqh/workspace/CompilTest/newGrammar.g:76:22: PREV ^
+							// /home/frosqh/workspace/CompilTest/newGrammar.g:75:22: PREV ^
 							{
-							dbg.location(76,26);
-							PREV94=(Token)match(input,PREV,FOLLOW_PREV_in_binExpr4629); 
+							dbg.location(75,26);
+							PREV94=(Token)match(input,PREV,FOLLOW_PREV_in_binExpr4628); 
 							PREV94_tree = (CommonTree)adaptor.create(PREV94);
 							root_0 = (CommonTree)adaptor.becomeRoot(PREV94_tree, root_0);
 
@@ -3084,10 +3084,10 @@ public class newGrammarParser extends DebugParser {
 						case 2 :
 							dbg.enterAlt(2);
 
-							// /home/frosqh/workspace/CompilTest/newGrammar.g:76:28: OPBOOLEQ ^
+							// /home/frosqh/workspace/CompilTest/newGrammar.g:75:28: OPBOOLEQ ^
 							{
-							dbg.location(76,36);
-							OPBOOLEQ95=(Token)match(input,OPBOOLEQ,FOLLOW_OPBOOLEQ_in_binExpr4632); 
+							dbg.location(75,36);
+							OPBOOLEQ95=(Token)match(input,OPBOOLEQ,FOLLOW_OPBOOLEQ_in_binExpr4631); 
 							OPBOOLEQ95_tree = (CommonTree)adaptor.create(OPBOOLEQ95);
 							root_0 = (CommonTree)adaptor.becomeRoot(OPBOOLEQ95_tree, root_0);
 
@@ -3096,10 +3096,10 @@ public class newGrammarParser extends DebugParser {
 						case 3 :
 							dbg.enterAlt(3);
 
-							// /home/frosqh/workspace/CompilTest/newGrammar.g:76:38: NEXT ^
+							// /home/frosqh/workspace/CompilTest/newGrammar.g:75:38: NEXT ^
 							{
-							dbg.location(76,42);
-							NEXT96=(Token)match(input,NEXT,FOLLOW_NEXT_in_binExpr4635); 
+							dbg.location(75,42);
+							NEXT96=(Token)match(input,NEXT,FOLLOW_NEXT_in_binExpr4634); 
 							NEXT96_tree = (CommonTree)adaptor.create(NEXT96);
 							root_0 = (CommonTree)adaptor.becomeRoot(NEXT96_tree, root_0);
 
@@ -3108,8 +3108,8 @@ public class newGrammarParser extends DebugParser {
 
 					}
 					} finally {dbg.exitSubRule(21);}
-					dbg.location(76,45);
-					pushFollow(FOLLOW_binExpr5_in_binExpr4639);
+					dbg.location(75,45);
+					pushFollow(FOLLOW_binExpr5_in_binExpr4638);
 					binExpr597=binExpr5();
 					state._fsp--;
 
@@ -3140,7 +3140,7 @@ public class newGrammarParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(76, 54);
+		dbg.location(75, 54);
 
 		}
 		finally {
@@ -3162,7 +3162,7 @@ public class newGrammarParser extends DebugParser {
 
 
 	// $ANTLR start "binExpr5"
-	// /home/frosqh/workspace/CompilTest/newGrammar.g:78:1: binExpr5 : binExpr6 ( ADDSUB ^ binExpr6 )* ;
+	// /home/frosqh/workspace/CompilTest/newGrammar.g:77:1: binExpr5 : binExpr6 ( ADDSUB ^ binExpr6 )* ;
 	public final newGrammarParser.binExpr5_return binExpr5() throws RecognitionException {
 		newGrammarParser.binExpr5_return retval = new newGrammarParser.binExpr5_return();
 		retval.start = input.LT(1);
@@ -3178,25 +3178,25 @@ public class newGrammarParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "binExpr5");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(78, 0);
+		dbg.location(77, 0);
 
 		try {
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:78:10: ( binExpr6 ( ADDSUB ^ binExpr6 )* )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:77:10: ( binExpr6 ( ADDSUB ^ binExpr6 )* )
 			dbg.enterAlt(1);
 
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:78:12: binExpr6 ( ADDSUB ^ binExpr6 )*
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:77:12: binExpr6 ( ADDSUB ^ binExpr6 )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(78,12);
-			pushFollow(FOLLOW_binExpr6_in_binExpr5650);
+			dbg.location(77,12);
+			pushFollow(FOLLOW_binExpr6_in_binExpr5649);
 			binExpr698=binExpr6();
 			state._fsp--;
 
 			adaptor.addChild(root_0, binExpr698.getTree());
-			dbg.location(78,20);
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:78:20: ( ADDSUB ^ binExpr6 )*
+			dbg.location(77,20);
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:77:20: ( ADDSUB ^ binExpr6 )*
 			try { dbg.enterSubRule(23);
 
 			loop23:
@@ -3215,14 +3215,14 @@ public class newGrammarParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:78:21: ADDSUB ^ binExpr6
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:77:21: ADDSUB ^ binExpr6
 					{
-					dbg.location(78,27);
-					ADDSUB99=(Token)match(input,ADDSUB,FOLLOW_ADDSUB_in_binExpr5652); 
+					dbg.location(77,27);
+					ADDSUB99=(Token)match(input,ADDSUB,FOLLOW_ADDSUB_in_binExpr5651); 
 					ADDSUB99_tree = (CommonTree)adaptor.create(ADDSUB99);
 					root_0 = (CommonTree)adaptor.becomeRoot(ADDSUB99_tree, root_0);
-					dbg.location(78,29);
-					pushFollow(FOLLOW_binExpr6_in_binExpr5655);
+					dbg.location(77,29);
+					pushFollow(FOLLOW_binExpr6_in_binExpr5654);
 					binExpr6100=binExpr6();
 					state._fsp--;
 
@@ -3253,7 +3253,7 @@ public class newGrammarParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(78, 38);
+		dbg.location(77, 38);
 
 		}
 		finally {
@@ -3275,7 +3275,7 @@ public class newGrammarParser extends DebugParser {
 
 
 	// $ANTLR start "binExpr6"
-	// /home/frosqh/workspace/CompilTest/newGrammar.g:80:1: binExpr6 : unExpr ( ( STAR ^| DIV ^) unExpr )* ;
+	// /home/frosqh/workspace/CompilTest/newGrammar.g:79:1: binExpr6 : unExpr ( ( STAR ^| DIV ^) unExpr )* ;
 	public final newGrammarParser.binExpr6_return binExpr6() throws RecognitionException {
 		newGrammarParser.binExpr6_return retval = new newGrammarParser.binExpr6_return();
 		retval.start = input.LT(1);
@@ -3293,25 +3293,25 @@ public class newGrammarParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "binExpr6");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(80, 0);
+		dbg.location(79, 0);
 
 		try {
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:80:10: ( unExpr ( ( STAR ^| DIV ^) unExpr )* )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:79:10: ( unExpr ( ( STAR ^| DIV ^) unExpr )* )
 			dbg.enterAlt(1);
 
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:80:12: unExpr ( ( STAR ^| DIV ^) unExpr )*
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:79:12: unExpr ( ( STAR ^| DIV ^) unExpr )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(80,12);
-			pushFollow(FOLLOW_unExpr_in_binExpr6666);
+			dbg.location(79,12);
+			pushFollow(FOLLOW_unExpr_in_binExpr6665);
 			unExpr101=unExpr();
 			state._fsp--;
 
 			adaptor.addChild(root_0, unExpr101.getTree());
-			dbg.location(80,19);
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:80:19: ( ( STAR ^| DIV ^) unExpr )*
+			dbg.location(79,19);
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:79:19: ( ( STAR ^| DIV ^) unExpr )*
 			try { dbg.enterSubRule(25);
 
 			loop25:
@@ -3330,10 +3330,10 @@ public class newGrammarParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:80:20: ( STAR ^| DIV ^) unExpr
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:79:20: ( STAR ^| DIV ^) unExpr
 					{
-					dbg.location(80,20);
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:80:20: ( STAR ^| DIV ^)
+					dbg.location(79,20);
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:79:20: ( STAR ^| DIV ^)
 					int alt24=2;
 					try { dbg.enterSubRule(24);
 					try { dbg.enterDecision(24, decisionCanBacktrack[24]);
@@ -3359,10 +3359,10 @@ public class newGrammarParser extends DebugParser {
 						case 1 :
 							dbg.enterAlt(1);
 
-							// /home/frosqh/workspace/CompilTest/newGrammar.g:80:21: STAR ^
+							// /home/frosqh/workspace/CompilTest/newGrammar.g:79:21: STAR ^
 							{
-							dbg.location(80,25);
-							STAR102=(Token)match(input,STAR,FOLLOW_STAR_in_binExpr6670); 
+							dbg.location(79,25);
+							STAR102=(Token)match(input,STAR,FOLLOW_STAR_in_binExpr6669); 
 							STAR102_tree = (CommonTree)adaptor.create(STAR102);
 							root_0 = (CommonTree)adaptor.becomeRoot(STAR102_tree, root_0);
 
@@ -3371,10 +3371,10 @@ public class newGrammarParser extends DebugParser {
 						case 2 :
 							dbg.enterAlt(2);
 
-							// /home/frosqh/workspace/CompilTest/newGrammar.g:80:27: DIV ^
+							// /home/frosqh/workspace/CompilTest/newGrammar.g:79:27: DIV ^
 							{
-							dbg.location(80,30);
-							DIV103=(Token)match(input,DIV,FOLLOW_DIV_in_binExpr6673); 
+							dbg.location(79,30);
+							DIV103=(Token)match(input,DIV,FOLLOW_DIV_in_binExpr6672); 
 							DIV103_tree = (CommonTree)adaptor.create(DIV103);
 							root_0 = (CommonTree)adaptor.becomeRoot(DIV103_tree, root_0);
 
@@ -3383,8 +3383,8 @@ public class newGrammarParser extends DebugParser {
 
 					}
 					} finally {dbg.exitSubRule(24);}
-					dbg.location(80,33);
-					pushFollow(FOLLOW_unExpr_in_binExpr6677);
+					dbg.location(79,33);
+					pushFollow(FOLLOW_unExpr_in_binExpr6676);
 					unExpr104=unExpr();
 					state._fsp--;
 
@@ -3415,7 +3415,7 @@ public class newGrammarParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(80, 40);
+		dbg.location(79, 40);
 
 		}
 		finally {
@@ -3437,7 +3437,7 @@ public class newGrammarParser extends DebugParser {
 
 
 	// $ANTLR start "vectExpr"
-	// /home/frosqh/workspace/CompilTest/newGrammar.g:83:1: vectExpr : starExpr ( '[' ^ expr ']' !)? ;
+	// /home/frosqh/workspace/CompilTest/newGrammar.g:81:1: vectExpr : starExpr ( '[' ^ expr ']' !)? ;
 	public final newGrammarParser.vectExpr_return vectExpr() throws RecognitionException {
 		newGrammarParser.vectExpr_return retval = new newGrammarParser.vectExpr_return();
 		retval.start = input.LT(1);
@@ -3455,25 +3455,25 @@ public class newGrammarParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "vectExpr");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(83, 0);
+		dbg.location(81, 0);
 
 		try {
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:83:10: ( starExpr ( '[' ^ expr ']' !)? )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:81:10: ( starExpr ( '[' ^ expr ']' !)? )
 			dbg.enterAlt(1);
 
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:83:12: starExpr ( '[' ^ expr ']' !)?
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:81:12: starExpr ( '[' ^ expr ']' !)?
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(83,12);
-			pushFollow(FOLLOW_starExpr_in_vectExpr689);
+			dbg.location(81,12);
+			pushFollow(FOLLOW_starExpr_in_vectExpr687);
 			starExpr105=starExpr();
 			state._fsp--;
 
 			adaptor.addChild(root_0, starExpr105.getTree());
-			dbg.location(83,21);
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:83:21: ( '[' ^ expr ']' !)?
+			dbg.location(81,21);
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:81:21: ( '[' ^ expr ']' !)?
 			int alt26=2;
 			try { dbg.enterSubRule(26);
 			try { dbg.enterDecision(26, decisionCanBacktrack[26]);
@@ -3488,20 +3488,20 @@ public class newGrammarParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:83:22: '[' ^ expr ']' !
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:81:22: '[' ^ expr ']' !
 					{
-					dbg.location(83,25);
-					char_literal106=(Token)match(input,36,FOLLOW_36_in_vectExpr692); 
+					dbg.location(81,25);
+					char_literal106=(Token)match(input,36,FOLLOW_36_in_vectExpr690); 
 					char_literal106_tree = (CommonTree)adaptor.create(char_literal106);
 					root_0 = (CommonTree)adaptor.becomeRoot(char_literal106_tree, root_0);
-					dbg.location(83,27);
-					pushFollow(FOLLOW_expr_in_vectExpr695);
+					dbg.location(81,27);
+					pushFollow(FOLLOW_expr_in_vectExpr693);
 					expr107=expr();
 					state._fsp--;
 
 					adaptor.addChild(root_0, expr107.getTree());
-					dbg.location(83,35);
-					char_literal108=(Token)match(input,37,FOLLOW_37_in_vectExpr697); 
+					dbg.location(81,35);
+					char_literal108=(Token)match(input,37,FOLLOW_37_in_vectExpr695); 
 					}
 					break;
 
@@ -3524,7 +3524,7 @@ public class newGrammarParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(83, 37);
+		dbg.location(81, 37);
 
 		}
 		finally {
@@ -3546,7 +3546,7 @@ public class newGrammarParser extends DebugParser {
 
 
 	// $ANTLR start "starExpr"
-	// /home/frosqh/workspace/CompilTest/newGrammar.g:85:1: starExpr : ( STAR ^)? moinsExpr ;
+	// /home/frosqh/workspace/CompilTest/newGrammar.g:83:1: starExpr : ( STAR ^)? moinsExpr ;
 	public final newGrammarParser.starExpr_return starExpr() throws RecognitionException {
 		newGrammarParser.starExpr_return retval = new newGrammarParser.starExpr_return();
 		retval.start = input.LT(1);
@@ -3561,19 +3561,19 @@ public class newGrammarParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "starExpr");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(85, 0);
+		dbg.location(83, 0);
 
 		try {
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:86:2: ( ( STAR ^)? moinsExpr )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:84:2: ( ( STAR ^)? moinsExpr )
 			dbg.enterAlt(1);
 
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:86:5: ( STAR ^)? moinsExpr
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:84:5: ( STAR ^)? moinsExpr
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(86,9);
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:86:9: ( STAR ^)?
+			dbg.location(84,9);
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:84:9: ( STAR ^)?
 			int alt27=2;
 			try { dbg.enterSubRule(27);
 			try { dbg.enterDecision(27, decisionCanBacktrack[27]);
@@ -3588,10 +3588,10 @@ public class newGrammarParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:86:9: STAR ^
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:84:9: STAR ^
 					{
-					dbg.location(86,9);
-					STAR109=(Token)match(input,STAR,FOLLOW_STAR_in_starExpr711); 
+					dbg.location(84,9);
+					STAR109=(Token)match(input,STAR,FOLLOW_STAR_in_starExpr709); 
 					STAR109_tree = (CommonTree)adaptor.create(STAR109);
 					root_0 = (CommonTree)adaptor.becomeRoot(STAR109_tree, root_0);
 
@@ -3600,8 +3600,8 @@ public class newGrammarParser extends DebugParser {
 
 			}
 			} finally {dbg.exitSubRule(27);}
-			dbg.location(86,12);
-			pushFollow(FOLLOW_moinsExpr_in_starExpr715);
+			dbg.location(84,12);
+			pushFollow(FOLLOW_moinsExpr_in_starExpr713);
 			moinsExpr110=moinsExpr();
 			state._fsp--;
 
@@ -3623,7 +3623,7 @@ public class newGrammarParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(86, 20);
+		dbg.location(84, 20);
 
 		}
 		finally {
@@ -3645,7 +3645,7 @@ public class newGrammarParser extends DebugParser {
 
 
 	// $ANTLR start "moinsExpr"
-	// /home/frosqh/workspace/CompilTest/newGrammar.g:88:1: moinsExpr : ( '-' ^)? atom ;
+	// /home/frosqh/workspace/CompilTest/newGrammar.g:86:1: moinsExpr : ( '-' ^)? atom ;
 	public final newGrammarParser.moinsExpr_return moinsExpr() throws RecognitionException {
 		newGrammarParser.moinsExpr_return retval = new newGrammarParser.moinsExpr_return();
 		retval.start = input.LT(1);
@@ -3660,19 +3660,19 @@ public class newGrammarParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "moinsExpr");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(88, 0);
+		dbg.location(86, 0);
 
 		try {
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:89:2: ( ( '-' ^)? atom )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:87:2: ( ( '-' ^)? atom )
 			dbg.enterAlt(1);
 
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:89:5: ( '-' ^)? atom
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:87:5: ( '-' ^)? atom
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(89,8);
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:89:8: ( '-' ^)?
+			dbg.location(87,8);
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:87:8: ( '-' ^)?
 			int alt28=2;
 			try { dbg.enterSubRule(28);
 			try { dbg.enterDecision(28, decisionCanBacktrack[28]);
@@ -3687,10 +3687,10 @@ public class newGrammarParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:89:8: '-' ^
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:87:8: '-' ^
 					{
-					dbg.location(89,8);
-					char_literal111=(Token)match(input,31,FOLLOW_31_in_moinsExpr727); 
+					dbg.location(87,8);
+					char_literal111=(Token)match(input,31,FOLLOW_31_in_moinsExpr725); 
 					char_literal111_tree = (CommonTree)adaptor.create(char_literal111);
 					root_0 = (CommonTree)adaptor.becomeRoot(char_literal111_tree, root_0);
 
@@ -3699,8 +3699,8 @@ public class newGrammarParser extends DebugParser {
 
 			}
 			} finally {dbg.exitSubRule(28);}
-			dbg.location(89,10);
-			pushFollow(FOLLOW_atom_in_moinsExpr730);
+			dbg.location(87,10);
+			pushFollow(FOLLOW_atom_in_moinsExpr728);
 			atom112=atom();
 			state._fsp--;
 
@@ -3722,7 +3722,7 @@ public class newGrammarParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(89, 13);
+		dbg.location(87, 13);
 
 		}
 		finally {
@@ -3744,7 +3744,7 @@ public class newGrammarParser extends DebugParser {
 
 
 	// $ANTLR start "dotExpr"
-	// /home/frosqh/workspace/CompilTest/newGrammar.g:92:1: dotExpr : vectExpr ( '.' ^ ( IDF | 'len' '(' ! ')' !) )? ;
+	// /home/frosqh/workspace/CompilTest/newGrammar.g:90:1: dotExpr : vectExpr ( '.' ^ ( IDF | 'len' '(' ! ')' !) )? ;
 	public final newGrammarParser.dotExpr_return dotExpr() throws RecognitionException {
 		newGrammarParser.dotExpr_return retval = new newGrammarParser.dotExpr_return();
 		retval.start = input.LT(1);
@@ -3767,25 +3767,25 @@ public class newGrammarParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "dotExpr");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(92, 0);
+		dbg.location(90, 0);
 
 		try {
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:92:9: ( vectExpr ( '.' ^ ( IDF | 'len' '(' ! ')' !) )? )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:90:9: ( vectExpr ( '.' ^ ( IDF | 'len' '(' ! ')' !) )? )
 			dbg.enterAlt(1);
 
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:92:11: vectExpr ( '.' ^ ( IDF | 'len' '(' ! ')' !) )?
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:90:11: vectExpr ( '.' ^ ( IDF | 'len' '(' ! ')' !) )?
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(92,11);
-			pushFollow(FOLLOW_vectExpr_in_dotExpr739);
+			dbg.location(90,11);
+			pushFollow(FOLLOW_vectExpr_in_dotExpr737);
 			vectExpr113=vectExpr();
 			state._fsp--;
 
 			adaptor.addChild(root_0, vectExpr113.getTree());
-			dbg.location(92,20);
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:92:20: ( '.' ^ ( IDF | 'len' '(' ! ')' !) )?
+			dbg.location(90,20);
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:90:20: ( '.' ^ ( IDF | 'len' '(' ! ')' !) )?
 			int alt30=2;
 			try { dbg.enterSubRule(30);
 			try { dbg.enterDecision(30, decisionCanBacktrack[30]);
@@ -3800,14 +3800,14 @@ public class newGrammarParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:92:21: '.' ^ ( IDF | 'len' '(' ! ')' !)
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:90:21: '.' ^ ( IDF | 'len' '(' ! ')' !)
 					{
-					dbg.location(92,24);
-					char_literal114=(Token)match(input,33,FOLLOW_33_in_dotExpr742); 
+					dbg.location(90,24);
+					char_literal114=(Token)match(input,33,FOLLOW_33_in_dotExpr740); 
 					char_literal114_tree = (CommonTree)adaptor.create(char_literal114);
 					root_0 = (CommonTree)adaptor.becomeRoot(char_literal114_tree, root_0);
-					dbg.location(92,26);
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:92:26: ( IDF | 'len' '(' ! ')' !)
+					dbg.location(90,26);
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:90:26: ( IDF | 'len' '(' ! ')' !)
 					int alt29=2;
 					try { dbg.enterSubRule(29);
 					try { dbg.enterDecision(29, decisionCanBacktrack[29]);
@@ -3833,10 +3833,10 @@ public class newGrammarParser extends DebugParser {
 						case 1 :
 							dbg.enterAlt(1);
 
-							// /home/frosqh/workspace/CompilTest/newGrammar.g:92:27: IDF
+							// /home/frosqh/workspace/CompilTest/newGrammar.g:90:27: IDF
 							{
-							dbg.location(92,27);
-							IDF115=(Token)match(input,IDF,FOLLOW_IDF_in_dotExpr746); 
+							dbg.location(90,27);
+							IDF115=(Token)match(input,IDF,FOLLOW_IDF_in_dotExpr744); 
 							IDF115_tree = (CommonTree)adaptor.create(IDF115);
 							adaptor.addChild(root_0, IDF115_tree);
 
@@ -3845,15 +3845,15 @@ public class newGrammarParser extends DebugParser {
 						case 2 :
 							dbg.enterAlt(2);
 
-							// /home/frosqh/workspace/CompilTest/newGrammar.g:92:33: 'len' '(' ! ')' !
+							// /home/frosqh/workspace/CompilTest/newGrammar.g:90:33: 'len' '(' ! ')' !
 							{
-							dbg.location(92,33);
-							string_literal116=(Token)match(input,41,FOLLOW_41_in_dotExpr750); 
+							dbg.location(90,33);
+							string_literal116=(Token)match(input,41,FOLLOW_41_in_dotExpr748); 
 							string_literal116_tree = (CommonTree)adaptor.create(string_literal116);
 							adaptor.addChild(root_0, string_literal116_tree);
-							dbg.location(92,42);
-							char_literal117=(Token)match(input,28,FOLLOW_28_in_dotExpr752); dbg.location(92,46);
-							char_literal118=(Token)match(input,29,FOLLOW_29_in_dotExpr754); 
+							dbg.location(90,42);
+							char_literal117=(Token)match(input,28,FOLLOW_28_in_dotExpr750); dbg.location(90,46);
+							char_literal118=(Token)match(input,29,FOLLOW_29_in_dotExpr752); 
 							}
 							break;
 
@@ -3882,7 +3882,7 @@ public class newGrammarParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(92, 50);
+		dbg.location(90, 50);
 
 		}
 		finally {
@@ -3904,7 +3904,7 @@ public class newGrammarParser extends DebugParser {
 
 
 	// $ANTLR start "unExpr"
-	// /home/frosqh/workspace/CompilTest/newGrammar.g:94:1: unExpr : ( UNAIRE ^| EPERLU ^)? dotExpr ;
+	// /home/frosqh/workspace/CompilTest/newGrammar.g:92:1: unExpr : ( UNAIRE ^| EPERLU ^)? dotExpr ;
 	public final newGrammarParser.unExpr_return unExpr() throws RecognitionException {
 		newGrammarParser.unExpr_return retval = new newGrammarParser.unExpr_return();
 		retval.start = input.LT(1);
@@ -3921,19 +3921,19 @@ public class newGrammarParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "unExpr");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(94, 0);
+		dbg.location(92, 0);
 
 		try {
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:94:8: ( ( UNAIRE ^| EPERLU ^)? dotExpr )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:92:8: ( ( UNAIRE ^| EPERLU ^)? dotExpr )
 			dbg.enterAlt(1);
 
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:94:10: ( UNAIRE ^| EPERLU ^)? dotExpr
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:92:10: ( UNAIRE ^| EPERLU ^)? dotExpr
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(94,10);
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:94:10: ( UNAIRE ^| EPERLU ^)?
+			dbg.location(92,10);
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:92:10: ( UNAIRE ^| EPERLU ^)?
 			int alt31=3;
 			try { dbg.enterSubRule(31);
 			try { dbg.enterDecision(31, decisionCanBacktrack[31]);
@@ -3951,10 +3951,10 @@ public class newGrammarParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:94:11: UNAIRE ^
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:92:11: UNAIRE ^
 					{
-					dbg.location(94,17);
-					UNAIRE119=(Token)match(input,UNAIRE,FOLLOW_UNAIRE_in_unExpr768); 
+					dbg.location(92,17);
+					UNAIRE119=(Token)match(input,UNAIRE,FOLLOW_UNAIRE_in_unExpr766); 
 					UNAIRE119_tree = (CommonTree)adaptor.create(UNAIRE119);
 					root_0 = (CommonTree)adaptor.becomeRoot(UNAIRE119_tree, root_0);
 
@@ -3963,10 +3963,10 @@ public class newGrammarParser extends DebugParser {
 				case 2 :
 					dbg.enterAlt(2);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:94:19: EPERLU ^
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:92:19: EPERLU ^
 					{
-					dbg.location(94,25);
-					EPERLU120=(Token)match(input,EPERLU,FOLLOW_EPERLU_in_unExpr771); 
+					dbg.location(92,25);
+					EPERLU120=(Token)match(input,EPERLU,FOLLOW_EPERLU_in_unExpr769); 
 					EPERLU120_tree = (CommonTree)adaptor.create(EPERLU120);
 					root_0 = (CommonTree)adaptor.becomeRoot(EPERLU120_tree, root_0);
 
@@ -3975,8 +3975,8 @@ public class newGrammarParser extends DebugParser {
 
 			}
 			} finally {dbg.exitSubRule(31);}
-			dbg.location(94,29);
-			pushFollow(FOLLOW_dotExpr_in_unExpr776);
+			dbg.location(92,29);
+			pushFollow(FOLLOW_dotExpr_in_unExpr774);
 			dotExpr121=dotExpr();
 			state._fsp--;
 
@@ -3998,7 +3998,7 @@ public class newGrammarParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(94, 35);
+		dbg.location(92, 35);
 
 		}
 		finally {
@@ -4020,7 +4020,7 @@ public class newGrammarParser extends DebugParser {
 
 
 	// $ANTLR start "atom"
-	// /home/frosqh/workspace/CompilTest/newGrammar.g:96:1: atom : ( INT | BOOL | IDF ^ ( ( callFun ) )? | '(' expr ')' -> expr );
+	// /home/frosqh/workspace/CompilTest/newGrammar.g:94:1: atom : ( INT | BOOL | IDF ^ ( ( callFun ) )? | '(' expr ')' -> expr );
 	public final newGrammarParser.atom_return atom() throws RecognitionException {
 		newGrammarParser.atom_return retval = new newGrammarParser.atom_return();
 		retval.start = input.LT(1);
@@ -4047,10 +4047,10 @@ public class newGrammarParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "atom");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(96, 0);
+		dbg.location(94, 0);
 
 		try {
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:96:6: ( INT | BOOL | IDF ^ ( ( callFun ) )? | '(' expr ')' -> expr )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:94:6: ( INT | BOOL | IDF ^ ( ( callFun ) )? | '(' expr ')' -> expr )
 			int alt33=4;
 			try { dbg.enterDecision(33, decisionCanBacktrack[33]);
 
@@ -4087,13 +4087,13 @@ public class newGrammarParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:96:8: INT
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:94:8: INT
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					dbg.location(96,8);
-					INT122=(Token)match(input,INT,FOLLOW_INT_in_atom784); 
+					dbg.location(94,8);
+					INT122=(Token)match(input,INT,FOLLOW_INT_in_atom782); 
 					INT122_tree = (CommonTree)adaptor.create(INT122);
 					adaptor.addChild(root_0, INT122_tree);
 
@@ -4102,13 +4102,13 @@ public class newGrammarParser extends DebugParser {
 				case 2 :
 					dbg.enterAlt(2);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:97:3: BOOL
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:95:3: BOOL
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					dbg.location(97,3);
-					BOOL123=(Token)match(input,BOOL,FOLLOW_BOOL_in_atom787); 
+					dbg.location(95,3);
+					BOOL123=(Token)match(input,BOOL,FOLLOW_BOOL_in_atom785); 
 					BOOL123_tree = (CommonTree)adaptor.create(BOOL123);
 					adaptor.addChild(root_0, BOOL123_tree);
 
@@ -4117,17 +4117,17 @@ public class newGrammarParser extends DebugParser {
 				case 3 :
 					dbg.enterAlt(3);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:98:4: IDF ^ ( ( callFun ) )?
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:96:4: IDF ^ ( ( callFun ) )?
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					dbg.location(98,7);
-					IDF124=(Token)match(input,IDF,FOLLOW_IDF_in_atom792); 
+					dbg.location(96,7);
+					IDF124=(Token)match(input,IDF,FOLLOW_IDF_in_atom790); 
 					IDF124_tree = (CommonTree)adaptor.create(IDF124);
 					root_0 = (CommonTree)adaptor.becomeRoot(IDF124_tree, root_0);
-					dbg.location(98,9);
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:98:9: ( ( callFun ) )?
+					dbg.location(96,9);
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:96:9: ( ( callFun ) )?
 					int alt32=2;
 					try { dbg.enterSubRule(32);
 					try { dbg.enterDecision(32, decisionCanBacktrack[32]);
@@ -4142,16 +4142,16 @@ public class newGrammarParser extends DebugParser {
 						case 1 :
 							dbg.enterAlt(1);
 
-							// /home/frosqh/workspace/CompilTest/newGrammar.g:98:10: ( callFun )
+							// /home/frosqh/workspace/CompilTest/newGrammar.g:96:10: ( callFun )
 							{
-							dbg.location(98,10);
-							// /home/frosqh/workspace/CompilTest/newGrammar.g:98:10: ( callFun )
+							dbg.location(96,10);
+							// /home/frosqh/workspace/CompilTest/newGrammar.g:96:10: ( callFun )
 							dbg.enterAlt(1);
 
-							// /home/frosqh/workspace/CompilTest/newGrammar.g:98:11: callFun
+							// /home/frosqh/workspace/CompilTest/newGrammar.g:96:11: callFun
 							{
-							dbg.location(98,11);
-							pushFollow(FOLLOW_callFun_in_atom797);
+							dbg.location(96,11);
+							pushFollow(FOLLOW_callFun_in_atom795);
 							callFun125=callFun();
 							state._fsp--;
 
@@ -4170,18 +4170,18 @@ public class newGrammarParser extends DebugParser {
 				case 4 :
 					dbg.enterAlt(4);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:99:3: '(' expr ')'
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:97:3: '(' expr ')'
 					{
-					dbg.location(99,3);
-					char_literal126=(Token)match(input,28,FOLLOW_28_in_atom803);  
+					dbg.location(97,3);
+					char_literal126=(Token)match(input,28,FOLLOW_28_in_atom801);  
 					stream_28.add(char_literal126);
-					dbg.location(99,6);
-					pushFollow(FOLLOW_expr_in_atom804);
+					dbg.location(97,6);
+					pushFollow(FOLLOW_expr_in_atom802);
 					expr127=expr();
 					state._fsp--;
 
-					stream_expr.add(expr127.getTree());dbg.location(99,10);
-					char_literal128=(Token)match(input,29,FOLLOW_29_in_atom805);  
+					stream_expr.add(expr127.getTree());dbg.location(97,10);
+					char_literal128=(Token)match(input,29,FOLLOW_29_in_atom803);  
 					stream_29.add(char_literal128);
 
 					// AST REWRITE
@@ -4195,9 +4195,9 @@ public class newGrammarParser extends DebugParser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (CommonTree)adaptor.nil();
-					// 99:13: -> expr
+					// 97:13: -> expr
 					{
-						dbg.location(99,16);
+						dbg.location(97,16);
 						adaptor.addChild(root_0, stream_expr.nextTree());
 					}
 
@@ -4222,7 +4222,7 @@ public class newGrammarParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(99, 19);
+		dbg.location(97, 19);
 
 		}
 		finally {
@@ -4244,7 +4244,7 @@ public class newGrammarParser extends DebugParser {
 
 
 	// $ANTLR start "expr"
-	// /home/frosqh/workspace/CompilTest/newGrammar.g:101:1: expr : ( 'vec' '!' '[' expr ']' -> ^( 'vec' expr ) | 'print' '!' '(' expr ')' -> ^( 'print' expr ) | block | binExpr1 );
+	// /home/frosqh/workspace/CompilTest/newGrammar.g:99:1: expr : ( 'vec' '!' '[' expr ']' -> ^( 'vec' expr ) | 'print' '!' '(' expr ')' -> ^( 'print' expr ) | block | binExpr1 );
 	public final newGrammarParser.expr_return expr() throws RecognitionException {
 		newGrammarParser.expr_return retval = new newGrammarParser.expr_return();
 		retval.start = input.LT(1);
@@ -4284,10 +4284,10 @@ public class newGrammarParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "expr");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(101, 0);
+		dbg.location(99, 0);
 
 		try {
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:101:6: ( 'vec' '!' '[' expr ']' -> ^( 'vec' expr ) | 'print' '!' '(' expr ')' -> ^( 'print' expr ) | block | binExpr1 )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:99:6: ( 'vec' '!' '[' expr ']' -> ^( 'vec' expr ) | 'print' '!' '(' expr ')' -> ^( 'print' expr ) | block | binExpr1 )
 			int alt34=4;
 			try { dbg.enterDecision(34, decisionCanBacktrack[34]);
 
@@ -4331,24 +4331,24 @@ public class newGrammarParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:101:8: 'vec' '!' '[' expr ']'
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:99:8: 'vec' '!' '[' expr ']'
 					{
-					dbg.location(101,8);
-					string_literal129=(Token)match(input,48,FOLLOW_48_in_expr817);  
+					dbg.location(99,8);
+					string_literal129=(Token)match(input,48,FOLLOW_48_in_expr815);  
 					stream_48.add(string_literal129);
-					dbg.location(101,14);
-					char_literal130=(Token)match(input,UNAIRE,FOLLOW_UNAIRE_in_expr819);  
+					dbg.location(99,14);
+					char_literal130=(Token)match(input,UNAIRE,FOLLOW_UNAIRE_in_expr817);  
 					stream_UNAIRE.add(char_literal130);
-					dbg.location(101,18);
-					char_literal131=(Token)match(input,36,FOLLOW_36_in_expr821);  
+					dbg.location(99,18);
+					char_literal131=(Token)match(input,36,FOLLOW_36_in_expr819);  
 					stream_36.add(char_literal131);
-					dbg.location(101,22);
-					pushFollow(FOLLOW_expr_in_expr823);
+					dbg.location(99,22);
+					pushFollow(FOLLOW_expr_in_expr821);
 					expr132=expr();
 					state._fsp--;
 
-					stream_expr.add(expr132.getTree());dbg.location(101,27);
-					char_literal133=(Token)match(input,37,FOLLOW_37_in_expr825);  
+					stream_expr.add(expr132.getTree());dbg.location(99,27);
+					char_literal133=(Token)match(input,37,FOLLOW_37_in_expr823);  
 					stream_37.add(char_literal133);
 
 					// AST REWRITE
@@ -4362,15 +4362,15 @@ public class newGrammarParser extends DebugParser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (CommonTree)adaptor.nil();
-					// 101:31: -> ^( 'vec' expr )
+					// 99:31: -> ^( 'vec' expr )
 					{
-						dbg.location(101,34);
-						// /home/frosqh/workspace/CompilTest/newGrammar.g:101:34: ^( 'vec' expr )
+						dbg.location(99,34);
+						// /home/frosqh/workspace/CompilTest/newGrammar.g:99:34: ^( 'vec' expr )
 						{
 						CommonTree root_1 = (CommonTree)adaptor.nil();
-						dbg.location(101,36);
+						dbg.location(99,36);
 						root_1 = (CommonTree)adaptor.becomeRoot(stream_48.nextNode(), root_1);
-						dbg.location(101,42);
+						dbg.location(99,42);
 						adaptor.addChild(root_1, stream_expr.nextTree());
 						adaptor.addChild(root_0, root_1);
 						}
@@ -4385,24 +4385,24 @@ public class newGrammarParser extends DebugParser {
 				case 2 :
 					dbg.enterAlt(2);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:102:3: 'print' '!' '(' expr ')'
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:100:3: 'print' '!' '(' expr ')'
 					{
-					dbg.location(102,3);
-					string_literal134=(Token)match(input,45,FOLLOW_45_in_expr837);  
+					dbg.location(100,3);
+					string_literal134=(Token)match(input,45,FOLLOW_45_in_expr835);  
 					stream_45.add(string_literal134);
-					dbg.location(102,11);
-					char_literal135=(Token)match(input,UNAIRE,FOLLOW_UNAIRE_in_expr839);  
+					dbg.location(100,11);
+					char_literal135=(Token)match(input,UNAIRE,FOLLOW_UNAIRE_in_expr837);  
 					stream_UNAIRE.add(char_literal135);
-					dbg.location(102,15);
-					char_literal136=(Token)match(input,28,FOLLOW_28_in_expr841);  
+					dbg.location(100,15);
+					char_literal136=(Token)match(input,28,FOLLOW_28_in_expr839);  
 					stream_28.add(char_literal136);
-					dbg.location(102,19);
-					pushFollow(FOLLOW_expr_in_expr843);
+					dbg.location(100,19);
+					pushFollow(FOLLOW_expr_in_expr841);
 					expr137=expr();
 					state._fsp--;
 
-					stream_expr.add(expr137.getTree());dbg.location(102,24);
-					char_literal138=(Token)match(input,29,FOLLOW_29_in_expr845);  
+					stream_expr.add(expr137.getTree());dbg.location(100,24);
+					char_literal138=(Token)match(input,29,FOLLOW_29_in_expr843);  
 					stream_29.add(char_literal138);
 
 					// AST REWRITE
@@ -4416,15 +4416,15 @@ public class newGrammarParser extends DebugParser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (CommonTree)adaptor.nil();
-					// 102:28: -> ^( 'print' expr )
+					// 100:28: -> ^( 'print' expr )
 					{
-						dbg.location(102,31);
-						// /home/frosqh/workspace/CompilTest/newGrammar.g:102:31: ^( 'print' expr )
+						dbg.location(100,31);
+						// /home/frosqh/workspace/CompilTest/newGrammar.g:100:31: ^( 'print' expr )
 						{
 						CommonTree root_1 = (CommonTree)adaptor.nil();
-						dbg.location(102,33);
+						dbg.location(100,33);
 						root_1 = (CommonTree)adaptor.becomeRoot(stream_45.nextNode(), root_1);
-						dbg.location(102,41);
+						dbg.location(100,41);
 						adaptor.addChild(root_1, stream_expr.nextTree());
 						adaptor.addChild(root_0, root_1);
 						}
@@ -4439,13 +4439,13 @@ public class newGrammarParser extends DebugParser {
 				case 3 :
 					dbg.enterAlt(3);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:103:3: block
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:101:3: block
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					dbg.location(103,3);
-					pushFollow(FOLLOW_block_in_expr856);
+					dbg.location(101,3);
+					pushFollow(FOLLOW_block_in_expr854);
 					block139=block();
 					state._fsp--;
 
@@ -4456,13 +4456,13 @@ public class newGrammarParser extends DebugParser {
 				case 4 :
 					dbg.enterAlt(4);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:104:3: binExpr1
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:102:3: binExpr1
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					dbg.location(104,3);
-					pushFollow(FOLLOW_binExpr1_in_expr860);
+					dbg.location(102,3);
+					pushFollow(FOLLOW_binExpr1_in_expr858);
 					binExpr1140=binExpr1();
 					state._fsp--;
 
@@ -4486,7 +4486,7 @@ public class newGrammarParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(104, 10);
+		dbg.location(102, 10);
 
 		}
 		finally {
@@ -4508,7 +4508,7 @@ public class newGrammarParser extends DebugParser {
 
 
 	// $ANTLR start "bigbinExpr1"
-	// /home/frosqh/workspace/CompilTest/newGrammar.g:107:1: bigbinExpr1 : bigbinExpr2 ( EQUAL ^ bigbinExpr2 )* ;
+	// /home/frosqh/workspace/CompilTest/newGrammar.g:105:1: bigbinExpr1 : bigbinExpr2 ( EQUAL ^ bigbinExpr2 )* ;
 	public final newGrammarParser.bigbinExpr1_return bigbinExpr1() throws RecognitionException {
 		newGrammarParser.bigbinExpr1_return retval = new newGrammarParser.bigbinExpr1_return();
 		retval.start = input.LT(1);
@@ -4524,25 +4524,25 @@ public class newGrammarParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "bigbinExpr1");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(107, 0);
+		dbg.location(105, 0);
 
 		try {
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:107:13: ( bigbinExpr2 ( EQUAL ^ bigbinExpr2 )* )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:105:13: ( bigbinExpr2 ( EQUAL ^ bigbinExpr2 )* )
 			dbg.enterAlt(1);
 
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:107:15: bigbinExpr2 ( EQUAL ^ bigbinExpr2 )*
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:105:15: bigbinExpr2 ( EQUAL ^ bigbinExpr2 )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(107,15);
-			pushFollow(FOLLOW_bigbinExpr2_in_bigbinExpr1869);
+			dbg.location(105,15);
+			pushFollow(FOLLOW_bigbinExpr2_in_bigbinExpr1867);
 			bigbinExpr2141=bigbinExpr2();
 			state._fsp--;
 
 			adaptor.addChild(root_0, bigbinExpr2141.getTree());
-			dbg.location(107,27);
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:107:27: ( EQUAL ^ bigbinExpr2 )*
+			dbg.location(105,27);
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:105:27: ( EQUAL ^ bigbinExpr2 )*
 			try { dbg.enterSubRule(35);
 
 			loop35:
@@ -4561,14 +4561,14 @@ public class newGrammarParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:107:28: EQUAL ^ bigbinExpr2
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:105:28: EQUAL ^ bigbinExpr2
 					{
-					dbg.location(107,33);
-					EQUAL142=(Token)match(input,EQUAL,FOLLOW_EQUAL_in_bigbinExpr1872); 
+					dbg.location(105,33);
+					EQUAL142=(Token)match(input,EQUAL,FOLLOW_EQUAL_in_bigbinExpr1870); 
 					EQUAL142_tree = (CommonTree)adaptor.create(EQUAL142);
 					root_0 = (CommonTree)adaptor.becomeRoot(EQUAL142_tree, root_0);
-					dbg.location(107,35);
-					pushFollow(FOLLOW_bigbinExpr2_in_bigbinExpr1875);
+					dbg.location(105,35);
+					pushFollow(FOLLOW_bigbinExpr2_in_bigbinExpr1873);
 					bigbinExpr2143=bigbinExpr2();
 					state._fsp--;
 
@@ -4599,7 +4599,7 @@ public class newGrammarParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(107, 47);
+		dbg.location(105, 47);
 
 		}
 		finally {
@@ -4621,7 +4621,7 @@ public class newGrammarParser extends DebugParser {
 
 
 	// $ANTLR start "bigbinExpr2"
-	// /home/frosqh/workspace/CompilTest/newGrammar.g:109:1: bigbinExpr2 : bigbinExpr3 ( ORBOOL ^ bigbinExpr3 )* ;
+	// /home/frosqh/workspace/CompilTest/newGrammar.g:107:1: bigbinExpr2 : bigbinExpr3 ( ORBOOL ^ bigbinExpr3 )* ;
 	public final newGrammarParser.bigbinExpr2_return bigbinExpr2() throws RecognitionException {
 		newGrammarParser.bigbinExpr2_return retval = new newGrammarParser.bigbinExpr2_return();
 		retval.start = input.LT(1);
@@ -4637,25 +4637,25 @@ public class newGrammarParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "bigbinExpr2");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(109, 0);
+		dbg.location(107, 0);
 
 		try {
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:109:13: ( bigbinExpr3 ( ORBOOL ^ bigbinExpr3 )* )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:107:13: ( bigbinExpr3 ( ORBOOL ^ bigbinExpr3 )* )
 			dbg.enterAlt(1);
 
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:109:15: bigbinExpr3 ( ORBOOL ^ bigbinExpr3 )*
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:107:15: bigbinExpr3 ( ORBOOL ^ bigbinExpr3 )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(109,15);
-			pushFollow(FOLLOW_bigbinExpr3_in_bigbinExpr2886);
+			dbg.location(107,15);
+			pushFollow(FOLLOW_bigbinExpr3_in_bigbinExpr2884);
 			bigbinExpr3144=bigbinExpr3();
 			state._fsp--;
 
 			adaptor.addChild(root_0, bigbinExpr3144.getTree());
-			dbg.location(109,26);
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:109:26: ( ORBOOL ^ bigbinExpr3 )*
+			dbg.location(107,26);
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:107:26: ( ORBOOL ^ bigbinExpr3 )*
 			try { dbg.enterSubRule(36);
 
 			loop36:
@@ -4674,14 +4674,14 @@ public class newGrammarParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:109:27: ORBOOL ^ bigbinExpr3
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:107:27: ORBOOL ^ bigbinExpr3
 					{
-					dbg.location(109,33);
-					ORBOOL145=(Token)match(input,ORBOOL,FOLLOW_ORBOOL_in_bigbinExpr2888); 
+					dbg.location(107,33);
+					ORBOOL145=(Token)match(input,ORBOOL,FOLLOW_ORBOOL_in_bigbinExpr2886); 
 					ORBOOL145_tree = (CommonTree)adaptor.create(ORBOOL145);
 					root_0 = (CommonTree)adaptor.becomeRoot(ORBOOL145_tree, root_0);
-					dbg.location(109,35);
-					pushFollow(FOLLOW_bigbinExpr3_in_bigbinExpr2891);
+					dbg.location(107,35);
+					pushFollow(FOLLOW_bigbinExpr3_in_bigbinExpr2889);
 					bigbinExpr3146=bigbinExpr3();
 					state._fsp--;
 
@@ -4712,7 +4712,7 @@ public class newGrammarParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(109, 47);
+		dbg.location(107, 47);
 
 		}
 		finally {
@@ -4734,7 +4734,7 @@ public class newGrammarParser extends DebugParser {
 
 
 	// $ANTLR start "bigbinExpr3"
-	// /home/frosqh/workspace/CompilTest/newGrammar.g:111:1: bigbinExpr3 : bigbinExpr4 ( ANDBOOL ^ bigbinExpr4 )* ;
+	// /home/frosqh/workspace/CompilTest/newGrammar.g:109:1: bigbinExpr3 : bigbinExpr4 ( ANDBOOL ^ bigbinExpr4 )* ;
 	public final newGrammarParser.bigbinExpr3_return bigbinExpr3() throws RecognitionException {
 		newGrammarParser.bigbinExpr3_return retval = new newGrammarParser.bigbinExpr3_return();
 		retval.start = input.LT(1);
@@ -4750,25 +4750,25 @@ public class newGrammarParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "bigbinExpr3");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(111, 0);
+		dbg.location(109, 0);
 
 		try {
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:111:13: ( bigbinExpr4 ( ANDBOOL ^ bigbinExpr4 )* )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:109:13: ( bigbinExpr4 ( ANDBOOL ^ bigbinExpr4 )* )
 			dbg.enterAlt(1);
 
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:111:15: bigbinExpr4 ( ANDBOOL ^ bigbinExpr4 )*
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:109:15: bigbinExpr4 ( ANDBOOL ^ bigbinExpr4 )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(111,15);
-			pushFollow(FOLLOW_bigbinExpr4_in_bigbinExpr3902);
+			dbg.location(109,15);
+			pushFollow(FOLLOW_bigbinExpr4_in_bigbinExpr3900);
 			bigbinExpr4147=bigbinExpr4();
 			state._fsp--;
 
 			adaptor.addChild(root_0, bigbinExpr4147.getTree());
-			dbg.location(111,26);
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:111:26: ( ANDBOOL ^ bigbinExpr4 )*
+			dbg.location(109,26);
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:109:26: ( ANDBOOL ^ bigbinExpr4 )*
 			try { dbg.enterSubRule(37);
 
 			loop37:
@@ -4787,14 +4787,14 @@ public class newGrammarParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:111:27: ANDBOOL ^ bigbinExpr4
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:109:27: ANDBOOL ^ bigbinExpr4
 					{
-					dbg.location(111,34);
-					ANDBOOL148=(Token)match(input,ANDBOOL,FOLLOW_ANDBOOL_in_bigbinExpr3904); 
+					dbg.location(109,34);
+					ANDBOOL148=(Token)match(input,ANDBOOL,FOLLOW_ANDBOOL_in_bigbinExpr3902); 
 					ANDBOOL148_tree = (CommonTree)adaptor.create(ANDBOOL148);
 					root_0 = (CommonTree)adaptor.becomeRoot(ANDBOOL148_tree, root_0);
-					dbg.location(111,36);
-					pushFollow(FOLLOW_bigbinExpr4_in_bigbinExpr3907);
+					dbg.location(109,36);
+					pushFollow(FOLLOW_bigbinExpr4_in_bigbinExpr3905);
 					bigbinExpr4149=bigbinExpr4();
 					state._fsp--;
 
@@ -4825,7 +4825,7 @@ public class newGrammarParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(111, 48);
+		dbg.location(109, 48);
 
 		}
 		finally {
@@ -4847,7 +4847,7 @@ public class newGrammarParser extends DebugParser {
 
 
 	// $ANTLR start "bigbinExpr4"
-	// /home/frosqh/workspace/CompilTest/newGrammar.g:113:1: bigbinExpr4 : bigbinExpr5 ( ( PREV ^| OPBOOLEQ ^| NEXT ^) bigbinExpr5 )* ;
+	// /home/frosqh/workspace/CompilTest/newGrammar.g:111:1: bigbinExpr4 : bigbinExpr5 ( ( PREV ^| OPBOOLEQ ^| NEXT ^) bigbinExpr5 )* ;
 	public final newGrammarParser.bigbinExpr4_return bigbinExpr4() throws RecognitionException {
 		newGrammarParser.bigbinExpr4_return retval = new newGrammarParser.bigbinExpr4_return();
 		retval.start = input.LT(1);
@@ -4867,25 +4867,25 @@ public class newGrammarParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "bigbinExpr4");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(113, 0);
+		dbg.location(111, 0);
 
 		try {
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:113:13: ( bigbinExpr5 ( ( PREV ^| OPBOOLEQ ^| NEXT ^) bigbinExpr5 )* )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:111:13: ( bigbinExpr5 ( ( PREV ^| OPBOOLEQ ^| NEXT ^) bigbinExpr5 )* )
 			dbg.enterAlt(1);
 
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:113:15: bigbinExpr5 ( ( PREV ^| OPBOOLEQ ^| NEXT ^) bigbinExpr5 )*
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:111:15: bigbinExpr5 ( ( PREV ^| OPBOOLEQ ^| NEXT ^) bigbinExpr5 )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(113,15);
-			pushFollow(FOLLOW_bigbinExpr5_in_bigbinExpr4918);
+			dbg.location(111,15);
+			pushFollow(FOLLOW_bigbinExpr5_in_bigbinExpr4916);
 			bigbinExpr5150=bigbinExpr5();
 			state._fsp--;
 
 			adaptor.addChild(root_0, bigbinExpr5150.getTree());
-			dbg.location(113,26);
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:113:26: ( ( PREV ^| OPBOOLEQ ^| NEXT ^) bigbinExpr5 )*
+			dbg.location(111,26);
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:111:26: ( ( PREV ^| OPBOOLEQ ^| NEXT ^) bigbinExpr5 )*
 			try { dbg.enterSubRule(39);
 
 			loop39:
@@ -4904,10 +4904,10 @@ public class newGrammarParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:113:27: ( PREV ^| OPBOOLEQ ^| NEXT ^) bigbinExpr5
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:111:27: ( PREV ^| OPBOOLEQ ^| NEXT ^) bigbinExpr5
 					{
-					dbg.location(113,27);
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:113:27: ( PREV ^| OPBOOLEQ ^| NEXT ^)
+					dbg.location(111,27);
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:111:27: ( PREV ^| OPBOOLEQ ^| NEXT ^)
 					int alt38=3;
 					try { dbg.enterSubRule(38);
 					try { dbg.enterDecision(38, decisionCanBacktrack[38]);
@@ -4940,10 +4940,10 @@ public class newGrammarParser extends DebugParser {
 						case 1 :
 							dbg.enterAlt(1);
 
-							// /home/frosqh/workspace/CompilTest/newGrammar.g:113:28: PREV ^
+							// /home/frosqh/workspace/CompilTest/newGrammar.g:111:28: PREV ^
 							{
-							dbg.location(113,32);
-							PREV151=(Token)match(input,PREV,FOLLOW_PREV_in_bigbinExpr4921); 
+							dbg.location(111,32);
+							PREV151=(Token)match(input,PREV,FOLLOW_PREV_in_bigbinExpr4919); 
 							PREV151_tree = (CommonTree)adaptor.create(PREV151);
 							root_0 = (CommonTree)adaptor.becomeRoot(PREV151_tree, root_0);
 
@@ -4952,10 +4952,10 @@ public class newGrammarParser extends DebugParser {
 						case 2 :
 							dbg.enterAlt(2);
 
-							// /home/frosqh/workspace/CompilTest/newGrammar.g:113:34: OPBOOLEQ ^
+							// /home/frosqh/workspace/CompilTest/newGrammar.g:111:34: OPBOOLEQ ^
 							{
-							dbg.location(113,42);
-							OPBOOLEQ152=(Token)match(input,OPBOOLEQ,FOLLOW_OPBOOLEQ_in_bigbinExpr4924); 
+							dbg.location(111,42);
+							OPBOOLEQ152=(Token)match(input,OPBOOLEQ,FOLLOW_OPBOOLEQ_in_bigbinExpr4922); 
 							OPBOOLEQ152_tree = (CommonTree)adaptor.create(OPBOOLEQ152);
 							root_0 = (CommonTree)adaptor.becomeRoot(OPBOOLEQ152_tree, root_0);
 
@@ -4964,10 +4964,10 @@ public class newGrammarParser extends DebugParser {
 						case 3 :
 							dbg.enterAlt(3);
 
-							// /home/frosqh/workspace/CompilTest/newGrammar.g:113:44: NEXT ^
+							// /home/frosqh/workspace/CompilTest/newGrammar.g:111:44: NEXT ^
 							{
-							dbg.location(113,48);
-							NEXT153=(Token)match(input,NEXT,FOLLOW_NEXT_in_bigbinExpr4927); 
+							dbg.location(111,48);
+							NEXT153=(Token)match(input,NEXT,FOLLOW_NEXT_in_bigbinExpr4925); 
 							NEXT153_tree = (CommonTree)adaptor.create(NEXT153);
 							root_0 = (CommonTree)adaptor.becomeRoot(NEXT153_tree, root_0);
 
@@ -4976,8 +4976,8 @@ public class newGrammarParser extends DebugParser {
 
 					}
 					} finally {dbg.exitSubRule(38);}
-					dbg.location(113,51);
-					pushFollow(FOLLOW_bigbinExpr5_in_bigbinExpr4931);
+					dbg.location(111,51);
+					pushFollow(FOLLOW_bigbinExpr5_in_bigbinExpr4929);
 					bigbinExpr5154=bigbinExpr5();
 					state._fsp--;
 
@@ -5008,7 +5008,7 @@ public class newGrammarParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(113, 63);
+		dbg.location(111, 63);
 
 		}
 		finally {
@@ -5030,7 +5030,7 @@ public class newGrammarParser extends DebugParser {
 
 
 	// $ANTLR start "bigbinExpr5"
-	// /home/frosqh/workspace/CompilTest/newGrammar.g:115:1: bigbinExpr5 : bigbinExpr6 ( ADDSUB ^ bigbinExpr6 )* ;
+	// /home/frosqh/workspace/CompilTest/newGrammar.g:113:1: bigbinExpr5 : bigbinExpr6 ( ADDSUB ^ bigbinExpr6 )* ;
 	public final newGrammarParser.bigbinExpr5_return bigbinExpr5() throws RecognitionException {
 		newGrammarParser.bigbinExpr5_return retval = new newGrammarParser.bigbinExpr5_return();
 		retval.start = input.LT(1);
@@ -5046,25 +5046,25 @@ public class newGrammarParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "bigbinExpr5");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(115, 0);
+		dbg.location(113, 0);
 
 		try {
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:115:13: ( bigbinExpr6 ( ADDSUB ^ bigbinExpr6 )* )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:113:13: ( bigbinExpr6 ( ADDSUB ^ bigbinExpr6 )* )
 			dbg.enterAlt(1);
 
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:115:15: bigbinExpr6 ( ADDSUB ^ bigbinExpr6 )*
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:113:15: bigbinExpr6 ( ADDSUB ^ bigbinExpr6 )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(115,15);
-			pushFollow(FOLLOW_bigbinExpr6_in_bigbinExpr5942);
+			dbg.location(113,15);
+			pushFollow(FOLLOW_bigbinExpr6_in_bigbinExpr5940);
 			bigbinExpr6155=bigbinExpr6();
 			state._fsp--;
 
 			adaptor.addChild(root_0, bigbinExpr6155.getTree());
-			dbg.location(115,26);
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:115:26: ( ADDSUB ^ bigbinExpr6 )*
+			dbg.location(113,26);
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:113:26: ( ADDSUB ^ bigbinExpr6 )*
 			try { dbg.enterSubRule(40);
 
 			loop40:
@@ -5083,14 +5083,14 @@ public class newGrammarParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:115:27: ADDSUB ^ bigbinExpr6
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:113:27: ADDSUB ^ bigbinExpr6
 					{
-					dbg.location(115,33);
-					ADDSUB156=(Token)match(input,ADDSUB,FOLLOW_ADDSUB_in_bigbinExpr5944); 
+					dbg.location(113,33);
+					ADDSUB156=(Token)match(input,ADDSUB,FOLLOW_ADDSUB_in_bigbinExpr5942); 
 					ADDSUB156_tree = (CommonTree)adaptor.create(ADDSUB156);
 					root_0 = (CommonTree)adaptor.becomeRoot(ADDSUB156_tree, root_0);
-					dbg.location(115,35);
-					pushFollow(FOLLOW_bigbinExpr6_in_bigbinExpr5947);
+					dbg.location(113,35);
+					pushFollow(FOLLOW_bigbinExpr6_in_bigbinExpr5945);
 					bigbinExpr6157=bigbinExpr6();
 					state._fsp--;
 
@@ -5121,7 +5121,7 @@ public class newGrammarParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(115, 47);
+		dbg.location(113, 47);
 
 		}
 		finally {
@@ -5143,7 +5143,7 @@ public class newGrammarParser extends DebugParser {
 
 
 	// $ANTLR start "bigbinExpr6"
-	// /home/frosqh/workspace/CompilTest/newGrammar.g:117:1: bigbinExpr6 : bigunExpr ( ( STAR ^| DIV ^) bigunExpr )* ;
+	// /home/frosqh/workspace/CompilTest/newGrammar.g:115:1: bigbinExpr6 : bigunExpr ( ( STAR ^| DIV ^) bigunExpr )* ;
 	public final newGrammarParser.bigbinExpr6_return bigbinExpr6() throws RecognitionException {
 		newGrammarParser.bigbinExpr6_return retval = new newGrammarParser.bigbinExpr6_return();
 		retval.start = input.LT(1);
@@ -5161,25 +5161,25 @@ public class newGrammarParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "bigbinExpr6");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(117, 0);
+		dbg.location(115, 0);
 
 		try {
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:117:13: ( bigunExpr ( ( STAR ^| DIV ^) bigunExpr )* )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:115:13: ( bigunExpr ( ( STAR ^| DIV ^) bigunExpr )* )
 			dbg.enterAlt(1);
 
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:117:15: bigunExpr ( ( STAR ^| DIV ^) bigunExpr )*
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:115:15: bigunExpr ( ( STAR ^| DIV ^) bigunExpr )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(117,15);
-			pushFollow(FOLLOW_bigunExpr_in_bigbinExpr6958);
+			dbg.location(115,15);
+			pushFollow(FOLLOW_bigunExpr_in_bigbinExpr6956);
 			bigunExpr158=bigunExpr();
 			state._fsp--;
 
 			adaptor.addChild(root_0, bigunExpr158.getTree());
-			dbg.location(117,25);
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:117:25: ( ( STAR ^| DIV ^) bigunExpr )*
+			dbg.location(115,25);
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:115:25: ( ( STAR ^| DIV ^) bigunExpr )*
 			try { dbg.enterSubRule(42);
 
 			loop42:
@@ -5198,10 +5198,10 @@ public class newGrammarParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:117:26: ( STAR ^| DIV ^) bigunExpr
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:115:26: ( STAR ^| DIV ^) bigunExpr
 					{
-					dbg.location(117,26);
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:117:26: ( STAR ^| DIV ^)
+					dbg.location(115,26);
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:115:26: ( STAR ^| DIV ^)
 					int alt41=2;
 					try { dbg.enterSubRule(41);
 					try { dbg.enterDecision(41, decisionCanBacktrack[41]);
@@ -5227,10 +5227,10 @@ public class newGrammarParser extends DebugParser {
 						case 1 :
 							dbg.enterAlt(1);
 
-							// /home/frosqh/workspace/CompilTest/newGrammar.g:117:27: STAR ^
+							// /home/frosqh/workspace/CompilTest/newGrammar.g:115:27: STAR ^
 							{
-							dbg.location(117,31);
-							STAR159=(Token)match(input,STAR,FOLLOW_STAR_in_bigbinExpr6962); 
+							dbg.location(115,31);
+							STAR159=(Token)match(input,STAR,FOLLOW_STAR_in_bigbinExpr6960); 
 							STAR159_tree = (CommonTree)adaptor.create(STAR159);
 							root_0 = (CommonTree)adaptor.becomeRoot(STAR159_tree, root_0);
 
@@ -5239,10 +5239,10 @@ public class newGrammarParser extends DebugParser {
 						case 2 :
 							dbg.enterAlt(2);
 
-							// /home/frosqh/workspace/CompilTest/newGrammar.g:117:33: DIV ^
+							// /home/frosqh/workspace/CompilTest/newGrammar.g:115:33: DIV ^
 							{
-							dbg.location(117,36);
-							DIV160=(Token)match(input,DIV,FOLLOW_DIV_in_bigbinExpr6965); 
+							dbg.location(115,36);
+							DIV160=(Token)match(input,DIV,FOLLOW_DIV_in_bigbinExpr6963); 
 							DIV160_tree = (CommonTree)adaptor.create(DIV160);
 							root_0 = (CommonTree)adaptor.becomeRoot(DIV160_tree, root_0);
 
@@ -5251,8 +5251,8 @@ public class newGrammarParser extends DebugParser {
 
 					}
 					} finally {dbg.exitSubRule(41);}
-					dbg.location(117,39);
-					pushFollow(FOLLOW_bigunExpr_in_bigbinExpr6969);
+					dbg.location(115,39);
+					pushFollow(FOLLOW_bigunExpr_in_bigbinExpr6967);
 					bigunExpr161=bigunExpr();
 					state._fsp--;
 
@@ -5283,7 +5283,7 @@ public class newGrammarParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(117, 49);
+		dbg.location(115, 49);
 
 		}
 		finally {
@@ -5305,7 +5305,7 @@ public class newGrammarParser extends DebugParser {
 
 
 	// $ANTLR start "bigvectExpr"
-	// /home/frosqh/workspace/CompilTest/newGrammar.g:119:1: bigvectExpr : bigatom ( '[' bigExpr ']' )? ;
+	// /home/frosqh/workspace/CompilTest/newGrammar.g:117:1: bigvectExpr : bigatom ( '[' bigExpr ']' )? ;
 	public final newGrammarParser.bigvectExpr_return bigvectExpr() throws RecognitionException {
 		newGrammarParser.bigvectExpr_return retval = new newGrammarParser.bigvectExpr_return();
 		retval.start = input.LT(1);
@@ -5323,25 +5323,25 @@ public class newGrammarParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "bigvectExpr");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(119, 0);
+		dbg.location(117, 0);
 
 		try {
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:119:13: ( bigatom ( '[' bigExpr ']' )? )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:117:13: ( bigatom ( '[' bigExpr ']' )? )
 			dbg.enterAlt(1);
 
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:119:15: bigatom ( '[' bigExpr ']' )?
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:117:15: bigatom ( '[' bigExpr ']' )?
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(119,15);
-			pushFollow(FOLLOW_bigatom_in_bigvectExpr980);
+			dbg.location(117,15);
+			pushFollow(FOLLOW_bigatom_in_bigvectExpr978);
 			bigatom162=bigatom();
 			state._fsp--;
 
 			adaptor.addChild(root_0, bigatom162.getTree());
-			dbg.location(119,23);
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:119:23: ( '[' bigExpr ']' )?
+			dbg.location(117,23);
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:117:23: ( '[' bigExpr ']' )?
 			int alt43=2;
 			try { dbg.enterSubRule(43);
 			try { dbg.enterDecision(43, decisionCanBacktrack[43]);
@@ -5356,20 +5356,20 @@ public class newGrammarParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:119:24: '[' bigExpr ']'
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:117:24: '[' bigExpr ']'
 					{
-					dbg.location(119,24);
-					char_literal163=(Token)match(input,36,FOLLOW_36_in_bigvectExpr983); 
+					dbg.location(117,24);
+					char_literal163=(Token)match(input,36,FOLLOW_36_in_bigvectExpr981); 
 					char_literal163_tree = (CommonTree)adaptor.create(char_literal163);
 					adaptor.addChild(root_0, char_literal163_tree);
-					dbg.location(119,28);
-					pushFollow(FOLLOW_bigExpr_in_bigvectExpr985);
+					dbg.location(117,28);
+					pushFollow(FOLLOW_bigExpr_in_bigvectExpr983);
 					bigExpr164=bigExpr();
 					state._fsp--;
 
 					adaptor.addChild(root_0, bigExpr164.getTree());
-					dbg.location(119,36);
-					char_literal165=(Token)match(input,37,FOLLOW_37_in_bigvectExpr987); 
+					dbg.location(117,36);
+					char_literal165=(Token)match(input,37,FOLLOW_37_in_bigvectExpr985); 
 					char_literal165_tree = (CommonTree)adaptor.create(char_literal165);
 					adaptor.addChild(root_0, char_literal165_tree);
 
@@ -5395,7 +5395,7 @@ public class newGrammarParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(119, 40);
+		dbg.location(117, 40);
 
 		}
 		finally {
@@ -5417,7 +5417,7 @@ public class newGrammarParser extends DebugParser {
 
 
 	// $ANTLR start "bigdotExpr"
-	// /home/frosqh/workspace/CompilTest/newGrammar.g:121:1: bigdotExpr : bigvectExpr ( '.' ^ ( IDF | 'len' '(' ')' ) )? ;
+	// /home/frosqh/workspace/CompilTest/newGrammar.g:119:1: bigdotExpr : bigvectExpr ( '.' ^ ( IDF | 'len' '(' ')' ) )? ;
 	public final newGrammarParser.bigdotExpr_return bigdotExpr() throws RecognitionException {
 		newGrammarParser.bigdotExpr_return retval = new newGrammarParser.bigdotExpr_return();
 		retval.start = input.LT(1);
@@ -5440,25 +5440,25 @@ public class newGrammarParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "bigdotExpr");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(121, 0);
+		dbg.location(119, 0);
 
 		try {
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:121:12: ( bigvectExpr ( '.' ^ ( IDF | 'len' '(' ')' ) )? )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:119:12: ( bigvectExpr ( '.' ^ ( IDF | 'len' '(' ')' ) )? )
 			dbg.enterAlt(1);
 
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:121:14: bigvectExpr ( '.' ^ ( IDF | 'len' '(' ')' ) )?
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:119:14: bigvectExpr ( '.' ^ ( IDF | 'len' '(' ')' ) )?
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(121,14);
-			pushFollow(FOLLOW_bigvectExpr_in_bigdotExpr997);
+			dbg.location(119,14);
+			pushFollow(FOLLOW_bigvectExpr_in_bigdotExpr995);
 			bigvectExpr166=bigvectExpr();
 			state._fsp--;
 
 			adaptor.addChild(root_0, bigvectExpr166.getTree());
-			dbg.location(121,26);
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:121:26: ( '.' ^ ( IDF | 'len' '(' ')' ) )?
+			dbg.location(119,26);
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:119:26: ( '.' ^ ( IDF | 'len' '(' ')' ) )?
 			int alt45=2;
 			try { dbg.enterSubRule(45);
 			try { dbg.enterDecision(45, decisionCanBacktrack[45]);
@@ -5473,14 +5473,14 @@ public class newGrammarParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:121:27: '.' ^ ( IDF | 'len' '(' ')' )
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:119:27: '.' ^ ( IDF | 'len' '(' ')' )
 					{
-					dbg.location(121,30);
-					char_literal167=(Token)match(input,33,FOLLOW_33_in_bigdotExpr1000); 
+					dbg.location(119,30);
+					char_literal167=(Token)match(input,33,FOLLOW_33_in_bigdotExpr998); 
 					char_literal167_tree = (CommonTree)adaptor.create(char_literal167);
 					root_0 = (CommonTree)adaptor.becomeRoot(char_literal167_tree, root_0);
-					dbg.location(121,32);
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:121:32: ( IDF | 'len' '(' ')' )
+					dbg.location(119,32);
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:119:32: ( IDF | 'len' '(' ')' )
 					int alt44=2;
 					try { dbg.enterSubRule(44);
 					try { dbg.enterDecision(44, decisionCanBacktrack[44]);
@@ -5506,10 +5506,10 @@ public class newGrammarParser extends DebugParser {
 						case 1 :
 							dbg.enterAlt(1);
 
-							// /home/frosqh/workspace/CompilTest/newGrammar.g:121:33: IDF
+							// /home/frosqh/workspace/CompilTest/newGrammar.g:119:33: IDF
 							{
-							dbg.location(121,33);
-							IDF168=(Token)match(input,IDF,FOLLOW_IDF_in_bigdotExpr1004); 
+							dbg.location(119,33);
+							IDF168=(Token)match(input,IDF,FOLLOW_IDF_in_bigdotExpr1002); 
 							IDF168_tree = (CommonTree)adaptor.create(IDF168);
 							adaptor.addChild(root_0, IDF168_tree);
 
@@ -5518,18 +5518,18 @@ public class newGrammarParser extends DebugParser {
 						case 2 :
 							dbg.enterAlt(2);
 
-							// /home/frosqh/workspace/CompilTest/newGrammar.g:121:39: 'len' '(' ')'
+							// /home/frosqh/workspace/CompilTest/newGrammar.g:119:39: 'len' '(' ')'
 							{
-							dbg.location(121,39);
-							string_literal169=(Token)match(input,41,FOLLOW_41_in_bigdotExpr1008); 
+							dbg.location(119,39);
+							string_literal169=(Token)match(input,41,FOLLOW_41_in_bigdotExpr1006); 
 							string_literal169_tree = (CommonTree)adaptor.create(string_literal169);
 							adaptor.addChild(root_0, string_literal169_tree);
-							dbg.location(121,45);
-							char_literal170=(Token)match(input,28,FOLLOW_28_in_bigdotExpr1010); 
+							dbg.location(119,45);
+							char_literal170=(Token)match(input,28,FOLLOW_28_in_bigdotExpr1008); 
 							char_literal170_tree = (CommonTree)adaptor.create(char_literal170);
 							adaptor.addChild(root_0, char_literal170_tree);
-							dbg.location(121,48);
-							char_literal171=(Token)match(input,29,FOLLOW_29_in_bigdotExpr1011); 
+							dbg.location(119,48);
+							char_literal171=(Token)match(input,29,FOLLOW_29_in_bigdotExpr1009); 
 							char_literal171_tree = (CommonTree)adaptor.create(char_literal171);
 							adaptor.addChild(root_0, char_literal171_tree);
 
@@ -5561,7 +5561,7 @@ public class newGrammarParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(121, 53);
+		dbg.location(119, 53);
 
 		}
 		finally {
@@ -5583,7 +5583,7 @@ public class newGrammarParser extends DebugParser {
 
 
 	// $ANTLR start "bigunExpr"
-	// /home/frosqh/workspace/CompilTest/newGrammar.g:123:1: bigunExpr : ( UNAIRE ^)? bigdotExpr ;
+	// /home/frosqh/workspace/CompilTest/newGrammar.g:121:1: bigunExpr : ( UNAIRE ^)? bigdotExpr ;
 	public final newGrammarParser.bigunExpr_return bigunExpr() throws RecognitionException {
 		newGrammarParser.bigunExpr_return retval = new newGrammarParser.bigunExpr_return();
 		retval.start = input.LT(1);
@@ -5598,19 +5598,19 @@ public class newGrammarParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "bigunExpr");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(123, 0);
+		dbg.location(121, 0);
 
 		try {
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:123:11: ( ( UNAIRE ^)? bigdotExpr )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:121:11: ( ( UNAIRE ^)? bigdotExpr )
 			dbg.enterAlt(1);
 
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:123:13: ( UNAIRE ^)? bigdotExpr
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:121:13: ( UNAIRE ^)? bigdotExpr
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
-			dbg.location(123,19);
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:123:19: ( UNAIRE ^)?
+			dbg.location(121,19);
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:121:19: ( UNAIRE ^)?
 			int alt46=2;
 			try { dbg.enterSubRule(46);
 			try { dbg.enterDecision(46, decisionCanBacktrack[46]);
@@ -5625,10 +5625,10 @@ public class newGrammarParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:123:19: UNAIRE ^
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:121:19: UNAIRE ^
 					{
-					dbg.location(123,19);
-					UNAIRE172=(Token)match(input,UNAIRE,FOLLOW_UNAIRE_in_bigunExpr1022); 
+					dbg.location(121,19);
+					UNAIRE172=(Token)match(input,UNAIRE,FOLLOW_UNAIRE_in_bigunExpr1020); 
 					UNAIRE172_tree = (CommonTree)adaptor.create(UNAIRE172);
 					root_0 = (CommonTree)adaptor.becomeRoot(UNAIRE172_tree, root_0);
 
@@ -5637,8 +5637,8 @@ public class newGrammarParser extends DebugParser {
 
 			}
 			} finally {dbg.exitSubRule(46);}
-			dbg.location(123,22);
-			pushFollow(FOLLOW_bigdotExpr_in_bigunExpr1026);
+			dbg.location(121,22);
+			pushFollow(FOLLOW_bigdotExpr_in_bigunExpr1024);
 			bigdotExpr173=bigdotExpr();
 			state._fsp--;
 
@@ -5660,7 +5660,7 @@ public class newGrammarParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(123, 31);
+		dbg.location(121, 31);
 
 		}
 		finally {
@@ -5682,7 +5682,7 @@ public class newGrammarParser extends DebugParser {
 
 
 	// $ANTLR start "bigExpr"
-	// /home/frosqh/workspace/CompilTest/newGrammar.g:125:1: bigExpr : ( 'vec' '!' '[' expr ( ',' expr )* ']' -> ^( 'vec' ( expr )* ) | 'print' '!' '(' expr ')' -> ^( 'print' expr ) | block | bigbinExpr1 );
+	// /home/frosqh/workspace/CompilTest/newGrammar.g:123:1: bigExpr : ( 'vec' '!' '[' expr ( ',' expr )* ']' -> ^( 'vec' ( expr )* ) | 'print' '!' '(' expr ')' -> ^( 'print' expr ) | block | bigbinExpr1 );
 	public final newGrammarParser.bigExpr_return bigExpr() throws RecognitionException {
 		newGrammarParser.bigExpr_return retval = new newGrammarParser.bigExpr_return();
 		retval.start = input.LT(1);
@@ -5726,10 +5726,10 @@ public class newGrammarParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "bigExpr");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(125, 0);
+		dbg.location(123, 0);
 
 		try {
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:126:3: ( 'vec' '!' '[' expr ( ',' expr )* ']' -> ^( 'vec' ( expr )* ) | 'print' '!' '(' expr ')' -> ^( 'print' expr ) | block | bigbinExpr1 )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:124:3: ( 'vec' '!' '[' expr ( ',' expr )* ']' -> ^( 'vec' ( expr )* ) | 'print' '!' '(' expr ')' -> ^( 'print' expr ) | block | bigbinExpr1 )
 			int alt48=4;
 			try { dbg.enterDecision(48, decisionCanBacktrack[48]);
 
@@ -5770,24 +5770,24 @@ public class newGrammarParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:126:3: 'vec' '!' '[' expr ( ',' expr )* ']'
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:124:3: 'vec' '!' '[' expr ( ',' expr )* ']'
 					{
-					dbg.location(126,3);
-					string_literal174=(Token)match(input,48,FOLLOW_48_in_bigExpr1035);  
+					dbg.location(124,3);
+					string_literal174=(Token)match(input,48,FOLLOW_48_in_bigExpr1033);  
 					stream_48.add(string_literal174);
-					dbg.location(126,9);
-					char_literal175=(Token)match(input,UNAIRE,FOLLOW_UNAIRE_in_bigExpr1037);  
+					dbg.location(124,9);
+					char_literal175=(Token)match(input,UNAIRE,FOLLOW_UNAIRE_in_bigExpr1035);  
 					stream_UNAIRE.add(char_literal175);
-					dbg.location(126,13);
-					char_literal176=(Token)match(input,36,FOLLOW_36_in_bigExpr1039);  
+					dbg.location(124,13);
+					char_literal176=(Token)match(input,36,FOLLOW_36_in_bigExpr1037);  
 					stream_36.add(char_literal176);
-					dbg.location(126,17);
-					pushFollow(FOLLOW_expr_in_bigExpr1041);
+					dbg.location(124,17);
+					pushFollow(FOLLOW_expr_in_bigExpr1039);
 					expr177=expr();
 					state._fsp--;
 
-					stream_expr.add(expr177.getTree());dbg.location(126,22);
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:126:22: ( ',' expr )*
+					stream_expr.add(expr177.getTree());dbg.location(124,22);
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:124:22: ( ',' expr )*
 					try { dbg.enterSubRule(47);
 
 					loop47:
@@ -5806,13 +5806,13 @@ public class newGrammarParser extends DebugParser {
 						case 1 :
 							dbg.enterAlt(1);
 
-							// /home/frosqh/workspace/CompilTest/newGrammar.g:126:23: ',' expr
+							// /home/frosqh/workspace/CompilTest/newGrammar.g:124:23: ',' expr
 							{
-							dbg.location(126,23);
-							char_literal178=(Token)match(input,30,FOLLOW_30_in_bigExpr1044);  
+							dbg.location(124,23);
+							char_literal178=(Token)match(input,30,FOLLOW_30_in_bigExpr1042);  
 							stream_30.add(char_literal178);
-							dbg.location(126,27);
-							pushFollow(FOLLOW_expr_in_bigExpr1046);
+							dbg.location(124,27);
+							pushFollow(FOLLOW_expr_in_bigExpr1044);
 							expr179=expr();
 							state._fsp--;
 
@@ -5825,12 +5825,12 @@ public class newGrammarParser extends DebugParser {
 						}
 					}
 					} finally {dbg.exitSubRule(47);}
-					dbg.location(126,33);
-					char_literal180=(Token)match(input,37,FOLLOW_37_in_bigExpr1049);  
+					dbg.location(124,33);
+					char_literal180=(Token)match(input,37,FOLLOW_37_in_bigExpr1047);  
 					stream_37.add(char_literal180);
 
 					// AST REWRITE
-					// elements: expr, 48
+					// elements: 48, expr
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -5840,18 +5840,18 @@ public class newGrammarParser extends DebugParser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (CommonTree)adaptor.nil();
-					// 126:37: -> ^( 'vec' ( expr )* )
+					// 124:37: -> ^( 'vec' ( expr )* )
 					{
-						dbg.location(126,40);
-						// /home/frosqh/workspace/CompilTest/newGrammar.g:126:40: ^( 'vec' ( expr )* )
+						dbg.location(124,40);
+						// /home/frosqh/workspace/CompilTest/newGrammar.g:124:40: ^( 'vec' ( expr )* )
 						{
 						CommonTree root_1 = (CommonTree)adaptor.nil();
-						dbg.location(126,42);
+						dbg.location(124,42);
 						root_1 = (CommonTree)adaptor.becomeRoot(stream_48.nextNode(), root_1);
-						dbg.location(126,48);
-						// /home/frosqh/workspace/CompilTest/newGrammar.g:126:48: ( expr )*
+						dbg.location(124,48);
+						// /home/frosqh/workspace/CompilTest/newGrammar.g:124:48: ( expr )*
 						while ( stream_expr.hasNext() ) {
-							dbg.location(126,48);
+							dbg.location(124,48);
 							adaptor.addChild(root_1, stream_expr.nextTree());
 						}
 						stream_expr.reset();
@@ -5869,28 +5869,28 @@ public class newGrammarParser extends DebugParser {
 				case 2 :
 					dbg.enterAlt(2);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:127:3: 'print' '!' '(' expr ')'
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:125:3: 'print' '!' '(' expr ')'
 					{
-					dbg.location(127,3);
-					string_literal181=(Token)match(input,45,FOLLOW_45_in_bigExpr1062);  
+					dbg.location(125,3);
+					string_literal181=(Token)match(input,45,FOLLOW_45_in_bigExpr1060);  
 					stream_45.add(string_literal181);
-					dbg.location(127,11);
-					char_literal182=(Token)match(input,UNAIRE,FOLLOW_UNAIRE_in_bigExpr1064);  
+					dbg.location(125,11);
+					char_literal182=(Token)match(input,UNAIRE,FOLLOW_UNAIRE_in_bigExpr1062);  
 					stream_UNAIRE.add(char_literal182);
-					dbg.location(127,15);
-					char_literal183=(Token)match(input,28,FOLLOW_28_in_bigExpr1066);  
+					dbg.location(125,15);
+					char_literal183=(Token)match(input,28,FOLLOW_28_in_bigExpr1064);  
 					stream_28.add(char_literal183);
-					dbg.location(127,19);
-					pushFollow(FOLLOW_expr_in_bigExpr1068);
+					dbg.location(125,19);
+					pushFollow(FOLLOW_expr_in_bigExpr1066);
 					expr184=expr();
 					state._fsp--;
 
-					stream_expr.add(expr184.getTree());dbg.location(127,24);
-					char_literal185=(Token)match(input,29,FOLLOW_29_in_bigExpr1070);  
+					stream_expr.add(expr184.getTree());dbg.location(125,24);
+					char_literal185=(Token)match(input,29,FOLLOW_29_in_bigExpr1068);  
 					stream_29.add(char_literal185);
 
 					// AST REWRITE
-					// elements: 45, expr
+					// elements: expr, 45
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -5900,15 +5900,15 @@ public class newGrammarParser extends DebugParser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (CommonTree)adaptor.nil();
-					// 127:28: -> ^( 'print' expr )
+					// 125:28: -> ^( 'print' expr )
 					{
-						dbg.location(127,31);
-						// /home/frosqh/workspace/CompilTest/newGrammar.g:127:31: ^( 'print' expr )
+						dbg.location(125,31);
+						// /home/frosqh/workspace/CompilTest/newGrammar.g:125:31: ^( 'print' expr )
 						{
 						CommonTree root_1 = (CommonTree)adaptor.nil();
-						dbg.location(127,33);
+						dbg.location(125,33);
 						root_1 = (CommonTree)adaptor.becomeRoot(stream_45.nextNode(), root_1);
-						dbg.location(127,41);
+						dbg.location(125,41);
 						adaptor.addChild(root_1, stream_expr.nextTree());
 						adaptor.addChild(root_0, root_1);
 						}
@@ -5923,13 +5923,13 @@ public class newGrammarParser extends DebugParser {
 				case 3 :
 					dbg.enterAlt(3);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:128:3: block
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:126:3: block
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					dbg.location(128,3);
-					pushFollow(FOLLOW_block_in_bigExpr1081);
+					dbg.location(126,3);
+					pushFollow(FOLLOW_block_in_bigExpr1079);
 					block186=block();
 					state._fsp--;
 
@@ -5940,13 +5940,13 @@ public class newGrammarParser extends DebugParser {
 				case 4 :
 					dbg.enterAlt(4);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:129:3: bigbinExpr1
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:127:3: bigbinExpr1
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					dbg.location(129,3);
-					pushFollow(FOLLOW_bigbinExpr1_in_bigExpr1085);
+					dbg.location(127,3);
+					pushFollow(FOLLOW_bigbinExpr1_in_bigExpr1083);
 					bigbinExpr1187=bigbinExpr1();
 					state._fsp--;
 
@@ -5970,7 +5970,7 @@ public class newGrammarParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(129, 13);
+		dbg.location(127, 13);
 
 		}
 		finally {
@@ -5992,7 +5992,7 @@ public class newGrammarParser extends DebugParser {
 
 
 	// $ANTLR start "bigatom"
-	// /home/frosqh/workspace/CompilTest/newGrammar.g:131:1: bigatom : ( INT | BOOL | IDF ^ ( newStruc | callFun )? | '(' bigExpr ')' -> bigExpr );
+	// /home/frosqh/workspace/CompilTest/newGrammar.g:129:1: bigatom : ( INT | BOOL | IDF ^ ( newStruc | callFun )? | '(' bigExpr ')' -> bigExpr );
 	public final newGrammarParser.bigatom_return bigatom() throws RecognitionException {
 		newGrammarParser.bigatom_return retval = new newGrammarParser.bigatom_return();
 		retval.start = input.LT(1);
@@ -6020,10 +6020,10 @@ public class newGrammarParser extends DebugParser {
 		try { dbg.enterRule(getGrammarFileName(), "bigatom");
 		if ( getRuleLevel()==0 ) {dbg.commence();}
 		incRuleLevel();
-		dbg.location(131, 0);
+		dbg.location(129, 0);
 
 		try {
-			// /home/frosqh/workspace/CompilTest/newGrammar.g:131:9: ( INT | BOOL | IDF ^ ( newStruc | callFun )? | '(' bigExpr ')' -> bigExpr )
+			// /home/frosqh/workspace/CompilTest/newGrammar.g:129:9: ( INT | BOOL | IDF ^ ( newStruc | callFun )? | '(' bigExpr ')' -> bigExpr )
 			int alt50=4;
 			try { dbg.enterDecision(50, decisionCanBacktrack[50]);
 
@@ -6060,13 +6060,13 @@ public class newGrammarParser extends DebugParser {
 				case 1 :
 					dbg.enterAlt(1);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:131:11: INT
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:129:11: INT
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					dbg.location(131,11);
-					INT188=(Token)match(input,INT,FOLLOW_INT_in_bigatom1093); 
+					dbg.location(129,11);
+					INT188=(Token)match(input,INT,FOLLOW_INT_in_bigatom1091); 
 					INT188_tree = (CommonTree)adaptor.create(INT188);
 					adaptor.addChild(root_0, INT188_tree);
 
@@ -6075,13 +6075,13 @@ public class newGrammarParser extends DebugParser {
 				case 2 :
 					dbg.enterAlt(2);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:132:3: BOOL
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:130:3: BOOL
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					dbg.location(132,3);
-					BOOL189=(Token)match(input,BOOL,FOLLOW_BOOL_in_bigatom1096); 
+					dbg.location(130,3);
+					BOOL189=(Token)match(input,BOOL,FOLLOW_BOOL_in_bigatom1094); 
 					BOOL189_tree = (CommonTree)adaptor.create(BOOL189);
 					adaptor.addChild(root_0, BOOL189_tree);
 
@@ -6090,17 +6090,17 @@ public class newGrammarParser extends DebugParser {
 				case 3 :
 					dbg.enterAlt(3);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:133:4: IDF ^ ( newStruc | callFun )?
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:131:4: IDF ^ ( newStruc | callFun )?
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
 
-					dbg.location(133,7);
-					IDF190=(Token)match(input,IDF,FOLLOW_IDF_in_bigatom1101); 
+					dbg.location(131,7);
+					IDF190=(Token)match(input,IDF,FOLLOW_IDF_in_bigatom1099); 
 					IDF190_tree = (CommonTree)adaptor.create(IDF190);
 					root_0 = (CommonTree)adaptor.becomeRoot(IDF190_tree, root_0);
-					dbg.location(133,9);
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:133:9: ( newStruc | callFun )?
+					dbg.location(131,9);
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:131:9: ( newStruc | callFun )?
 					int alt49=3;
 					try { dbg.enterSubRule(49);
 					try { dbg.enterDecision(49, decisionCanBacktrack[49]);
@@ -6118,10 +6118,10 @@ public class newGrammarParser extends DebugParser {
 						case 1 :
 							dbg.enterAlt(1);
 
-							// /home/frosqh/workspace/CompilTest/newGrammar.g:133:10: newStruc
+							// /home/frosqh/workspace/CompilTest/newGrammar.g:131:10: newStruc
 							{
-							dbg.location(133,10);
-							pushFollow(FOLLOW_newStruc_in_bigatom1105);
+							dbg.location(131,10);
+							pushFollow(FOLLOW_newStruc_in_bigatom1103);
 							newStruc191=newStruc();
 							state._fsp--;
 
@@ -6132,10 +6132,10 @@ public class newGrammarParser extends DebugParser {
 						case 2 :
 							dbg.enterAlt(2);
 
-							// /home/frosqh/workspace/CompilTest/newGrammar.g:133:19: callFun
+							// /home/frosqh/workspace/CompilTest/newGrammar.g:131:19: callFun
 							{
-							dbg.location(133,19);
-							pushFollow(FOLLOW_callFun_in_bigatom1107);
+							dbg.location(131,19);
+							pushFollow(FOLLOW_callFun_in_bigatom1105);
 							callFun192=callFun();
 							state._fsp--;
 
@@ -6152,18 +6152,18 @@ public class newGrammarParser extends DebugParser {
 				case 4 :
 					dbg.enterAlt(4);
 
-					// /home/frosqh/workspace/CompilTest/newGrammar.g:134:3: '(' bigExpr ')'
+					// /home/frosqh/workspace/CompilTest/newGrammar.g:132:3: '(' bigExpr ')'
 					{
-					dbg.location(134,3);
-					char_literal193=(Token)match(input,28,FOLLOW_28_in_bigatom1112);  
+					dbg.location(132,3);
+					char_literal193=(Token)match(input,28,FOLLOW_28_in_bigatom1110);  
 					stream_28.add(char_literal193);
-					dbg.location(134,6);
-					pushFollow(FOLLOW_bigExpr_in_bigatom1113);
+					dbg.location(132,6);
+					pushFollow(FOLLOW_bigExpr_in_bigatom1111);
 					bigExpr194=bigExpr();
 					state._fsp--;
 
-					stream_bigExpr.add(bigExpr194.getTree());dbg.location(134,13);
-					char_literal195=(Token)match(input,29,FOLLOW_29_in_bigatom1114);  
+					stream_bigExpr.add(bigExpr194.getTree());dbg.location(132,13);
+					char_literal195=(Token)match(input,29,FOLLOW_29_in_bigatom1112);  
 					stream_29.add(char_literal195);
 
 					// AST REWRITE
@@ -6177,9 +6177,9 @@ public class newGrammarParser extends DebugParser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (CommonTree)adaptor.nil();
-					// 134:17: -> bigExpr
+					// 132:17: -> bigExpr
 					{
-						dbg.location(134,20);
+						dbg.location(132,20);
 						adaptor.addChild(root_0, stream_bigExpr.nextTree());
 					}
 
@@ -6204,7 +6204,7 @@ public class newGrammarParser extends DebugParser {
 		finally {
 			// do for sure before leaving
 		}
-		dbg.location(134, 26);
+		dbg.location(132, 26);
 
 		}
 		finally {
@@ -6304,116 +6304,116 @@ public class newGrammarParser extends DebugParser {
 	public static final BitSet FOLLOW_block_in_ifExpr543 = new BitSet(new long[]{0x0000008000000002L});
 	public static final BitSet FOLLOW_39_in_ifExpr546 = new BitSet(new long[]{0x0004000000000000L});
 	public static final BitSet FOLLOW_block_in_ifExpr548 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_binExpr2_in_binExpr1577 = new BitSet(new long[]{0x0000000000002002L});
-	public static final BitSet FOLLOW_EQUAL_in_binExpr1580 = new BitSet(new long[]{0x0000000092815100L});
-	public static final BitSet FOLLOW_binExpr2_in_binExpr1583 = new BitSet(new long[]{0x0000000000002002L});
-	public static final BitSet FOLLOW_binExpr3_in_binExpr2594 = new BitSet(new long[]{0x0000000000200002L});
-	public static final BitSet FOLLOW_ORBOOL_in_binExpr2596 = new BitSet(new long[]{0x0000000092815100L});
-	public static final BitSet FOLLOW_binExpr3_in_binExpr2599 = new BitSet(new long[]{0x0000000000200002L});
-	public static final BitSet FOLLOW_binExpr4_in_binExpr3610 = new BitSet(new long[]{0x0000000000000022L});
-	public static final BitSet FOLLOW_ANDBOOL_in_binExpr3612 = new BitSet(new long[]{0x0000000092815100L});
-	public static final BitSet FOLLOW_binExpr4_in_binExpr3615 = new BitSet(new long[]{0x0000000000000022L});
-	public static final BitSet FOLLOW_binExpr5_in_binExpr4626 = new BitSet(new long[]{0x0000000000580002L});
-	public static final BitSet FOLLOW_PREV_in_binExpr4629 = new BitSet(new long[]{0x0000000092815100L});
-	public static final BitSet FOLLOW_OPBOOLEQ_in_binExpr4632 = new BitSet(new long[]{0x0000000092815100L});
-	public static final BitSet FOLLOW_NEXT_in_binExpr4635 = new BitSet(new long[]{0x0000000092815100L});
-	public static final BitSet FOLLOW_binExpr5_in_binExpr4639 = new BitSet(new long[]{0x0000000000580002L});
-	public static final BitSet FOLLOW_binExpr6_in_binExpr5650 = new BitSet(new long[]{0x0000000000000012L});
-	public static final BitSet FOLLOW_ADDSUB_in_binExpr5652 = new BitSet(new long[]{0x0000000092815100L});
-	public static final BitSet FOLLOW_binExpr6_in_binExpr5655 = new BitSet(new long[]{0x0000000000000012L});
-	public static final BitSet FOLLOW_unExpr_in_binExpr6666 = new BitSet(new long[]{0x0000000000800802L});
-	public static final BitSet FOLLOW_STAR_in_binExpr6670 = new BitSet(new long[]{0x0000000092815100L});
-	public static final BitSet FOLLOW_DIV_in_binExpr6673 = new BitSet(new long[]{0x0000000092815100L});
-	public static final BitSet FOLLOW_unExpr_in_binExpr6677 = new BitSet(new long[]{0x0000000000800802L});
-	public static final BitSet FOLLOW_starExpr_in_vectExpr689 = new BitSet(new long[]{0x0000001000000002L});
-	public static final BitSet FOLLOW_36_in_vectExpr692 = new BitSet(new long[]{0x0005200092815100L});
-	public static final BitSet FOLLOW_expr_in_vectExpr695 = new BitSet(new long[]{0x0000002000000000L});
-	public static final BitSet FOLLOW_37_in_vectExpr697 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_STAR_in_starExpr711 = new BitSet(new long[]{0x0000000090014100L});
-	public static final BitSet FOLLOW_moinsExpr_in_starExpr715 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_31_in_moinsExpr727 = new BitSet(new long[]{0x0000000010014100L});
-	public static final BitSet FOLLOW_atom_in_moinsExpr730 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_vectExpr_in_dotExpr739 = new BitSet(new long[]{0x0000000200000002L});
-	public static final BitSet FOLLOW_33_in_dotExpr742 = new BitSet(new long[]{0x0000020000004000L});
-	public static final BitSet FOLLOW_IDF_in_dotExpr746 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_41_in_dotExpr750 = new BitSet(new long[]{0x0000000010000000L});
-	public static final BitSet FOLLOW_28_in_dotExpr752 = new BitSet(new long[]{0x0000000020000000L});
-	public static final BitSet FOLLOW_29_in_dotExpr754 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_UNAIRE_in_unExpr768 = new BitSet(new long[]{0x0000000090814100L});
-	public static final BitSet FOLLOW_EPERLU_in_unExpr771 = new BitSet(new long[]{0x0000000090814100L});
-	public static final BitSet FOLLOW_dotExpr_in_unExpr776 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_INT_in_atom784 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_BOOL_in_atom787 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_IDF_in_atom792 = new BitSet(new long[]{0x0000000010000002L});
-	public static final BitSet FOLLOW_callFun_in_atom797 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_28_in_atom803 = new BitSet(new long[]{0x0005200092815100L});
-	public static final BitSet FOLLOW_expr_in_atom804 = new BitSet(new long[]{0x0000000020000000L});
-	public static final BitSet FOLLOW_29_in_atom805 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_48_in_expr817 = new BitSet(new long[]{0x0000000002000000L});
-	public static final BitSet FOLLOW_UNAIRE_in_expr819 = new BitSet(new long[]{0x0000001000000000L});
-	public static final BitSet FOLLOW_36_in_expr821 = new BitSet(new long[]{0x0005200092815100L});
-	public static final BitSet FOLLOW_expr_in_expr823 = new BitSet(new long[]{0x0000002000000000L});
-	public static final BitSet FOLLOW_37_in_expr825 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_45_in_expr837 = new BitSet(new long[]{0x0000000002000000L});
-	public static final BitSet FOLLOW_UNAIRE_in_expr839 = new BitSet(new long[]{0x0000000010000000L});
-	public static final BitSet FOLLOW_28_in_expr841 = new BitSet(new long[]{0x0005200092815100L});
-	public static final BitSet FOLLOW_expr_in_expr843 = new BitSet(new long[]{0x0000000020000000L});
-	public static final BitSet FOLLOW_29_in_expr845 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_block_in_expr856 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_binExpr1_in_expr860 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_bigbinExpr2_in_bigbinExpr1869 = new BitSet(new long[]{0x0000000000002002L});
-	public static final BitSet FOLLOW_EQUAL_in_bigbinExpr1872 = new BitSet(new long[]{0x0000000012014100L});
-	public static final BitSet FOLLOW_bigbinExpr2_in_bigbinExpr1875 = new BitSet(new long[]{0x0000000000002002L});
-	public static final BitSet FOLLOW_bigbinExpr3_in_bigbinExpr2886 = new BitSet(new long[]{0x0000000000200002L});
-	public static final BitSet FOLLOW_ORBOOL_in_bigbinExpr2888 = new BitSet(new long[]{0x0000000012014100L});
-	public static final BitSet FOLLOW_bigbinExpr3_in_bigbinExpr2891 = new BitSet(new long[]{0x0000000000200002L});
-	public static final BitSet FOLLOW_bigbinExpr4_in_bigbinExpr3902 = new BitSet(new long[]{0x0000000000000022L});
-	public static final BitSet FOLLOW_ANDBOOL_in_bigbinExpr3904 = new BitSet(new long[]{0x0000000012014100L});
-	public static final BitSet FOLLOW_bigbinExpr4_in_bigbinExpr3907 = new BitSet(new long[]{0x0000000000000022L});
-	public static final BitSet FOLLOW_bigbinExpr5_in_bigbinExpr4918 = new BitSet(new long[]{0x0000000000580002L});
-	public static final BitSet FOLLOW_PREV_in_bigbinExpr4921 = new BitSet(new long[]{0x0000000012014100L});
-	public static final BitSet FOLLOW_OPBOOLEQ_in_bigbinExpr4924 = new BitSet(new long[]{0x0000000012014100L});
-	public static final BitSet FOLLOW_NEXT_in_bigbinExpr4927 = new BitSet(new long[]{0x0000000012014100L});
-	public static final BitSet FOLLOW_bigbinExpr5_in_bigbinExpr4931 = new BitSet(new long[]{0x0000000000580002L});
-	public static final BitSet FOLLOW_bigbinExpr6_in_bigbinExpr5942 = new BitSet(new long[]{0x0000000000000012L});
-	public static final BitSet FOLLOW_ADDSUB_in_bigbinExpr5944 = new BitSet(new long[]{0x0000000012014100L});
-	public static final BitSet FOLLOW_bigbinExpr6_in_bigbinExpr5947 = new BitSet(new long[]{0x0000000000000012L});
-	public static final BitSet FOLLOW_bigunExpr_in_bigbinExpr6958 = new BitSet(new long[]{0x0000000000800802L});
-	public static final BitSet FOLLOW_STAR_in_bigbinExpr6962 = new BitSet(new long[]{0x0000000012014100L});
-	public static final BitSet FOLLOW_DIV_in_bigbinExpr6965 = new BitSet(new long[]{0x0000000012014100L});
-	public static final BitSet FOLLOW_bigunExpr_in_bigbinExpr6969 = new BitSet(new long[]{0x0000000000800802L});
-	public static final BitSet FOLLOW_bigatom_in_bigvectExpr980 = new BitSet(new long[]{0x0000001000000002L});
-	public static final BitSet FOLLOW_36_in_bigvectExpr983 = new BitSet(new long[]{0x0005200012014100L});
-	public static final BitSet FOLLOW_bigExpr_in_bigvectExpr985 = new BitSet(new long[]{0x0000002000000000L});
-	public static final BitSet FOLLOW_37_in_bigvectExpr987 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_bigvectExpr_in_bigdotExpr997 = new BitSet(new long[]{0x0000000200000002L});
-	public static final BitSet FOLLOW_33_in_bigdotExpr1000 = new BitSet(new long[]{0x0000020000004000L});
-	public static final BitSet FOLLOW_IDF_in_bigdotExpr1004 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_41_in_bigdotExpr1008 = new BitSet(new long[]{0x0000000010000000L});
-	public static final BitSet FOLLOW_28_in_bigdotExpr1010 = new BitSet(new long[]{0x0000000020000000L});
-	public static final BitSet FOLLOW_29_in_bigdotExpr1011 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_UNAIRE_in_bigunExpr1022 = new BitSet(new long[]{0x0000000010014100L});
-	public static final BitSet FOLLOW_bigdotExpr_in_bigunExpr1026 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_48_in_bigExpr1035 = new BitSet(new long[]{0x0000000002000000L});
-	public static final BitSet FOLLOW_UNAIRE_in_bigExpr1037 = new BitSet(new long[]{0x0000001000000000L});
-	public static final BitSet FOLLOW_36_in_bigExpr1039 = new BitSet(new long[]{0x0005200092815100L});
-	public static final BitSet FOLLOW_expr_in_bigExpr1041 = new BitSet(new long[]{0x0000002040000000L});
-	public static final BitSet FOLLOW_30_in_bigExpr1044 = new BitSet(new long[]{0x0005200092815100L});
-	public static final BitSet FOLLOW_expr_in_bigExpr1046 = new BitSet(new long[]{0x0000002040000000L});
-	public static final BitSet FOLLOW_37_in_bigExpr1049 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_45_in_bigExpr1062 = new BitSet(new long[]{0x0000000002000000L});
-	public static final BitSet FOLLOW_UNAIRE_in_bigExpr1064 = new BitSet(new long[]{0x0000000010000000L});
-	public static final BitSet FOLLOW_28_in_bigExpr1066 = new BitSet(new long[]{0x0005200092815100L});
-	public static final BitSet FOLLOW_expr_in_bigExpr1068 = new BitSet(new long[]{0x0000000020000000L});
-	public static final BitSet FOLLOW_29_in_bigExpr1070 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_block_in_bigExpr1081 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_bigbinExpr1_in_bigExpr1085 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_INT_in_bigatom1093 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_BOOL_in_bigatom1096 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_IDF_in_bigatom1101 = new BitSet(new long[]{0x0004000010000002L});
-	public static final BitSet FOLLOW_newStruc_in_bigatom1105 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_callFun_in_bigatom1107 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_28_in_bigatom1112 = new BitSet(new long[]{0x0005200012014100L});
-	public static final BitSet FOLLOW_bigExpr_in_bigatom1113 = new BitSet(new long[]{0x0000000020000000L});
-	public static final BitSet FOLLOW_29_in_bigatom1114 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_binExpr2_in_binExpr1576 = new BitSet(new long[]{0x0000000000002002L});
+	public static final BitSet FOLLOW_EQUAL_in_binExpr1579 = new BitSet(new long[]{0x0000000092815100L});
+	public static final BitSet FOLLOW_binExpr2_in_binExpr1582 = new BitSet(new long[]{0x0000000000002002L});
+	public static final BitSet FOLLOW_binExpr3_in_binExpr2593 = new BitSet(new long[]{0x0000000000200002L});
+	public static final BitSet FOLLOW_ORBOOL_in_binExpr2595 = new BitSet(new long[]{0x0000000092815100L});
+	public static final BitSet FOLLOW_binExpr3_in_binExpr2598 = new BitSet(new long[]{0x0000000000200002L});
+	public static final BitSet FOLLOW_binExpr4_in_binExpr3609 = new BitSet(new long[]{0x0000000000000022L});
+	public static final BitSet FOLLOW_ANDBOOL_in_binExpr3611 = new BitSet(new long[]{0x0000000092815100L});
+	public static final BitSet FOLLOW_binExpr4_in_binExpr3614 = new BitSet(new long[]{0x0000000000000022L});
+	public static final BitSet FOLLOW_binExpr5_in_binExpr4625 = new BitSet(new long[]{0x0000000000580002L});
+	public static final BitSet FOLLOW_PREV_in_binExpr4628 = new BitSet(new long[]{0x0000000092815100L});
+	public static final BitSet FOLLOW_OPBOOLEQ_in_binExpr4631 = new BitSet(new long[]{0x0000000092815100L});
+	public static final BitSet FOLLOW_NEXT_in_binExpr4634 = new BitSet(new long[]{0x0000000092815100L});
+	public static final BitSet FOLLOW_binExpr5_in_binExpr4638 = new BitSet(new long[]{0x0000000000580002L});
+	public static final BitSet FOLLOW_binExpr6_in_binExpr5649 = new BitSet(new long[]{0x0000000000000012L});
+	public static final BitSet FOLLOW_ADDSUB_in_binExpr5651 = new BitSet(new long[]{0x0000000092815100L});
+	public static final BitSet FOLLOW_binExpr6_in_binExpr5654 = new BitSet(new long[]{0x0000000000000012L});
+	public static final BitSet FOLLOW_unExpr_in_binExpr6665 = new BitSet(new long[]{0x0000000000800802L});
+	public static final BitSet FOLLOW_STAR_in_binExpr6669 = new BitSet(new long[]{0x0000000092815100L});
+	public static final BitSet FOLLOW_DIV_in_binExpr6672 = new BitSet(new long[]{0x0000000092815100L});
+	public static final BitSet FOLLOW_unExpr_in_binExpr6676 = new BitSet(new long[]{0x0000000000800802L});
+	public static final BitSet FOLLOW_starExpr_in_vectExpr687 = new BitSet(new long[]{0x0000001000000002L});
+	public static final BitSet FOLLOW_36_in_vectExpr690 = new BitSet(new long[]{0x0005200092815100L});
+	public static final BitSet FOLLOW_expr_in_vectExpr693 = new BitSet(new long[]{0x0000002000000000L});
+	public static final BitSet FOLLOW_37_in_vectExpr695 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_STAR_in_starExpr709 = new BitSet(new long[]{0x0000000090014100L});
+	public static final BitSet FOLLOW_moinsExpr_in_starExpr713 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_31_in_moinsExpr725 = new BitSet(new long[]{0x0000000010014100L});
+	public static final BitSet FOLLOW_atom_in_moinsExpr728 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_vectExpr_in_dotExpr737 = new BitSet(new long[]{0x0000000200000002L});
+	public static final BitSet FOLLOW_33_in_dotExpr740 = new BitSet(new long[]{0x0000020000004000L});
+	public static final BitSet FOLLOW_IDF_in_dotExpr744 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_41_in_dotExpr748 = new BitSet(new long[]{0x0000000010000000L});
+	public static final BitSet FOLLOW_28_in_dotExpr750 = new BitSet(new long[]{0x0000000020000000L});
+	public static final BitSet FOLLOW_29_in_dotExpr752 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_UNAIRE_in_unExpr766 = new BitSet(new long[]{0x0000000090814100L});
+	public static final BitSet FOLLOW_EPERLU_in_unExpr769 = new BitSet(new long[]{0x0000000090814100L});
+	public static final BitSet FOLLOW_dotExpr_in_unExpr774 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_INT_in_atom782 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_BOOL_in_atom785 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_IDF_in_atom790 = new BitSet(new long[]{0x0000000010000002L});
+	public static final BitSet FOLLOW_callFun_in_atom795 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_28_in_atom801 = new BitSet(new long[]{0x0005200092815100L});
+	public static final BitSet FOLLOW_expr_in_atom802 = new BitSet(new long[]{0x0000000020000000L});
+	public static final BitSet FOLLOW_29_in_atom803 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_48_in_expr815 = new BitSet(new long[]{0x0000000002000000L});
+	public static final BitSet FOLLOW_UNAIRE_in_expr817 = new BitSet(new long[]{0x0000001000000000L});
+	public static final BitSet FOLLOW_36_in_expr819 = new BitSet(new long[]{0x0005200092815100L});
+	public static final BitSet FOLLOW_expr_in_expr821 = new BitSet(new long[]{0x0000002000000000L});
+	public static final BitSet FOLLOW_37_in_expr823 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_45_in_expr835 = new BitSet(new long[]{0x0000000002000000L});
+	public static final BitSet FOLLOW_UNAIRE_in_expr837 = new BitSet(new long[]{0x0000000010000000L});
+	public static final BitSet FOLLOW_28_in_expr839 = new BitSet(new long[]{0x0005200092815100L});
+	public static final BitSet FOLLOW_expr_in_expr841 = new BitSet(new long[]{0x0000000020000000L});
+	public static final BitSet FOLLOW_29_in_expr843 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_block_in_expr854 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_binExpr1_in_expr858 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_bigbinExpr2_in_bigbinExpr1867 = new BitSet(new long[]{0x0000000000002002L});
+	public static final BitSet FOLLOW_EQUAL_in_bigbinExpr1870 = new BitSet(new long[]{0x0000000012014100L});
+	public static final BitSet FOLLOW_bigbinExpr2_in_bigbinExpr1873 = new BitSet(new long[]{0x0000000000002002L});
+	public static final BitSet FOLLOW_bigbinExpr3_in_bigbinExpr2884 = new BitSet(new long[]{0x0000000000200002L});
+	public static final BitSet FOLLOW_ORBOOL_in_bigbinExpr2886 = new BitSet(new long[]{0x0000000012014100L});
+	public static final BitSet FOLLOW_bigbinExpr3_in_bigbinExpr2889 = new BitSet(new long[]{0x0000000000200002L});
+	public static final BitSet FOLLOW_bigbinExpr4_in_bigbinExpr3900 = new BitSet(new long[]{0x0000000000000022L});
+	public static final BitSet FOLLOW_ANDBOOL_in_bigbinExpr3902 = new BitSet(new long[]{0x0000000012014100L});
+	public static final BitSet FOLLOW_bigbinExpr4_in_bigbinExpr3905 = new BitSet(new long[]{0x0000000000000022L});
+	public static final BitSet FOLLOW_bigbinExpr5_in_bigbinExpr4916 = new BitSet(new long[]{0x0000000000580002L});
+	public static final BitSet FOLLOW_PREV_in_bigbinExpr4919 = new BitSet(new long[]{0x0000000012014100L});
+	public static final BitSet FOLLOW_OPBOOLEQ_in_bigbinExpr4922 = new BitSet(new long[]{0x0000000012014100L});
+	public static final BitSet FOLLOW_NEXT_in_bigbinExpr4925 = new BitSet(new long[]{0x0000000012014100L});
+	public static final BitSet FOLLOW_bigbinExpr5_in_bigbinExpr4929 = new BitSet(new long[]{0x0000000000580002L});
+	public static final BitSet FOLLOW_bigbinExpr6_in_bigbinExpr5940 = new BitSet(new long[]{0x0000000000000012L});
+	public static final BitSet FOLLOW_ADDSUB_in_bigbinExpr5942 = new BitSet(new long[]{0x0000000012014100L});
+	public static final BitSet FOLLOW_bigbinExpr6_in_bigbinExpr5945 = new BitSet(new long[]{0x0000000000000012L});
+	public static final BitSet FOLLOW_bigunExpr_in_bigbinExpr6956 = new BitSet(new long[]{0x0000000000800802L});
+	public static final BitSet FOLLOW_STAR_in_bigbinExpr6960 = new BitSet(new long[]{0x0000000012014100L});
+	public static final BitSet FOLLOW_DIV_in_bigbinExpr6963 = new BitSet(new long[]{0x0000000012014100L});
+	public static final BitSet FOLLOW_bigunExpr_in_bigbinExpr6967 = new BitSet(new long[]{0x0000000000800802L});
+	public static final BitSet FOLLOW_bigatom_in_bigvectExpr978 = new BitSet(new long[]{0x0000001000000002L});
+	public static final BitSet FOLLOW_36_in_bigvectExpr981 = new BitSet(new long[]{0x0005200012014100L});
+	public static final BitSet FOLLOW_bigExpr_in_bigvectExpr983 = new BitSet(new long[]{0x0000002000000000L});
+	public static final BitSet FOLLOW_37_in_bigvectExpr985 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_bigvectExpr_in_bigdotExpr995 = new BitSet(new long[]{0x0000000200000002L});
+	public static final BitSet FOLLOW_33_in_bigdotExpr998 = new BitSet(new long[]{0x0000020000004000L});
+	public static final BitSet FOLLOW_IDF_in_bigdotExpr1002 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_41_in_bigdotExpr1006 = new BitSet(new long[]{0x0000000010000000L});
+	public static final BitSet FOLLOW_28_in_bigdotExpr1008 = new BitSet(new long[]{0x0000000020000000L});
+	public static final BitSet FOLLOW_29_in_bigdotExpr1009 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_UNAIRE_in_bigunExpr1020 = new BitSet(new long[]{0x0000000010014100L});
+	public static final BitSet FOLLOW_bigdotExpr_in_bigunExpr1024 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_48_in_bigExpr1033 = new BitSet(new long[]{0x0000000002000000L});
+	public static final BitSet FOLLOW_UNAIRE_in_bigExpr1035 = new BitSet(new long[]{0x0000001000000000L});
+	public static final BitSet FOLLOW_36_in_bigExpr1037 = new BitSet(new long[]{0x0005200092815100L});
+	public static final BitSet FOLLOW_expr_in_bigExpr1039 = new BitSet(new long[]{0x0000002040000000L});
+	public static final BitSet FOLLOW_30_in_bigExpr1042 = new BitSet(new long[]{0x0005200092815100L});
+	public static final BitSet FOLLOW_expr_in_bigExpr1044 = new BitSet(new long[]{0x0000002040000000L});
+	public static final BitSet FOLLOW_37_in_bigExpr1047 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_45_in_bigExpr1060 = new BitSet(new long[]{0x0000000002000000L});
+	public static final BitSet FOLLOW_UNAIRE_in_bigExpr1062 = new BitSet(new long[]{0x0000000010000000L});
+	public static final BitSet FOLLOW_28_in_bigExpr1064 = new BitSet(new long[]{0x0005200092815100L});
+	public static final BitSet FOLLOW_expr_in_bigExpr1066 = new BitSet(new long[]{0x0000000020000000L});
+	public static final BitSet FOLLOW_29_in_bigExpr1068 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_block_in_bigExpr1079 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_bigbinExpr1_in_bigExpr1083 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_INT_in_bigatom1091 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_BOOL_in_bigatom1094 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_IDF_in_bigatom1099 = new BitSet(new long[]{0x0004000010000002L});
+	public static final BitSet FOLLOW_newStruc_in_bigatom1103 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_callFun_in_bigatom1105 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_28_in_bigatom1110 = new BitSet(new long[]{0x0005200012014100L});
+	public static final BitSet FOLLOW_bigExpr_in_bigatom1111 = new BitSet(new long[]{0x0000000020000000L});
+	public static final BitSet FOLLOW_29_in_bigatom1112 = new BitSet(new long[]{0x0000000000000002L});
 }
